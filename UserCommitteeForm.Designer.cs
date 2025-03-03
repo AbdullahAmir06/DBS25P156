@@ -224,6 +224,7 @@
             Name = "UserCommitteeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserCommitteeForm";
+            Load += UserCommitteeForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

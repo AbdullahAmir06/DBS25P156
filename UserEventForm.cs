@@ -93,5 +93,11 @@ namespace DBS25P156
         {
             label3.Font = new Font(label3.Font, FontStyle.Regular);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
+

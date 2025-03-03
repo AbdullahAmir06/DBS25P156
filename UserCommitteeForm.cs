@@ -21,5 +21,11 @@ namespace DBS25P156
         {
             this.Close();
         }
+
+        private void UserCommitteeForm_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
