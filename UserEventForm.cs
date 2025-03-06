@@ -98,6 +98,14 @@ namespace DBS25P156
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
+            this.Hide();
+            eventRegistrationForm.ShowDialog();
+            this.Show();
+        }
     }
 }
 

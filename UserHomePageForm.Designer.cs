@@ -230,7 +230,7 @@
             label8.Cursor = Cursors.Hand;
             label8.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ActiveCaption;
-            label8.Location = new Point(62, 312);
+            label8.Location = new Point(61, 312);
             label8.Name = "label8";
             label8.Size = new Size(185, 50);
             label8.TabIndex = 4;
@@ -246,7 +246,7 @@
             label9.Cursor = Cursors.Hand;
             label9.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ActiveCaption;
-            label9.Location = new Point(329, 312);
+            label9.Location = new Point(319, 312);
             label9.Name = "label9";
             label9.Size = new Size(269, 50);
             label9.TabIndex = 5;
@@ -262,7 +262,7 @@
             label10.Cursor = Cursors.Hand;
             label10.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ActiveCaption;
-            label10.Location = new Point(682, 312);
+            label10.Location = new Point(680, 312);
             label10.Name = "label10";
             label10.Size = new Size(194, 50);
             label10.TabIndex = 6;

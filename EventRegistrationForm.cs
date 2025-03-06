@@ -92,11 +92,11 @@ namespace DBS25P156
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||  // Check TextBox1
             string.IsNullOrWhiteSpace(ContactTextBox.Text) ||  // Check TextBox2
-        (!radioButton1.Checked) ||  // Check if any RadioButton is selected
+        (!radioButton1.Checked && !radioButton2.Checked) ||  // Check if any RadioButton is selected
         comboBox1.SelectedIndex == -1)  // Check if ComboBox has a selection
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -104,8 +104,12 @@ namespace DBS25P156
             else
             {
                 label2.Visible = true;
-                //this.Close();
+                button1.Enabled = false;
 
+                await Task.Delay(2000); //used to wait for 3 sec
+                UserHomePageForm userHomePageForm = new UserHomePageForm();
+                this.Hide();
+                userHomePageForm.ShowDialog();
             }
         }
         private void radioButton1_Enter(object sender, EventArgs e)
