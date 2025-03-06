@@ -104,6 +104,7 @@ namespace DBS25P156
             EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
             this.Hide();
             eventRegistrationForm.ShowDialog();
+
             this.Show();
         }
     }
