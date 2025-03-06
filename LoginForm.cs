@@ -11,10 +11,13 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
+
 namespace DBS25P156
 {
     public partial class LoginForm : Form
     {
+         
         public LoginForm()
         {
             InitializeComponent();
@@ -74,7 +77,7 @@ namespace DBS25P156
             if (string.IsNullOrEmpty(textBox3.Text))
             {
                 textBox3.Focus();
-                errorProvider1.SetError(textBox3, "Please Enter Username");
+                errorProvider1.SetError(textBox3, "Please Enter Username/Email");
             }
             else
             {

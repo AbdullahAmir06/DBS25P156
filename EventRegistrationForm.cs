@@ -94,23 +94,44 @@ namespace DBS25P156
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||  // Check TextBox1
-            string.IsNullOrWhiteSpace(ContactTextBox.Text) ||  // Check TextBox2
-        (!radioButton1.Checked && !radioButton2.Checked) ||  // Check if any RadioButton is selected
-        comboBox1.SelectedIndex == -1)  // Check if ComboBox has a selection
+            if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
+       string.IsNullOrWhiteSpace(ContactTextBox.Text) ||
+       comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // If role is "Student", enforce radio button validation
+            if (comboBox1.Text.Trim() == "Student" && !radioButton1.Checked && !radioButton2.Checked)
+            {
+                errorProvider4.SetError(radioButton2, "Please Select Your Fees Status");
+                return;
             }
             else
             {
-                label2.Visible = true;
-                button1.Enabled = false;
-
-                await Task.Delay(2000); //used to wait for 3 sec
-                UserHomePageForm userHomePageForm = new UserHomePageForm();
-                this.Hide();
-                userHomePageForm.ShowDialog();
+                errorProvider4.Clear();
             }
+
+            // Show appropriate message
+            if (comboBox1.Text.Trim() == "Student")
+            {
+                MessageBox.Show("Register Successfully!! Kindly pay the fees in the payment menu, if not paid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            button1.Enabled = false;
+
+            await Task.Delay(500);
+
+
+            UserHomePageForm userHomePageForm = new UserHomePageForm();
+            this.Hide();
+            userHomePageForm.ShowDialog();
+
         }
         private void radioButton1_Enter(object sender, EventArgs e)
         {
@@ -133,11 +154,6 @@ namespace DBS25P156
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_Click(object sender, EventArgs e)
         {
 
@@ -153,14 +169,30 @@ namespace DBS25P156
             Fee.Font = new Font(Fee.Font.FontFamily, 9);
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        private void radioButton1_VisibleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Trim() == "Student")
+            {
+                Fee.Visible = true;
+                radioButton1.Visible = true;
+                radioButton2.Visible = true;
+            }
+            else
+            {
+                Fee.Visible = false;
+                radioButton1.Visible = false;
+                radioButton2.Visible = false;
+            }
         }
     }
 }

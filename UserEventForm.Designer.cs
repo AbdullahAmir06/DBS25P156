@@ -91,6 +91,7 @@
             label6.Size = new Size(78, 36);
             label6.TabIndex = 5;
             label6.Text = "Events";
+            label6.Click += label6_Click;
             label6.MouseLeave += label6_MouseLeave;
             label6.MouseHover += label6_MouseHover;
             // 
@@ -192,6 +193,7 @@
             label5.Size = new Size(115, 36);
             label5.TabIndex = 4;
             label5.Text = "Payments";
+            label5.Click += label5_Click;
             label5.MouseLeave += label5_MouseLeave;
             label5.MouseHover += label5_MouseHover;
             // 
@@ -217,6 +219,7 @@
             label2.Size = new Size(138, 36);
             label2.TabIndex = 1;
             label2.Text = "Committees";
+            label2.Click += label2_Click;
             label2.MouseLeave += label2_MouseLeave;
             label2.MouseHover += label2_MouseHover;
             // 

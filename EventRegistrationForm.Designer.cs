@@ -41,7 +41,6 @@
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             Fee = new Label();
-            label2 = new Label();
             comboBox1 = new ComboBox();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
@@ -98,11 +97,11 @@
             BackToLogin.FlatStyle = FlatStyle.Flat;
             BackToLogin.Font = new Font("Poppins", 9F, FontStyle.Underline);
             BackToLogin.ForeColor = SystemColors.ButtonHighlight;
-            BackToLogin.Location = new Point(157, 394);
+            BackToLogin.Location = new Point(161, 343);
             BackToLogin.Name = "BackToLogin";
-            BackToLogin.Size = new Size(119, 26);
+            BackToLogin.Size = new Size(104, 26);
             BackToLogin.TabIndex = 4;
-            BackToLogin.Text = "Back to Events";
+            BackToLogin.Text = "Go To Home";
             BackToLogin.Click += BackToLogin_Click;
             // 
             // InstituteTextBox
@@ -159,7 +158,6 @@
             groupBox2.Controls.Add(radioButton2);
             groupBox2.Controls.Add(radioButton1);
             groupBox2.Controls.Add(Fee);
-            groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(comboBox1);
             groupBox2.Controls.Add(ContactTextBox);
             groupBox2.Controls.Add(Contact);
@@ -172,7 +170,7 @@
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
             groupBox2.Location = new Point(196, 62);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(437, 446);
+            groupBox2.Size = new Size(437, 396);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Registration";
@@ -187,6 +185,7 @@
             radioButton2.TabIndex = 26;
             radioButton2.Text = "Paid";
             radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.Visible = false;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged_1;
             // 
             // radioButton1
@@ -199,7 +198,8 @@
             radioButton1.TabIndex = 25;
             radioButton1.Text = "Pending";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            radioButton1.Visible = false;
+            radioButton1.VisibleChanged += radioButton1_VisibleChanged;
             radioButton1.Click += radioButton1_Click;
             radioButton1.Enter += radioButton1_Enter;
             radioButton1.Leave += radioButton1_Leave;
@@ -214,18 +214,7 @@
             Fee.Size = new Size(123, 37);
             Fee.TabIndex = 24;
             Fee.Text = "Fee";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins Medium", 10.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(20, 352);
-            label2.Name = "label2";
-            label2.Size = new Size(250, 30);
-            label2.TabIndex = 23;
-            label2.Text = "Registration Successful !!";
-            label2.Visible = false;
+            Fee.Visible = false;
             // 
             // comboBox1
             // 
@@ -239,6 +228,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(204, 34);
             comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
             // 
@@ -264,7 +254,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(800, 560);
+            ClientSize = new Size(800, 510);
             Controls.Add(label1);
             Controls.Add(groupBox2);
             Name = "EventRegistrationForm";
@@ -296,7 +286,6 @@
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
         private ErrorProvider errorProvider3;
-        private Label label2;
         private Label Fee;
         private ErrorProvider errorProvider4;
         private RadioButton radioButton2;

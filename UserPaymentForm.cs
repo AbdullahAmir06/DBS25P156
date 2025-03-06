@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DBS25P156
 {
-    public partial class UserEventForm : Form
+    public partial class UserPaymentForm : Form
     {
-        public UserEventForm()
+        public UserPaymentForm()
         {
             InitializeComponent();
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -28,27 +23,6 @@ namespace DBS25P156
             //UserHomePageForm userHomePageForm = new UserHomePageForm();
             //userHomePageForm.ShowDialog();
         }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
-            this.Hide();
-            eventRegistrationForm.ShowDialog();
-            //this.Show();
-        }
-
-        private void UserEventForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label7_MouseHover(object sender, EventArgs e)
         {
             label7.Font = new Font(label7.Font, FontStyle.Bold | FontStyle.Underline);
@@ -98,25 +72,6 @@ namespace DBS25P156
             label3.Font = new Font(label3.Font, FontStyle.Regular);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
-            this.Hide();
-            eventRegistrationForm.ShowDialog();
-
-            //this.Show();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
             UserCommitteeForm userCommitteeForm = new UserCommitteeForm();
@@ -124,12 +79,23 @@ namespace DBS25P156
             userCommitteeForm.ShowDialog();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
+            UserEventForm userEventForm = new UserEventForm();
             this.Hide();
-            UserPaymentForm userPaymentForm = new UserPaymentForm();
-            userPaymentForm.ShowDialog();
+            userEventForm.ShowDialog();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+        }
+
+        private void UserPaymentForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
-

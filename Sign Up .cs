@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+using System.Text.RegularExpressions; // To check for regular expression in email i.e @ and .
+
 namespace DBS25P156
 {
     public partial class Sign_Up : Form
     {
+        string Pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";    // check if the email is in the correct format i.e it contain in @ and .
         public Sign_Up()
         {
             InitializeComponent();
@@ -69,9 +72,19 @@ namespace DBS25P156
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(EmailTextBox.Text) || string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                button1.Enabled = false;
+                MessageBox.Show("Account Created Successfully.", "Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -87,10 +100,10 @@ namespace DBS25P156
         private void EmailTextBox_Leave(object sender, EventArgs e)
         {
             Email.Font = new Font(Email.Font.FontFamily, 8);
-            if (string.IsNullOrEmpty(EmailTextBox.Text))
+            if (string.IsNullOrEmpty(EmailTextBox.Text) || Regex.IsMatch(EmailTextBox.Text, Pattern) == false)
             {
                 EmailTextBox.Focus();
-                errorProvider1.SetError(EmailTextBox, "Please Enter Email");
+                errorProvider1.SetError(EmailTextBox, "Please Enter Correct Email");
             }
             else
             {
@@ -152,3 +165,7 @@ namespace DBS25P156
         }
     }
 }
+
+
+
+// (Regex.IsMatch(textBox3.Text,Pattern)==false))

@@ -1,6 +1,6 @@
 ﻿namespace DBS25P156
 {
-    partial class UserCommitteeForm
+    partial class UserPaymentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserCommitteeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPaymentForm));
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -39,13 +39,17 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            panel2 = new Panel();
+            button1 = new Button();
+            label9 = new Label();
+            label8 = new Label();
             panel1 = new Panel();
             label4 = new Label();
-            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -135,7 +139,6 @@
             label5.Size = new Size(115, 36);
             label5.TabIndex = 4;
             label5.Text = "Payments";
-            label5.Click += label5_Click;
             label5.MouseLeave += label5_MouseLeave;
             label5.MouseHover += label5_MouseHover;
             // 
@@ -169,7 +172,7 @@
             label2.Size = new Size(138, 36);
             label2.TabIndex = 1;
             label2.Text = "Committees";
-            label2.Click += label2_Click_1;
+            label2.Click += label2_Click;
             label2.MouseLeave += label2_MouseLeave;
             label2.MouseHover += label2_MouseHover;
             // 
@@ -183,6 +186,49 @@
             label1.Size = new Size(83, 50);
             label1.TabIndex = 0;
             label1.Text = "ITEC";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(label9);
+            panel2.Location = new Point(30, 192);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(866, 185);
+            panel2.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(150, 84, 73, 115);
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(723, 65);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 60);
+            button1.TabIndex = 1;
+            button1.Text = "Pay";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(51, 43);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 20);
+            label9.TabIndex = 0;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.FlatStyle = FlatStyle.Flat;
+            label8.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Location = new Point(244, 56);
+            label8.Name = "label8";
+            label8.Size = new Size(466, 78);
+            label8.TabIndex = 5;
+            label8.Text = "Pending Payments";
             // 
             // panel1
             // 
@@ -199,10 +245,11 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(927, 50);
-            panel1.TabIndex = 2;
+            panel1.Size = new Size(924, 50);
+            panel1.TabIndex = 4;
             // 
             // label4
             // 
@@ -213,36 +260,25 @@
             label4.Size = new Size(0, 36);
             label4.TabIndex = 3;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.FlatStyle = FlatStyle.Flat;
-            label8.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(320, 65);
-            label8.Name = "label8";
-            label8.Size = new Size(318, 78);
-            label8.TabIndex = 3;
-            label8.Text = "Committees";
-            // 
-            // UserCommitteeForm
+            // UserPaymentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(925, 450);
+            ClientSize = new Size(924, 450);
+            Controls.Add(panel2);
             Controls.Add(label8);
             Controls.Add(panel1);
-            Name = "UserCommitteeForm";
+            Name = "UserPaymentForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "UserCommitteeForm";
-            Load += UserCommitteeForm_Load;
+            Text = "UserPaymentForm";
+            Load += UserPaymentForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -261,8 +297,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Panel panel2;
+        private Button button1;
+        private Label label9;
+        private Label label8;
         private Panel panel1;
         private Label label4;
-        private Label label8;
     }
 }

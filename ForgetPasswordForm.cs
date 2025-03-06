@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,6 +57,11 @@ namespace DBS25P156
             }
         }
 
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            label4.Font = new Font(label4.Font.FontFamily, 9);
+        }
+
         private void textBox3_Leave(object sender, EventArgs e)
         {
 
@@ -71,9 +77,9 @@ namespace DBS25P156
             }
         }
 
-        private void textBox3_Enter(object sender, EventArgs e)
+        private void textBox2_Enter(object sender, EventArgs e)
         {
-            label4.Font = new Font(label4.Font.FontFamily, 9);
+            label3.Font = new Font(label3.Font.FontFamily, 9);
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
@@ -95,14 +101,27 @@ namespace DBS25P156
 
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            label3.Font = new Font(label3.Font.FontFamily, 9);
-        }
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                button2.Enabled = false;
+                MessageBox.Show("Password Reset Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
+
+            }
         }
     }
 }

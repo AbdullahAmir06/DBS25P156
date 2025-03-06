@@ -103,7 +103,10 @@ namespace DBS25P156
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            UserPaymentForm userPaymentForm = new UserPaymentForm();
+            userPaymentForm.ShowDialog();
+            this.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
