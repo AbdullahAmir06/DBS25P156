@@ -147,6 +147,7 @@
             label6.Size = new Size(78, 36);
             label6.TabIndex = 5;
             label6.Text = "Events";
+            label6.Click += label6_Click_1;
             label6.MouseLeave += label6_MouseLeave;
             label6.MouseHover += label6_MouseHover;
             // 
@@ -188,6 +189,7 @@
             label3.Size = new Size(72, 36);
             label3.TabIndex = 2;
             label3.Text = "HOME";
+            label3.Click += label3_Click;
             label3.MouseLeave += label3_MouseLeave;
             label3.MouseHover += label3_MouseHover;
             // 

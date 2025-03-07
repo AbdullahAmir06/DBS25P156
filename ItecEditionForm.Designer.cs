@@ -213,6 +213,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(890, 50);
             panel1.TabIndex = 5;
+            panel1.Visible = false;
             panel1.Paint += panel1_Paint;
             // 
             // label7
@@ -251,7 +252,7 @@
             groupBoxADD.Controls.Add(label8);
             groupBoxADD.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxADD.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxADD.Location = new Point(379, 167);
+            groupBoxADD.Location = new Point(424, 167);
             groupBoxADD.Name = "groupBoxADD";
             groupBoxADD.Size = new Size(430, 345);
             groupBoxADD.TabIndex = 6;
@@ -364,6 +365,7 @@
             button5.TabIndex = 10;
             button5.Text = "Select This Edition";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // dateTimePicker2
             // 
@@ -518,7 +520,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(331, 231);
+            panel2.Location = new Point(331, 254);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 19;

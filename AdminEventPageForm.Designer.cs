@@ -61,6 +61,24 @@
             panel2 = new Panel();
             label15 = new Label();
             label14 = new Label();
+            groupBoxUpdate = new GroupBox();
+            button5 = new Button();
+            comboBox4 = new ComboBox();
+            dateTimePicker2 = new DateTimePicker();
+            label18 = new Label();
+            label17 = new Label();
+            comboBox3 = new ComboBox();
+            label16 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            groupBoxDelete = new GroupBox();
+            button6 = new Button();
+            comboBox5 = new ComboBox();
+            dateTimePicker3 = new DateTimePicker();
+            label19 = new Label();
+            label20 = new Label();
+            comboBox6 = new ComboBox();
+            label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -69,6 +87,8 @@
             groupBox2.SuspendLayout();
             groupBoxAdd.SuspendLayout();
             panel2.SuspendLayout();
+            groupBoxUpdate.SuspendLayout();
+            groupBoxDelete.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox4
@@ -124,6 +144,8 @@
             label7.TabIndex = 6;
             label7.Text = "LOGOUT";
             label7.Click += label7_Click;
+            label7.MouseLeave += label7_MouseLeave;
+            label7.MouseHover += label7_MouseHover;
             // 
             // label6
             // 
@@ -138,6 +160,8 @@
             label6.Size = new Size(78, 36);
             label6.TabIndex = 5;
             label6.Text = "Events";
+            label6.MouseLeave += label6_MouseLeave;
+            label6.MouseHover += label6_MouseHover;
             // 
             // label5
             // 
@@ -152,6 +176,8 @@
             label5.Size = new Size(94, 36);
             label5.TabIndex = 4;
             label5.Text = "Finance";
+            label5.MouseLeave += label5_MouseLeave;
+            label5.MouseHover += label5_MouseHover;
             // 
             // label3
             // 
@@ -167,6 +193,8 @@
             label3.TabIndex = 2;
             label3.Text = "HOME";
             label3.Click += label3_Click;
+            label3.MouseLeave += label3_MouseLeave;
+            label3.MouseHover += label3_MouseHover;
             // 
             // label2
             // 
@@ -181,6 +209,8 @@
             label2.Size = new Size(138, 36);
             label2.TabIndex = 1;
             label2.Text = "Committees";
+            label2.MouseLeave += label2_MouseLeave;
+            label2.MouseHover += label2_MouseHover;
             // 
             // label1
             // 
@@ -311,7 +341,7 @@
             groupBoxAdd.Controls.Add(label9);
             groupBoxAdd.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxAdd.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxAdd.Location = new Point(362, 174);
+            groupBoxAdd.Location = new Point(398, 176);
             groupBoxAdd.Name = "groupBoxAdd";
             groupBoxAdd.Size = new Size(465, 453);
             groupBoxAdd.TabIndex = 12;
@@ -341,6 +371,8 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(157, 34);
             comboBox2.TabIndex = 9;
+            comboBox2.Enter += comboBox2_Enter;
+            comboBox2.Leave += comboBox2_Leave;
             // 
             // label13
             // 
@@ -359,6 +391,8 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(326, 33);
             dateTimePicker1.TabIndex = 7;
+            dateTimePicker1.Enter += dateTimePicker1_Enter;
+            dateTimePicker1.Leave += dateTimePicker1_Leave;
             // 
             // label12
             // 
@@ -377,6 +411,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(394, 33);
             textBox2.TabIndex = 5;
+            textBox2.Enter += textBox2_Enter;
             // 
             // label11
             // 
@@ -397,6 +432,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(157, 34);
             comboBox1.TabIndex = 3;
+            comboBox1.Enter += comboBox1_Enter;
             // 
             // label10
             // 
@@ -415,6 +451,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(394, 33);
             textBox1.TabIndex = 1;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
             // label9
             // 
@@ -431,7 +469,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(227, 660);
+            panel2.Location = new Point(48, 688);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 20;
@@ -456,19 +494,205 @@
             label14.Size = new Size(0, 20);
             label14.TabIndex = 0;
             // 
+            // groupBoxUpdate
+            // 
+            groupBoxUpdate.Controls.Add(button5);
+            groupBoxUpdate.Controls.Add(comboBox4);
+            groupBoxUpdate.Controls.Add(dateTimePicker2);
+            groupBoxUpdate.Controls.Add(label18);
+            groupBoxUpdate.Controls.Add(label17);
+            groupBoxUpdate.Controls.Add(comboBox3);
+            groupBoxUpdate.Controls.Add(label16);
+            groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
+            groupBoxUpdate.Location = new Point(359, 228);
+            groupBoxUpdate.Name = "groupBoxUpdate";
+            groupBoxUpdate.Size = new Size(438, 313);
+            groupBoxUpdate.TabIndex = 21;
+            groupBoxUpdate.TabStop = false;
+            groupBoxUpdate.Text = "Update Event";
+            groupBoxUpdate.Visible = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.LightGray;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ActiveCaptionText;
+            button5.Location = new Point(105, 245);
+            button5.Name = "button5";
+            button5.Size = new Size(241, 37);
+            button5.TabIndex = 22;
+            button5.Text = "Update Event";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // comboBox4
+            // 
+            comboBox4.BackColor = Color.LightGray;
+            comboBox4.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(16, 195);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(183, 31);
+            comboBox4.TabIndex = 5;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker2.Location = new Point(16, 130);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(325, 33);
+            dateTimePicker2.TabIndex = 4;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(16, 107);
+            label18.Name = "label18";
+            label18.Size = new Size(41, 23);
+            label18.TabIndex = 3;
+            label18.Text = "Date";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Location = new Point(16, 169);
+            label17.Name = "label17";
+            label17.Size = new Size(51, 23);
+            label17.TabIndex = 2;
+            label17.Text = "Venue";
+            // 
+            // comboBox3
+            // 
+            comboBox3.BackColor = Color.LightGray;
+            comboBox3.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(16, 70);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(183, 31);
+            comboBox3.TabIndex = 1;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(16, 44);
+            label16.Name = "label16";
+            label16.Size = new Size(49, 23);
+            label16.TabIndex = 0;
+            label16.Text = "Name";
+            // 
+            // groupBoxDelete
+            // 
+            groupBoxDelete.Controls.Add(button6);
+            groupBoxDelete.Controls.Add(comboBox5);
+            groupBoxDelete.Controls.Add(dateTimePicker3);
+            groupBoxDelete.Controls.Add(label19);
+            groupBoxDelete.Controls.Add(label20);
+            groupBoxDelete.Controls.Add(comboBox6);
+            groupBoxDelete.Controls.Add(label21);
+            groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
+            groupBoxDelete.Location = new Point(302, 285);
+            groupBoxDelete.Name = "groupBoxDelete";
+            groupBoxDelete.Size = new Size(438, 313);
+            groupBoxDelete.TabIndex = 23;
+            groupBoxDelete.TabStop = false;
+            groupBoxDelete.Text = "Delete Event";
+            groupBoxDelete.Visible = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.LightGray;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = SystemColors.ActiveCaptionText;
+            button6.Location = new Point(105, 245);
+            button6.Name = "button6";
+            button6.Size = new Size(241, 37);
+            button6.TabIndex = 22;
+            button6.Text = "Delete Event";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // comboBox5
+            // 
+            comboBox5.BackColor = Color.LightGray;
+            comboBox5.Enabled = false;
+            comboBox5.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(16, 195);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(183, 31);
+            comboBox5.TabIndex = 5;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker3.Enabled = false;
+            dateTimePicker3.Location = new Point(16, 130);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(325, 33);
+            dateTimePicker3.TabIndex = 4;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(16, 107);
+            label19.Name = "label19";
+            label19.Size = new Size(41, 23);
+            label19.TabIndex = 3;
+            label19.Text = "Date";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label20.Location = new Point(16, 169);
+            label20.Name = "label20";
+            label20.Size = new Size(51, 23);
+            label20.TabIndex = 2;
+            label20.Text = "Venue";
+            // 
+            // comboBox6
+            // 
+            comboBox6.BackColor = Color.LightGray;
+            comboBox6.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(16, 70);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(183, 31);
+            comboBox6.TabIndex = 1;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.Location = new Point(16, 44);
+            label21.Name = "label21";
+            label21.Size = new Size(49, 23);
+            label21.TabIndex = 0;
+            label21.Text = "Name";
+            // 
             // AdminEventPageForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             ClientSize = new Size(894, 736);
+            Controls.Add(groupBoxDelete);
+            Controls.Add(groupBoxUpdate);
             Controls.Add(panel2);
             Controls.Add(groupBoxAdd);
             Controls.Add(label8);
             Controls.Add(groupBox2);
             Controls.Add(panel1);
             Name = "AdminEventPageForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminEventPageForm";
+            Load += AdminEventPageForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -480,6 +704,10 @@
             groupBoxAdd.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            groupBoxUpdate.ResumeLayout(false);
+            groupBoxUpdate.PerformLayout();
+            groupBoxDelete.ResumeLayout(false);
+            groupBoxDelete.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -518,5 +746,23 @@
         private ComboBox comboBox2;
         private Label label13;
         private Button button4;
+        private GroupBox groupBoxUpdate;
+        private Label label16;
+        private Button button5;
+        private ComboBox comboBox4;
+        private DateTimePicker dateTimePicker2;
+        private Label label18;
+        private Label label17;
+        private ComboBox comboBox3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private GroupBox groupBoxDelete;
+        private Button button6;
+        private ComboBox comboBox5;
+        private DateTimePicker dateTimePicker3;
+        private Label label19;
+        private Label label20;
+        private ComboBox comboBox6;
+        private Label label21;
     }
 }

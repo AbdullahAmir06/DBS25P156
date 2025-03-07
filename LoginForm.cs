@@ -17,7 +17,7 @@ namespace DBS25P156
 {
     public partial class LoginForm : Form
     {
-         
+
         public LoginForm()
         {
             InitializeComponent();
@@ -120,10 +120,21 @@ namespace DBS25P156
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserHomePageForm userHomePageForm = new UserHomePageForm();
-            this.Hide();
-        userHomePageForm.ShowDialog();
-            this.Show();
+            if (textBox3.Text == "admin" && textBox2.Text == "123")
+            {
+                ItecEditionForm itecEditionForm = new ItecEditionForm();
+                this.Hide();
+                itecEditionForm.ShowDialog();
+                this.Show();
+
+            }
+            else
+            {
+                UserHomePageForm userHomePageForm = new UserHomePageForm();
+                this.Hide();
+                userHomePageForm.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

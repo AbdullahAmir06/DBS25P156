@@ -92,7 +92,8 @@ namespace DBS25P156
             panel2.Visible = false;
             groupBoxADD.Visible = false;
             groupBoxDelete.Visible = false;
-
+            
+            groupBoxSelect.Location = new Point(379, 219);
             groupBoxSelect.Visible = true;
             groupBoxSelect.BringToFront();
 
@@ -105,6 +106,7 @@ namespace DBS25P156
             groupBoxADD.Visible = false;
 
             groupBoxDelete.Visible = true;
+            groupBoxDelete.Location = new Point(379, 219);
             groupBoxDelete.BringToFront();
         }
 
@@ -114,6 +116,7 @@ namespace DBS25P156
             groupBoxSelect.Visible = false;
             groupBoxDelete.Visible = false;
 
+            groupBoxADD.Location = new Point(379, 167);
             groupBoxADD.Visible = true;
             groupBoxADD.BringToFront();
 
@@ -157,6 +160,13 @@ namespace DBS25P156
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AdminHomePageForm adminHomePageForm = new AdminHomePageForm();
+            this.Hide();
+            adminHomePageForm.ShowDialog();
         }
     }
 }

@@ -76,18 +76,18 @@ namespace DBS25P156
         private void label6_Click(object sender, EventArgs e)
         {
 
-            UserEventForm userEventForm = new UserEventForm();
-            this.Hide();
-            userEventForm.ShowDialog();
-            this.Show();
+            //UserEventForm userEventForm = new UserEventForm();
+            //this.Hide();
+            //userEventForm.ShowDialog();
+            //this.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UserCommitteeForm userCommitteeForm = new UserCommitteeForm();
-            userCommitteeForm.ShowDialog();
-            this.Show();
+            //this.Hide();
+            //UserCommitteeForm userCommitteeForm = new UserCommitteeForm();
+            //userCommitteeForm.ShowDialog();
+            //this.Show();
         }
         private void panel3_Click(object sender, EventArgs e)
         {
@@ -96,10 +96,10 @@ namespace DBS25P156
 
         private void label5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UserPaymentForm userPaymentForm = new UserPaymentForm();
-            userPaymentForm.ShowDialog();
-            this.Show();
+            //this.Hide();
+            //UserPaymentForm userPaymentForm = new UserPaymentForm();
+            //userPaymentForm.ShowDialog();
+            //this.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -127,19 +127,9 @@ namespace DBS25P156
 
         private void label8_Click(object sender, EventArgs e)
         {
-
-            //UserEventForm userEventForm = new UserEventForm();
-            //this.Hide();
-            //userEventForm.ShowDialog();
-            //this.Show();
-        }
-        private void panel2_MouseEnter(object sender, EventArgs e)
-        {
-            //label8_Click(sender, e);
-        }
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            label8_Click(sender, e);
+            AdminEventPageForm adminEventPageForm = new AdminEventPageForm();
+            this.Hide();
+            adminEventPageForm.ShowDialog();
         }
 
         private void label9_MouseHover(object sender, EventArgs e)
@@ -160,21 +150,6 @@ namespace DBS25P156
         private void label9_MouseLeave(object sender, EventArgs e)
         {
             label9.Font = new Font(label9.Font, FontStyle.Regular);
-        }
-
-        private void panel2_MouseHover(object sender, EventArgs e)
-        {
-            label8.Font = new Font(label8.Font, FontStyle.Bold | FontStyle.Underline);
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            label8.Font = new Font(label8.Font, FontStyle.Regular);
         }
 
         private void label8_MouseHover(object sender, EventArgs e)
@@ -248,6 +223,19 @@ namespace DBS25P156
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+            AdminEventPageForm adminEventPageForm = new AdminEventPageForm();
+            this.Hide();
+            adminEventPageForm.ShowDialog();
+            this.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
