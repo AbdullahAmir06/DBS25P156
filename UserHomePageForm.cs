@@ -258,5 +258,10 @@ namespace DBS25P156
             pictureBox7.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\3-ezgif.com-gif-maker.png");
             label8.Font = new Font(label8.Font, FontStyle.Regular);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
