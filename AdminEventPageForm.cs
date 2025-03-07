@@ -324,7 +324,7 @@ namespace DBS25P156
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(comboBox3.Text) || string.IsNullOrWhiteSpace(comboBox4.Text) || string.IsNullOrWhiteSpace(dateTimePicker2.Text))
+            if (string.IsNullOrWhiteSpace(comboBox3.Text) || string.IsNullOrWhiteSpace(comboBox4.Text) || string.IsNullOrWhiteSpace(dateTimePicker2.Text))
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -333,7 +333,17 @@ namespace DBS25P156
                 button5.Enabled = false;
                 MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            }   
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

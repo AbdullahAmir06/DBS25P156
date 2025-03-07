@@ -377,7 +377,7 @@
             button4.Location = new Point(118, 381);
             button4.Name = "button4";
             button4.Size = new Size(241, 37);
-            button4.TabIndex = 10;
+            button4.TabIndex = 0;
             button4.Text = "Register";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
@@ -390,7 +390,7 @@
             comboBox2.Location = new Point(16, 320);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(157, 34);
-            comboBox2.TabIndex = 9;
+            comboBox2.TabIndex = 5;
             comboBox2.Enter += comboBox2_Enter;
             comboBox2.Leave += comboBox2_Leave;
             // 
@@ -412,7 +412,7 @@
             dateTimePicker1.Location = new Point(16, 257);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(326, 33);
-            dateTimePicker1.TabIndex = 7;
+            dateTimePicker1.TabIndex = 4;
             dateTimePicker1.Enter += dateTimePicker1_Enter;
             dateTimePicker1.Leave += dateTimePicker1_Leave;
             // 
@@ -432,7 +432,8 @@
             textBox2.Location = new Point(16, 195);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(394, 33);
-            textBox2.TabIndex = 5;
+            textBox2.TabIndex = 3;
+            textBox2.TextChanged += textBox2_TextChanged;
             textBox2.Enter += textBox2_Enter;
             textBox2.Leave += textBox2_Leave;
             // 
@@ -454,7 +455,7 @@
             comboBox1.Location = new Point(16, 132);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(157, 34);
-            comboBox1.TabIndex = 3;
+            comboBox1.TabIndex = 2;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
             // 
@@ -499,7 +500,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(311, 227);
+            groupBoxUpdate.Location = new Point(378, 250);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 313);
             groupBoxUpdate.TabIndex = 21;
@@ -516,7 +517,7 @@
             button5.Location = new Point(105, 245);
             button5.Name = "button5";
             button5.Size = new Size(241, 37);
-            button5.TabIndex = 22;
+            button5.TabIndex = 3;
             button5.Text = "Update Event";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
@@ -529,7 +530,7 @@
             comboBox4.Location = new Point(16, 195);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(183, 31);
-            comboBox4.TabIndex = 5;
+            comboBox4.TabIndex = 2;
             comboBox4.Enter += comboBox4_Enter;
             comboBox4.Leave += comboBox4_Leave;
             // 
@@ -541,7 +542,7 @@
             dateTimePicker2.Location = new Point(16, 130);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(325, 33);
-            dateTimePicker2.TabIndex = 4;
+            dateTimePicker2.TabIndex = 1;
             dateTimePicker2.Enter += dateTimePicker2_Enter;
             dateTimePicker2.Leave += dateTimePicker2_Leave;
             // 
@@ -573,7 +574,7 @@
             comboBox3.Location = new Point(16, 70);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(183, 31);
-            comboBox3.TabIndex = 1;
+            comboBox3.TabIndex = 0;
             comboBox3.Enter += comboBox3_Enter;
             comboBox3.Leave += comboBox3_Leave;
             // 
@@ -628,7 +629,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(541, 608);
+            groupBoxDelete.Location = new Point(339, 320);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 313);
             groupBoxDelete.TabIndex = 23;
@@ -645,7 +646,7 @@
             button6.Location = new Point(105, 245);
             button6.Name = "button6";
             button6.Size = new Size(241, 37);
-            button6.TabIndex = 22;
+            button6.TabIndex = 3;
             button6.Text = "Delete Event";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
@@ -659,7 +660,7 @@
             comboBox5.Location = new Point(16, 195);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(183, 31);
-            comboBox5.TabIndex = 5;
+            comboBox5.TabIndex = 2;
             // 
             // dateTimePicker3
             // 
@@ -670,7 +671,8 @@
             dateTimePicker3.Location = new Point(16, 130);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(325, 33);
-            dateTimePicker3.TabIndex = 4;
+            dateTimePicker3.TabIndex = 1;
+            dateTimePicker3.ValueChanged += dateTimePicker3_ValueChanged;
             // 
             // label19
             // 
@@ -700,7 +702,7 @@
             comboBox6.Location = new Point(16, 70);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(183, 31);
-            comboBox6.TabIndex = 1;
+            comboBox6.TabIndex = 0;
             comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
             comboBox6.Enter += comboBox6_Enter;
             comboBox6.Leave += comboBox6_Leave;
