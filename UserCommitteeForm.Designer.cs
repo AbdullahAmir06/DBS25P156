@@ -217,12 +217,13 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
+            label8.BorderStyle = BorderStyle.Fixed3D;
             label8.FlatStyle = FlatStyle.Flat;
             label8.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(320, 65);
             label8.Name = "label8";
-            label8.Size = new Size(318, 78);
+            label8.Size = new Size(320, 80);
             label8.TabIndex = 3;
             label8.Text = "Committees";
             // 

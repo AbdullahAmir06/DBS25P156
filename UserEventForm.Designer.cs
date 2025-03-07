@@ -227,12 +227,13 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
+            label8.BorderStyle = BorderStyle.Fixed3D;
             label8.FlatStyle = FlatStyle.Flat;
             label8.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(399, 65);
+            label8.Location = new Point(399, 59);
             label8.Name = "label8";
-            label8.Size = new Size(182, 78);
+            label8.Size = new Size(184, 80);
             label8.TabIndex = 2;
             label8.Text = "Events";
             label8.Click += label8_Click;
@@ -250,7 +251,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(label9);
-            panel2.Location = new Point(30, 146);
+            panel2.Location = new Point(30, 162);
             panel2.Name = "panel2";
             panel2.Size = new Size(866, 185);
             panel2.TabIndex = 3;
@@ -281,7 +282,7 @@
             // 
             panel3.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel3.Controls.Add(button2);
-            panel3.Location = new Point(30, 353);
+            panel3.Location = new Point(30, 369);
             panel3.Name = "panel3";
             panel3.Size = new Size(866, 185);
             panel3.TabIndex = 4;
@@ -305,7 +306,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(929, 576);
+            ClientSize = new Size(929, 591);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(label8);

@@ -61,6 +61,10 @@
             button2 = new Button();
             button3 = new Button();
             groupBox2 = new GroupBox();
+            label12 = new Label();
+            panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -70,6 +74,7 @@
             groupBoxSelect.SuspendLayout();
             groupBoxDelete.SuspendLayout();
             groupBox2.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox4
@@ -246,7 +251,7 @@
             groupBoxADD.Controls.Add(label8);
             groupBoxADD.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxADD.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxADD.Location = new Point(369, 73);
+            groupBoxADD.Location = new Point(379, 167);
             groupBoxADD.Name = "groupBoxADD";
             groupBoxADD.Size = new Size(430, 345);
             groupBoxADD.TabIndex = 6;
@@ -329,6 +334,7 @@
             label8.Size = new Size(40, 23);
             label8.TabIndex = 7;
             label8.Text = "Year";
+            label8.Click += label8_Click;
             // 
             // groupBoxSelect
             // 
@@ -337,7 +343,7 @@
             groupBoxSelect.Controls.Add(label13);
             groupBoxSelect.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxSelect.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxSelect.Location = new Point(369, 125);
+            groupBoxSelect.Location = new Point(379, 219);
             groupBoxSelect.Name = "groupBoxSelect";
             groupBoxSelect.Size = new Size(412, 246);
             groupBoxSelect.TabIndex = 16;
@@ -389,7 +395,7 @@
             groupBoxDelete.Controls.Add(label11);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(369, 143);
+            groupBoxDelete.Location = new Point(379, 237);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(418, 248);
             groupBoxDelete.TabIndex = 17;
@@ -442,7 +448,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Poppins", 10.2F);
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(46, 52);
+            button1.Location = new Point(46, 58);
             button1.Name = "button1";
             button1.Size = new Size(126, 60);
             button1.TabIndex = 7;
@@ -457,7 +463,7 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Poppins", 10.2F);
             button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(46, 141);
+            button2.Location = new Point(46, 147);
             button2.Name = "button2";
             button2.Size = new Size(126, 60);
             button2.TabIndex = 8;
@@ -472,7 +478,7 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Poppins", 10.2F);
             button3.ForeColor = SystemColors.ControlText;
-            button3.Location = new Point(46, 233);
+            button3.Location = new Point(46, 239);
             button3.Name = "button3";
             button3.Size = new Size(126, 60);
             button3.TabIndex = 9;
@@ -487,7 +493,7 @@
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
-            groupBox2.Location = new Point(50, 73);
+            groupBox2.Location = new Point(55, 167);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(229, 345);
             groupBox2.TabIndex = 10;
@@ -495,12 +501,56 @@
             groupBox2.Text = "Options";
             groupBox2.Enter += groupBox2_Enter;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BorderStyle = BorderStyle.Fixed3D;
+            label12.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = SystemColors.ButtonHighlight;
+            label12.Location = new Point(251, 65);
+            label12.Name = "label12";
+            label12.Size = new Size(442, 80);
+            label12.TabIndex = 18;
+            label12.Text = "ITEC Edition Menu";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Location = new Point(331, 231);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(487, 155);
+            panel2.TabIndex = 19;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
+            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Location = new Point(39, 59);
+            label15.Name = "label15";
+            label15.Size = new Size(410, 36);
+            label15.TabIndex = 1;
+            label15.Text = "Select the option from the Left Menu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(51, 43);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 0;
+            // 
             // ItecEditionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(890, 450);
+            ClientSize = new Size(890, 567);
+            Controls.Add(panel2);
+            Controls.Add(label12);
             Controls.Add(groupBoxSelect);
             Controls.Add(groupBoxDelete);
             Controls.Add(groupBox2);
@@ -523,7 +573,10 @@
             groupBoxDelete.ResumeLayout(false);
             groupBoxDelete.PerformLayout();
             groupBox2.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -560,5 +613,9 @@
         private Button button6;
         private DateTimePicker dateTimePicker3;
         private Label label11;
+        private Label label12;
+        private Panel panel2;
+        private Label label15;
+        private Label label14;
     }
 }

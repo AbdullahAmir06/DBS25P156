@@ -160,9 +160,9 @@
             label5.Location = new Point(597, 6);
             label5.Margin = new Padding(2);
             label5.Name = "label5";
-            label5.Size = new Size(115, 36);
+            label5.Size = new Size(94, 36);
             label5.TabIndex = 4;
-            label5.Text = "Payments";
+            label5.Text = "Finance";
             label5.MouseLeave += label5_MouseLeave;
             label5.MouseHover += label5_MouseHover;
             // 

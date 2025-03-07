@@ -89,6 +89,7 @@ namespace DBS25P156
 
         private void button2_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;
             groupBoxADD.Visible = false;
             groupBoxDelete.Visible = false;
 
@@ -99,6 +100,7 @@ namespace DBS25P156
 
         private void button3_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;
             groupBoxSelect.Visible = false;
             groupBoxADD.Visible = false;
 
@@ -108,6 +110,7 @@ namespace DBS25P156
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;
             groupBoxSelect.Visible = false;
             groupBoxDelete.Visible = false;
 
@@ -149,6 +152,11 @@ namespace DBS25P156
         private void label7_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
