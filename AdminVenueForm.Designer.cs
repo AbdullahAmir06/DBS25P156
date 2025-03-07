@@ -28,12 +28,447 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AdminVenueForm";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminVenueForm));
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel1 = new Panel();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            label8 = new Label();
+            groupBox2 = new GroupBox();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
+            groupBox1 = new GroupBox();
+            button6 = new Button();
+            numericUpDown1 = new NumericUpDown();
+            textBox3 = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
+            textBox1 = new TextBox();
+            label9 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            groupBox2.SuspendLayout();
+            panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(569, 9);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(27, 25);
+            pictureBox4.TabIndex = 10;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(397, 9);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(27, 25);
+            pictureBox3.TabIndex = 9;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(174, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(27, 25);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Cursor = Cursors.Hand;
+            label7.FlatStyle = FlatStyle.Flat;
+            label7.Font = new Font("Poppins", 12F);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(793, 7);
+            label7.Name = "label7";
+            label7.Size = new Size(97, 36);
+            label7.TabIndex = 6;
+            label7.Text = "LOGOUT";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Cursor = Cursors.Hand;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Poppins", 12F);
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Location = new Point(310, 6);
+            label6.Margin = new Padding(2);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 36);
+            label6.TabIndex = 5;
+            label6.Text = "Events";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Cursor = Cursors.Hand;
+            label5.FlatStyle = FlatStyle.Flat;
+            label5.Font = new Font("Poppins", 12F);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(597, 6);
+            label5.Margin = new Padding(2);
+            label5.Name = "label5";
+            label5.Size = new Size(94, 36);
+            label5.TabIndex = 4;
+            label5.Text = "Finance";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
+            label3.FlatStyle = FlatStyle.Flat;
+            label3.Font = new Font("Poppins", 12F);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(204, 6);
+            label3.Margin = new Padding(2);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 36);
+            label3.TabIndex = 2;
+            label3.Text = "HOME";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Poppins", 12F);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(423, 6);
+            label2.Margin = new Padding(2);
+            label2.Name = "label2";
+            label2.Size = new Size(138, 36);
+            label2.TabIndex = 1;
+            label2.Text = "Committees";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(6, -1);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 50);
+            label1.TabIndex = 0;
+            label1.Text = "ITEC";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(900, 50);
+            panel1.TabIndex = 7;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(282, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(27, 25);
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(479, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 36);
+            label4.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.BorderStyle = BorderStyle.Fixed3D;
+            label8.FlatStyle = FlatStyle.Flat;
+            label8.Font = new Font("Poppins Medium", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Location = new Point(367, 58);
+            label8.Name = "label8";
+            label8.Size = new Size(183, 80);
+            label8.TabIndex = 12;
+            label8.Text = "Venue";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(button1);
+            groupBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = SystemColors.ButtonHighlight;
+            groupBox2.Location = new Point(48, 159);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(229, 345);
+            groupBox2.TabIndex = 13;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Options";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(150, 84, 73, 115);
+            button3.BackgroundImageLayout = ImageLayout.None;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Poppins", 10.2F);
+            button3.ForeColor = SystemColors.ControlText;
+            button3.Location = new Point(46, 237);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 60);
+            button3.TabIndex = 9;
+            button3.Text = "DELETE";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(150, 84, 73, 115);
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Poppins", 10.2F);
+            button2.ForeColor = SystemColors.ControlText;
+            button2.Location = new Point(46, 145);
+            button2.Name = "button2";
+            button2.Size = new Size(126, 60);
+            button2.TabIndex = 8;
+            button2.Text = "UPDATE";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(150, 84, 73, 115);
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Poppins", 10.2F);
+            button1.ForeColor = SystemColors.ControlText;
+            button1.Location = new Point(46, 56);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 60);
+            button1.TabIndex = 7;
+            button1.Text = "ADD";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Location = new Point(7, 521);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(487, 155);
+            panel2.TabIndex = 21;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
+            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Location = new Point(39, 59);
+            label15.Name = "label15";
+            label15.Size = new Size(410, 36);
+            label15.TabIndex = 1;
+            label15.Text = "Select the option from the Left Menu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(51, 43);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(button6);
+            groupBox1.Controls.Add(numericUpDown1);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            groupBox1.Location = new Point(374, 159);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(407, 328);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Add Venue";
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.LightGray;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = SystemColors.ActiveCaptionText;
+            button6.Location = new Point(88, 260);
+            button6.Name = "button6";
+            button6.Size = new Size(241, 37);
+            button6.TabIndex = 23;
+            button6.Text = "Add Venue";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.BackColor = Color.LightGray;
+            numericUpDown1.Location = new Point(16, 126);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(150, 33);
+            numericUpDown1.TabIndex = 6;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.LightGray;
+            textBox3.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.Location = new Point(14, 190);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(307, 33);
+            textBox3.TabIndex = 5;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(12, 164);
+            label11.Name = "label11";
+            label11.Size = new Size(65, 23);
+            label11.TabIndex = 4;
+            label11.Text = "Location";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(14, 100);
+            label10.Name = "label10";
+            label10.Size = new Size(70, 23);
+            label10.TabIndex = 2;
+            label10.Text = "Capacity";
+            label10.Click += label10_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.LightGray;
+            textBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(14, 64);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(307, 33);
+            textBox1.TabIndex = 1;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(12, 38);
+            label9.Name = "label9";
+            label9.Size = new Size(49, 23);
+            label9.TabIndex = 0;
+            label9.Text = "Name";
+            // 
+            // AdminVenueForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(10, 25, 47);
+            ClientSize = new Size(900, 557);
+            Controls.Add(groupBox1);
+            Controls.Add(panel2);
+            Controls.Add(label8);
+            Controls.Add(groupBox2);
+            Controls.Add(panel1);
+            Name = "AdminVenueForm";
+            Text = "AdminVenueForm";
+            Load += AdminVenueForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            groupBox2.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox1;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Panel panel1;
+        private PictureBox pictureBox2;
+        private Label label4;
+        private Label label8;
+        private GroupBox groupBox2;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Panel panel2;
+        private Label label15;
+        private Label label14;
+        private GroupBox groupBox1;
+        private TextBox textBox1;
+        private Label label9;
+        private NumericUpDown numericUpDown1;
+        private TextBox textBox3;
+        private Label label11;
+        private Label label10;
+        private Button button6;
     }
 }

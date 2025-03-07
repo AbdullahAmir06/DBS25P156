@@ -109,7 +109,7 @@ namespace DBS25P156
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,6 +122,11 @@ namespace DBS25P156
                 this.Close();
 
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

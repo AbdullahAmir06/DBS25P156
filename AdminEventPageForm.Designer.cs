@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEventPageForm));
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -58,9 +59,6 @@
             label10 = new Label();
             textBox1 = new TextBox();
             label9 = new Label();
-            panel2 = new Panel();
-            label15 = new Label();
-            label14 = new Label();
             groupBoxUpdate = new GroupBox();
             button5 = new Button();
             comboBox4 = new ComboBox();
@@ -69,6 +67,9 @@
             label17 = new Label();
             comboBox3 = new ComboBox();
             label16 = new Label();
+            panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             groupBoxDelete = new GroupBox();
@@ -79,6 +80,15 @@
             label20 = new Label();
             comboBox6 = new ComboBox();
             label21 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
+            errorProvider4 = new ErrorProvider(components);
+            errorProvider5 = new ErrorProvider(components);
+            errorProvider6 = new ErrorProvider(components);
+            errorProvider7 = new ErrorProvider(components);
+            errorProvider8 = new ErrorProvider(components);
+            errorProvider9 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -86,9 +96,18 @@
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBoxAdd.SuspendLayout();
-            panel2.SuspendLayout();
             groupBoxUpdate.SuspendLayout();
+            panel2.SuspendLayout();
             groupBoxDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider9).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -341,7 +360,7 @@
             groupBoxAdd.Controls.Add(label9);
             groupBoxAdd.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxAdd.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxAdd.Location = new Point(398, 176);
+            groupBoxAdd.Location = new Point(405, 165);
             groupBoxAdd.Name = "groupBoxAdd";
             groupBoxAdd.Size = new Size(465, 453);
             groupBoxAdd.TabIndex = 12;
@@ -361,6 +380,7 @@
             button4.TabIndex = 10;
             button4.Text = "Register";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // comboBox2
             // 
@@ -387,6 +407,8 @@
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(16, 257);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(326, 33);
@@ -412,6 +434,7 @@
             textBox2.Size = new Size(394, 33);
             textBox2.TabIndex = 5;
             textBox2.Enter += textBox2_Enter;
+            textBox2.Leave += textBox2_Leave;
             // 
             // label11
             // 
@@ -433,6 +456,7 @@
             comboBox1.Size = new Size(157, 34);
             comboBox1.TabIndex = 3;
             comboBox1.Enter += comboBox1_Enter;
+            comboBox1.Leave += comboBox1_Leave;
             // 
             // label10
             // 
@@ -464,36 +488,6 @@
             label9.TabIndex = 0;
             label9.Text = "Name";
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(label14);
-            panel2.Location = new Point(48, 688);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(487, 155);
-            panel2.TabIndex = 20;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
-            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = SystemColors.ButtonHighlight;
-            label15.Location = new Point(39, 59);
-            label15.Name = "label15";
-            label15.Size = new Size(410, 36);
-            label15.TabIndex = 1;
-            label15.Text = "Select the option from the Left Menu";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(51, 43);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 20);
-            label14.TabIndex = 0;
-            // 
             // groupBoxUpdate
             // 
             groupBoxUpdate.Controls.Add(button5);
@@ -505,7 +499,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(359, 228);
+            groupBoxUpdate.Location = new Point(311, 227);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 313);
             groupBoxUpdate.TabIndex = 21;
@@ -525,6 +519,7 @@
             button5.TabIndex = 22;
             button5.Text = "Update Event";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // comboBox4
             // 
@@ -535,14 +530,20 @@
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(183, 31);
             comboBox4.TabIndex = 5;
+            comboBox4.Enter += comboBox4_Enter;
+            comboBox4.Leave += comboBox4_Leave;
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Location = new Point(16, 130);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(325, 33);
             dateTimePicker2.TabIndex = 4;
+            dateTimePicker2.Enter += dateTimePicker2_Enter;
+            dateTimePicker2.Leave += dateTimePicker2_Leave;
             // 
             // label18
             // 
@@ -573,6 +574,8 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(183, 31);
             comboBox3.TabIndex = 1;
+            comboBox3.Enter += comboBox3_Enter;
+            comboBox3.Leave += comboBox3_Leave;
             // 
             // label16
             // 
@@ -583,6 +586,36 @@
             label16.Size = new Size(49, 23);
             label16.TabIndex = 0;
             label16.Text = "Name";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Location = new Point(48, 643);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(487, 155);
+            panel2.TabIndex = 20;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
+            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Location = new Point(39, 59);
+            label15.Name = "label15";
+            label15.Size = new Size(410, 36);
+            label15.TabIndex = 1;
+            label15.Text = "Select the option from the Left Menu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(51, 43);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 0;
             // 
             // groupBoxDelete
             // 
@@ -595,7 +628,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(302, 285);
+            groupBoxDelete.Location = new Point(541, 608);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 313);
             groupBoxDelete.TabIndex = 23;
@@ -615,6 +648,7 @@
             button6.TabIndex = 22;
             button6.Text = "Delete Event";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // comboBox5
             // 
@@ -630,7 +664,9 @@
             // dateTimePicker3
             // 
             dateTimePicker3.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker3.CustomFormat = "dd/MM/yyyy hh:mm tt";
             dateTimePicker3.Enabled = false;
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
             dateTimePicker3.Location = new Point(16, 130);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(325, 33);
@@ -665,6 +701,9 @@
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(183, 31);
             comboBox6.TabIndex = 1;
+            comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
+            comboBox6.Enter += comboBox6_Enter;
+            comboBox6.Leave += comboBox6_Leave;
             // 
             // label21
             // 
@@ -675,6 +714,42 @@
             label21.Size = new Size(49, 23);
             label21.TabIndex = 0;
             label21.Text = "Name";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            errorProvider8.ContainerControl = this;
+            // 
+            // errorProvider9
+            // 
+            errorProvider9.ContainerControl = this;
             // 
             // AdminEventPageForm
             // 
@@ -702,12 +777,21 @@
             groupBox2.ResumeLayout(false);
             groupBoxAdd.ResumeLayout(false);
             groupBoxAdd.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             groupBoxUpdate.ResumeLayout(false);
             groupBoxUpdate.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             groupBoxDelete.ResumeLayout(false);
             groupBoxDelete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider9).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -764,5 +848,14 @@
         private Label label20;
         private ComboBox comboBox6;
         private Label label21;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
+        private ErrorProvider errorProvider4;
+        private ErrorProvider errorProvider5;
+        private ErrorProvider errorProvider6;
+        private ErrorProvider errorProvider7;
+        private ErrorProvider errorProvider8;
+        private ErrorProvider errorProvider9;
     }
 }

@@ -116,6 +116,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(375, 33);
             textBox3.TabIndex = 1;
+            textBox3.TextChanged += textBox3_TextChanged;
             textBox3.Enter += textBox3_Enter;
             textBox3.Leave += textBox3_Leave;
             // 

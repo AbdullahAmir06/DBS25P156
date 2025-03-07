@@ -520,7 +520,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(331, 254);
+            panel2.Location = new Point(328, 270);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 19;

@@ -130,6 +130,7 @@ namespace DBS25P156
             AdminEventPageForm adminEventPageForm = new AdminEventPageForm();
             this.Hide();
             adminEventPageForm.ShowDialog();
+            this.Show();
         }
 
         private void label9_MouseHover(object sender, EventArgs e)

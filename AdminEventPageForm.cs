@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBS25P156
 {
@@ -115,6 +116,15 @@ namespace DBS25P156
         private void textBox1_Leave(object sender, EventArgs e)
         {
             label9.Font = new Font(label9.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Focus();
+                errorProvider1.SetError(textBox1, "Please Enter Name of Event");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
         }
 
         private void comboBox1_Enter(object sender, EventArgs e)
@@ -125,6 +135,16 @@ namespace DBS25P156
         private void comboBox1_Leave(object sender, EventArgs e)
         {
             label10.Font = new Font(label10.Font.FontFamily, 8);
+
+            if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                comboBox1.Focus();
+                errorProvider2.SetError(comboBox1, "Please Select Event Category");
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
@@ -135,6 +155,16 @@ namespace DBS25P156
         private void textBox2_Leave(object sender, EventArgs e)
         {
             label11.Font = new Font(label11.Font.FontFamily, 8);
+
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Focus();
+                errorProvider3.SetError(textBox2, "Please Enter description of the event");
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
         }
 
         private void dateTimePicker1_Enter(object sender, EventArgs e)
@@ -145,6 +175,16 @@ namespace DBS25P156
         private void dateTimePicker1_Leave(object sender, EventArgs e)
         {
             label12.Font = new Font(label12.Font.FontFamily, 8);
+
+            if (string.IsNullOrEmpty(dateTimePicker1.Text))
+            {
+                dateTimePicker1.Focus();
+                errorProvider4.SetError(dateTimePicker1, "Please Select Date and Time");
+            }
+            else
+            {
+                errorProvider4.Clear();
+            }
         }
 
         private void comboBox2_Enter(object sender, EventArgs e)
@@ -155,11 +195,145 @@ namespace DBS25P156
         private void comboBox2_Leave(object sender, EventArgs e)
         {
             label13.Font = new Font(label13.Font.FontFamily, 8);
+
+            if (string.IsNullOrEmpty(comboBox2.Text))
+            {
+                comboBox2.Focus();
+                errorProvider5.SetError(comboBox2, "Please Select Event Venue");
+            }
+            else
+            {
+                errorProvider5.Clear();
+            }
         }
 
         private void AdminEventPageForm_Load(object sender, EventArgs e)
         {
             panel2.Location = new Point(340, 323);
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(comboBox1.Text) || string.IsNullOrWhiteSpace(comboBox2.Text) || string.IsNullOrWhiteSpace(dateTimePicker1.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                button2.Enabled = false;
+                MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
+
+            }
+        }
+
+        private void comboBox6_Enter(object sender, EventArgs e)
+        {
+            label21.Font = new Font(label21.Font.FontFamily, 9);
+        }
+
+        private void comboBox6_Leave(object sender, EventArgs e)
+        {
+            label21.Font = new Font(label21.Font.FontFamily, 8);
+
+            if (string.IsNullOrEmpty(comboBox6.Text))
+            {
+                comboBox6.Focus();
+                errorProvider6.SetError(comboBox6, "Please Select Event Name");
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(comboBox6.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                button6.Enabled = false;
+                MessageBox.Show("Event Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+        }
+
+        private void comboBox3_Enter(object sender, EventArgs e)
+        {
+            label16.Font = new Font(label16.Font.FontFamily, 9);
+        }
+        private void comboBox3_Leave(object sender, EventArgs e)
+        {
+            label16.Font = new Font(label16.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(comboBox3.Text))
+            {
+                comboBox3.Focus();
+                errorProvider7.SetError(comboBox3, "Please Select Event Name");
+            }
+            else
+            {
+                errorProvider7.Clear();
+            }
+        }
+
+        private void dateTimePicker2_Enter(object sender, EventArgs e)
+        {
+            label18.Font = new Font(label18.Font.FontFamily, 9);
+        }
+        private void dateTimePicker2_Leave(object sender, EventArgs e)
+        {
+            label18.Font = new Font(label18.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(dateTimePicker2.Text))
+            {
+                dateTimePicker2.Focus();
+                errorProvider8.SetError(dateTimePicker2, "Please Select Date and Time");
+            }
+            else
+            {
+                errorProvider8.Clear();
+            }
+        }
+
+        private void comboBox4_Enter(object sender, EventArgs e)
+        {
+            label17.Font = new Font(label17.Font.FontFamily, 9);
+        }
+
+        private void comboBox4_Leave(object sender, EventArgs e)
+        {
+            label17.Font = new Font(label17.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(comboBox4.Text))
+            {
+                comboBox4.Focus();
+                errorProvider9.SetError(comboBox4, "Please Select Event Venue");
+            }
+            else
+            {
+                errorProvider9.Clear();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(comboBox3.Text) || string.IsNullOrWhiteSpace(comboBox4.Text) || string.IsNullOrWhiteSpace(dateTimePicker2.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                button5.Enabled = false;
+                MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }   
         }
     }
 }
