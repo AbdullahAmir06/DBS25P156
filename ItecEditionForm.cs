@@ -16,6 +16,12 @@ namespace DBS25P156
         {
             InitializeComponent();
         }
+        private void ItecEditionForm_Load(object sender, EventArgs e)
+        {
+            groupBoxSelect.Visible = false;
+            groupBoxADD.Visible = false;
+            groupBoxDelete.Visible = false;
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -70,14 +76,69 @@ namespace DBS25P156
             label3.Font = new Font(label3.Font, FontStyle.Regular);
         }
 
-        private void ItecEditionForm_Load(object sender, EventArgs e)
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            groupBoxADD.Visible = false;
+            groupBoxDelete.Visible = false;
+
+            groupBoxSelect.Visible = true;
+            groupBoxSelect.BringToFront();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            groupBoxSelect.Visible = false;
+            groupBoxADD.Visible = false;
+
+            groupBoxDelete.Visible = true;
+            groupBoxDelete.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBoxSelect.Visible = false;
+            groupBoxDelete.Visible = false;
+
+            groupBoxADD.Visible = true;
+            groupBoxADD.BringToFront();
+
+        }
+
+        private void groupBoxSelect_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //group
+        }
+
+        private void groupBoxADD_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxDelete_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
