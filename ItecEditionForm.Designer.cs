@@ -51,12 +51,12 @@
             label8 = new Label();
             groupBoxSelect = new GroupBox();
             button5 = new Button();
+            dateTimePicker2 = new DateTimePicker();
+            label13 = new Label();
             groupBoxDelete = new GroupBox();
             button6 = new Button();
             dateTimePicker3 = new DateTimePicker();
             label11 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            label13 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -157,6 +157,7 @@
             label3.Size = new Size(72, 36);
             label3.TabIndex = 2;
             label3.Text = "HOME";
+            label3.Click += label3_Click;
             label3.MouseLeave += label3_MouseHover;
             label3.MouseHover += label3_MouseHover;
             // 
@@ -221,6 +222,7 @@
             label7.Size = new Size(97, 36);
             label7.TabIndex = 6;
             label7.Text = "LOGOUT";
+            label7.Click += label7_Click;
             label7.MouseLeave += label7_MouseLeave;
             label7.MouseHover += label7_MouseHover;
             // 
@@ -357,6 +359,29 @@
             button5.Text = "Select This Edition";
             button5.UseVisualStyleBackColor = false;
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker2.CustomFormat = "yyyy";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(24, 64);
+            dateTimePicker2.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
+            dateTimePicker2.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(250, 33);
+            dateTimePicker2.TabIndex = 14;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(24, 38);
+            label13.Name = "label13";
+            label13.Size = new Size(40, 23);
+            label13.TabIndex = 7;
+            label13.Text = "Year";
+            // 
             // groupBoxDelete
             // 
             groupBoxDelete.Controls.Add(button6);
@@ -409,29 +434,6 @@
             label11.Size = new Size(40, 23);
             label11.TabIndex = 7;
             label11.Text = "Year";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.CalendarMonthBackground = Color.LightGray;
-            dateTimePicker2.CustomFormat = "yyyy";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(24, 64);
-            dateTimePicker2.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dateTimePicker2.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.ShowUpDown = true;
-            dateTimePicker2.Size = new Size(250, 33);
-            dateTimePicker2.TabIndex = 14;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(24, 38);
-            label13.Name = "label13";
-            label13.Size = new Size(40, 23);
-            label13.TabIndex = 7;
-            label13.Text = "Year";
             // 
             // button1
             // 

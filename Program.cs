@@ -15,8 +15,8 @@ namespace DBS25P156
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            //Application.Run(new LoginForm());
-            Application.Run(new ItecEditionForm());
+            Application.Run(new LoginForm());
+            //Application.Run(new ItecEditionForm());
 
         }
     }
