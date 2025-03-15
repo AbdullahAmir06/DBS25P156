@@ -24,7 +24,7 @@ namespace DBS25P156
 
         private void FacultyEventRegistrationForm_Load(object sender, EventArgs e)
         {
-
+     
         }
 
         private void textBox3_Enter(object sender, EventArgs e)

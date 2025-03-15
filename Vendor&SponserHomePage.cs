@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace DBS25P156
 {
@@ -108,7 +109,9 @@ namespace DBS25P156
 
         private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
         {
-
+            UserSession.UserLoginRoleID = 3;
+            groupBox1.Visible = true;
+            groupBox1.Location = new Point(203, 34);
         }
 
         private void BackToLogin_Click(object sender, EventArgs e)
