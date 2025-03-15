@@ -38,13 +38,25 @@
             Contact = new Label();
             ServiceTypeTextBox = new TextBox();
             ServiceType = new Label();
+            groupBox2 = new GroupBox();
+            label1 = new Label();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            label3 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             errorProvider3 = new ErrorProvider(components);
+            errorProvider4 = new ErrorProvider(components);
+            errorProvider5 = new ErrorProvider(components);
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -59,7 +71,7 @@
             groupBox1.Controls.Add(ServiceType);
             groupBox1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
-            groupBox1.Location = new Point(203, 34);
+            groupBox1.Location = new Point(480, 55);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(422, 358);
             groupBox1.TabIndex = 0;
@@ -153,6 +165,7 @@
             ServiceTypeTextBox.Size = new Size(375, 33);
             ServiceTypeTextBox.TabIndex = 3;
             ServiceTypeTextBox.Enter += ServiceTypeTextBox_Enter;
+            ServiceTypeTextBox.Leave += ServiceTypeTextBox_Leave;
             // 
             // ServiceType
             // 
@@ -164,6 +177,100 @@
             ServiceType.Size = new Size(150, 22);
             ServiceType.TabIndex = 32;
             ServiceType.Text = "Service Type";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = SystemColors.ButtonHighlight;
+            groupBox2.Location = new Point(203, 40);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(422, 342);
+            groupBox2.TabIndex = 35;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Sponsor Registration";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Cursor = Cursors.Hand;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(170, 267);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 30);
+            label1.TabIndex = 0;
+            label1.Text = "Logout";
+            label1.Click += label1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LightGray;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(83, 221);
+            button2.Name = "button2";
+            button2.Size = new Size(241, 37);
+            button2.TabIndex = 3;
+            button2.Text = "Register";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.LightGray;
+            textBox1.Font = new Font("Poppins", 10.2F);
+            textBox1.ForeColor = SystemColors.ActiveCaptionText;
+            textBox1.Location = new Point(17, 74);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(375, 33);
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Poppins", 10.2F);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(17, 45);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 30);
+            label2.TabIndex = 34;
+            label2.Text = "Name";
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.LightGray;
+            textBox2.Font = new Font("Poppins", 10.2F);
+            textBox2.ForeColor = SystemColors.ActiveCaptionText;
+            textBox2.Location = new Point(17, 144);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(375, 33);
+            textBox2.TabIndex = 2;
+            textBox2.TextChanged += textBox2_TextChanged;
+            textBox2.Enter += textBox2_Enter;
+            textBox2.Leave += textBox2_Leave;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Poppins", 10.2F);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(17, 115);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 30);
+            label3.TabIndex = 33;
+            label3.Text = "Contact";
             // 
             // errorProvider1
             // 
@@ -177,12 +284,21 @@
             // 
             errorProvider3.ContainerControl = this;
             // 
+            // errorProvider4
+            // 
+            errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            errorProvider5.ContainerControl = this;
+            // 
             // Vendor_SponserHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Vendor_SponserHomePage";
             StartPosition = FormStartPosition.CenterScreen;
@@ -190,9 +306,13 @@
             Load += Vendor_SponserHomePage_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
             ResumeLayout(false);
         }
 
@@ -210,5 +330,14 @@
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
         private ErrorProvider errorProvider3;
+        private GroupBox groupBox2;
+        private Label label1;
+        private Button button2;
+        private TextBox textBox1;
+        private Label label2;
+        private TextBox textBox2;
+        private Label label3;
+        private ErrorProvider errorProvider4;
+        private ErrorProvider errorProvider5;
     }
 }

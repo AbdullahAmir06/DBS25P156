@@ -109,14 +109,92 @@ namespace DBS25P156
 
         private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
         {
-            UserSession.UserLoginRoleID = 3;
-            groupBox1.Visible = true;
-            groupBox1.Location = new Point(203, 34);
+            if (UserSession.UserLoginRoleID == 3)
+            {
+                groupBox2.Visible = false;
+                groupBox1.Visible = true;
+                groupBox1.Location = new Point(203, 34);
+            }
+            else if (UserSession.UserLoginRoleID == 4)
+            {
+                groupBox1.Visible = false;
+                groupBox2.Visible = true;
+                groupBox2.Location = new Point(203, 34);
+
+            }
         }
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            label2.Font = new Font(label2.Font.FontFamily, 9);
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            label2.Font = new Font(label2.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Focus();
+                errorProvider4.SetError(textBox1, "Please Enter Your Name");
+            }
+            else
+            {
+                errorProvider4.Clear();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            label3.Font = new Font(label3.Font.FontFamily, 9);
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            label3.Font = new Font(label3.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Focus();
+                errorProvider5.SetError(textBox2, "Please Enter Your Contact");
+            }
+            else
+            {
+                errorProvider5.Clear();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Sponser Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
+            }   
         }
     }
 }
