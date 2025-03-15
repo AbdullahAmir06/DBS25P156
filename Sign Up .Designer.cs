@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_Up));
             label1 = new Label();
             groupBox2 = new GroupBox();
+            comboBox1 = new ComboBox();
+            Role = new Label();
             EmailTextBox = new TextBox();
             Email = new Label();
             BackToLogin = new Label();
@@ -45,13 +47,11 @@
             errorProvider2 = new ErrorProvider(components);
             errorProvider3 = new ErrorProvider(components);
             errorProvider4 = new ErrorProvider(components);
-            errorProvider5 = new ErrorProvider(components);
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -70,6 +70,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(Role);
             groupBox2.Controls.Add(EmailTextBox);
             groupBox2.Controls.Add(Email);
             groupBox2.Controls.Add(BackToLogin);
@@ -83,11 +85,36 @@
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
             groupBox2.Location = new Point(196, 66);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(437, 371);
+            groupBox2.Size = new Size(437, 410);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Sign Up";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Student", "Faculty", "Sponser", "Vendor" });
+            comboBox1.Location = new Point(20, 249);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(150, 31);
+            comboBox1.TabIndex = 4;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Enter += comboBox1_Enter;
+            comboBox1.Leave += comboBox1_Leave;
+            // 
+            // Role
+            // 
+            Role.BackColor = Color.Transparent;
+            Role.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Role.ForeColor = SystemColors.ButtonHighlight;
+            Role.Location = new Point(20, 225);
+            Role.Name = "Role";
+            Role.Size = new Size(114, 30);
+            Role.TabIndex = 23;
+            Role.Text = "Role";
             // 
             // EmailTextBox
             // 
@@ -122,7 +149,7 @@
             BackToLogin.FlatStyle = FlatStyle.Flat;
             BackToLogin.Font = new Font("Poppins", 9F, FontStyle.Underline);
             BackToLogin.ForeColor = SystemColors.ButtonHighlight;
-            BackToLogin.Location = new Point(157, 330);
+            BackToLogin.Location = new Point(161, 352);
             BackToLogin.Name = "BackToLogin";
             BackToLogin.Size = new Size(111, 26);
             BackToLogin.TabIndex = 6;
@@ -160,7 +187,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(89, 284);
+            button1.Location = new Point(90, 311);
             button1.Name = "button1";
             button1.Size = new Size(241, 37);
             button1.TabIndex = 5;
@@ -179,7 +206,7 @@
             checkBox1.ForeColor = SystemColors.ActiveCaptionText;
             checkBox1.Image = (Image)resources.GetObject("checkBox1.Image");
             checkBox1.ImageAlign = ContentAlignment.MiddleRight;
-            checkBox1.Location = new Point(243, 239);
+            checkBox1.Location = new Point(243, 249);
             checkBox1.Name = "checkBox1";
             checkBox1.Padding = new Padding(1);
             checkBox1.Size = new Size(152, 33);
@@ -231,17 +258,13 @@
             // 
             errorProvider4.ContainerControl = this;
             // 
-            // errorProvider5
-            // 
-            errorProvider5.ContainerControl = this;
-            // 
             // Sign_Up
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(835, 490);
+            ClientSize = new Size(835, 517);
             Controls.Add(groupBox2);
             Controls.Add(label1);
             ForeColor = SystemColors.ButtonHighlight;
@@ -255,7 +278,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,6 +299,7 @@
         private ErrorProvider errorProvider2;
         private ErrorProvider errorProvider3;
         private ErrorProvider errorProvider4;
-        private ErrorProvider errorProvider5;
+        private ComboBox comboBox1;
+        private Label Role;
     }
 }

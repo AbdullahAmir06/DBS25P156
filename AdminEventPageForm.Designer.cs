@@ -367,6 +367,7 @@
             groupBoxAdd.TabStop = false;
             groupBoxAdd.Text = "Add Event";
             groupBoxAdd.Visible = false;
+            groupBoxAdd.Enter += groupBoxAdd_Enter;
             // 
             // button4
             // 

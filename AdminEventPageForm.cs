@@ -97,10 +97,10 @@ namespace DBS25P156
 
         private void label3_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            AdminHomePageForm adminHomePageForm = new AdminHomePageForm();
-            this.Hide();
-            adminHomePageForm.Show();
+            this.Close();
+            //AdminHomePageForm adminHomePageForm = new AdminHomePageForm();
+            //this.Hide();
+            //adminHomePageForm.Show();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -342,6 +342,11 @@ namespace DBS25P156
         }
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxAdd_Enter(object sender, EventArgs e)
         {
 
         }

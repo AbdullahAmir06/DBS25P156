@@ -18,6 +18,56 @@ namespace DBS25P156
         {
             InitializeComponent();
         }
+        private void EventRegistrationForm_Load(object sender, EventArgs e)
+        {
+            if (UserSession.UserLoginRoleID == 1)
+            {
+                ShowStudentInterface();
+            }
+            else if (UserSession.UserLoginRoleID == 2)
+            {
+                ShowFacultyInterface();
+            }
+            else if (UserSession.UserLoginRoleID == 3)
+            {
+                //ShowAdminInterface();
+            }
+        }
+
+        private void ShowStudentInterface()
+        {
+            // code of student interface
+            FacultyGroupBox.Visible = false;
+            groupBox2.Visible = true;
+
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
+            textBox6.Visible = false;
+            textBox7.Visible = false;
+            Fee.Location = new Point(20, 294);
+            radioButton1.Location = new Point(20, 328);
+            radioButton2.Location = new Point(129, 328);
+            button1.Location = new Point(82, 381);
+            BackToLogin.Location = new Point(160, 430);
+            groupBox2.Location = new Point(209, 62);
+            groupBox2.Size = new Size(437, 487);
+
+            //groupBox2.Location = new Point(196, 62);
+        }
+
+        private void ShowFacultyInterface()
+        {
+            // code of faculty interface
+            groupBox2.Visible = false;
+            FacultyGroupBox.Visible = true;
+
+            FacultyGroupBox.Location = new Point(196, 62);
+        }
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
@@ -49,10 +99,6 @@ namespace DBS25P156
         }
 
 
-        private void EventRegistrationForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void InstituteTextBox_Enter(object sender, EventArgs e)
         {
@@ -73,55 +119,19 @@ namespace DBS25P156
             }
         }
 
-        private void comboBox1_Enter(object sender, EventArgs e)
-        {
-            Role.Font = new Font(Role.Font.FontFamily, 9);
-        }
-
-        private void comboBox1_Leave(object sender, EventArgs e)
-        {
-            Role.Font = new Font(Role.Font.FontFamily, 8);
-            if (string.IsNullOrEmpty(comboBox1.Text))
-            {
-                comboBox1.Focus();
-                errorProvider3.SetError(comboBox1, "Please Select Your Role");
-            }
-            else
-            {
-                errorProvider3.Clear();
-            }
-        }
 
         private async void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
-       string.IsNullOrWhiteSpace(ContactTextBox.Text) ||
-       comboBox1.SelectedIndex == -1)
+       string.IsNullOrWhiteSpace(ContactTextBox.Text))
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // If role is "Student", enforce radio button validation
-            if (comboBox1.Text.Trim() == "Student" && !radioButton1.Checked && !radioButton2.Checked)
-            {
-                errorProvider4.SetError(radioButton2, "Please Select Your Fees Status");
-                return;
-            }
-            else
-            {
-                errorProvider4.Clear();
-            }
 
-            // Show appropriate message
-            if (comboBox1.Text.Trim() == "Student")
-            {
-                MessageBox.Show("Register Successfully!! Kindly pay the fees in the payment menu, if not paid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             button1.Enabled = false;
 
@@ -159,16 +169,6 @@ namespace DBS25P156
 
         }
 
-        private void radioButton2_Enter(object sender, EventArgs e)
-        {
-            Fee.Font = new Font(Fee.Font.FontFamily, 12);
-        }
-
-        private void radioButton2_Leave(object sender, EventArgs e)
-        {
-            Fee.Font = new Font(Fee.Font.FontFamily, 9);
-        }
-
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
 
@@ -179,19 +179,182 @@ namespace DBS25P156
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox3_MouseEnter(object sender, EventArgs e)
         {
-            if (comboBox1.Text.Trim() == "Student")
+            NameOfStudent.Font = new Font(NameOfStudent.Font.FontFamily, 9);
+        }
+
+        private void textBox3_MouseLeave(object sender, EventArgs e)
+        {
+            NameOfStudent.Font = new Font(NameOfStudent.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox3.Text))
             {
-                Fee.Visible = true;
-                radioButton1.Visible = true;
-                radioButton2.Visible = true;
+                textBox3.Focus();
+                errorProvider3.SetError(textBox3, "Please Enter Your Name");
             }
             else
             {
-                Fee.Visible = false;
-                radioButton1.Visible = false;
-                radioButton2.Visible = false;
+                errorProvider3.Clear();
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_Enter(object sender, EventArgs e)
+        {
+            RegisterAs.Font = new Font(RegisterAs.Font.FontFamily, 9);
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            RegisterAs.Font = new Font(RegisterAs.Font.FontFamily, 8);
+            if (comboBox1.SelectedIndex == -1)
+            {
+                comboBox1.Focus();
+                errorProvider5.SetError(comboBox1, "Please Select Registration Type");
+            }
+            else
+            {
+                errorProvider5.Clear();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                label9.Visible = false;
+                label10.Visible = false;
+                textBox4.Visible = false;
+                textBox5.Visible = false;
+                textBox6.Visible = false;
+                textBox7.Visible = false;
+                Fee.Location = new Point(20, 294);
+                radioButton1.Location = new Point(20, 328);
+                radioButton2.Location = new Point(129, 328);
+                button1.Location = new Point(82, 381);
+                BackToLogin.Location = new Point(160, 430);
+                groupBox2.Location = new Point(209, 62);
+                groupBox2.Size = new Size(437, 487);
+
+            }
+
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                label6.Visible = true;
+                label7.Visible = true;
+                label8.Visible = true;
+                label9.Visible = true;
+                label10.Visible = true;
+                textBox4.Visible = true;
+                textBox5.Visible = true;
+                textBox6.Visible = true;
+                textBox7.Visible = true;
+                label9.Location = new Point(20, 290);
+                label6.Location = new Point(20, 324);
+                textBox4.Location = new Point(20, 353);
+                label7.Location = new Point(20, 386);
+                textBox5.Location = new Point(20, 415);
+                label8.Location = new Point(20, 451);
+                textBox6.Location = new Point(20, 479);
+                label10.Location = new Point(20, 513);
+                textBox7.Location = new Point(20, 541);
+
+                Fee.Location = new Point(20, 587);
+                Fee.Text = "500 X 2 = 1000";
+                radioButton1.Location = new Point(20, 627);
+                radioButton2.Location = new Point(129, 627);
+                BackToLogin.Location = new Point(160, 717);
+                button1.Location = new Point(82, 668);
+                groupBox2.Size = new Size(437, 749);
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_Enter(object sender, EventArgs e)
+        {
+            label6.Font = new Font(label6.Font.FontFamily, 9);
+        }
+
+        private void textBox4_Leave(object sender, EventArgs e)
+        {
+            label6.Font = new Font(label6.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox4.Text))
+            {
+                textBox4.Focus();
+                errorProvider6.SetError(textBox4, "Please Enter Your Name");
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void textBox5_Enter(object sender, EventArgs e)
+        {
+            label7.Font = new Font(label7.Font.FontFamily, 9);
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            label7.Font = new Font(label7.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox5.Text))
+            {
+                textBox5.Focus();
+                errorProvider7.SetError(textBox5, "Please Enter Your Contact");
+            }
+            else
+            {
+                errorProvider7.Clear();
+            }
+        }
+
+        private void textBox6_Enter(object sender, EventArgs e)
+        {
+            label8.Font = new Font(label8.Font.FontFamily, 9);
+
+        }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+            label8.Font = new Font(label8.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                textBox6.Focus();
+                errorProvider8.SetError(textBox6, "Please Enter Your Institute Name");
+            }
+            else
+            {
+                errorProvider8.Clear();
+            }
+        }
+
+        private void textBox7_Enter(object sender, EventArgs e)
+        {
+            label10.Font = new Font(label10.Font.FontFamily, 9);
+        }
+
+        private void textBox7_Leave(object sender, EventArgs e)
+        {
+            label10.Font = new Font(label10.Font.FontFamily, 8);
+            if (string.IsNullOrEmpty(textBox7.Text))
+            {
+                textBox7.Focus();
+                errorProvider9.SetError(textBox7, "Please Enter Your Team Name");
+            }
+            else
+            {
+                errorProvider9.Clear();
             }
         }
     }

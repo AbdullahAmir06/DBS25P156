@@ -130,6 +130,8 @@ namespace DBS25P156
             }
             else
             {
+                UserSession.UserLoginRoleID = 1;
+
                 UserHomePageForm userHomePageForm = new UserHomePageForm();
                 this.Hide();
                 userHomePageForm.ShowDialog();

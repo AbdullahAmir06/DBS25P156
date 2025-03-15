@@ -74,14 +74,14 @@ namespace DBS25P156
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(EmailTextBox.Text) || string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+            if (string.IsNullOrWhiteSpace(EmailTextBox.Text) || string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text) || comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 button1.Enabled = false;
-                MessageBox.Show("Account Created Successfully.", "Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Account Created Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await Task.Delay(500);
                 this.Close();
             }
@@ -160,6 +160,30 @@ namespace DBS25P156
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_Enter(object sender, EventArgs e)
+        {
+            Role.Font = new Font(Role.Font.FontFamily, 9);
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            Role.Font = new Font(Role.Font.FontFamily, 8);
+            if (comboBox1.SelectedIndex == -1)
+            {
+                comboBox1.Focus();
+                errorProvider4.SetError(comboBox1, "Please Select Role");
+            }
+            else
+            {
+                errorProvider4.Clear();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
