@@ -57,16 +57,6 @@
             errorProvider2 = new ErrorProvider(components);
             errorProvider3 = new ErrorProvider(components);
             errorProvider4 = new ErrorProvider(components);
-            FacultyGroupBox = new GroupBox();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            label5 = new Label();
-            button2 = new Button();
             errorProvider5 = new ErrorProvider(components);
             errorProvider6 = new ErrorProvider(components);
             errorProvider7 = new ErrorProvider(components);
@@ -77,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
-            FacultyGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider7).BeginInit();
@@ -200,7 +189,7 @@
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
-            groupBox2.Location = new Point(720, 52);
+            groupBox2.Location = new Point(266, 79);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(437, 749);
             groupBox2.TabIndex = 4;
@@ -405,7 +394,7 @@
             Fee.ForeColor = SystemColors.ButtonHighlight;
             Fee.Location = new Point(20, 587);
             Fee.Name = "Fee";
-            Fee.Size = new Size(123, 37);
+            Fee.Size = new Size(191, 37);
             Fee.TabIndex = 24;
             Fee.Text = "Fee: 500";
             // 
@@ -424,132 +413,6 @@
             // errorProvider4
             // 
             errorProvider4.ContainerControl = this;
-            // 
-            // FacultyGroupBox
-            // 
-            FacultyGroupBox.BackColor = Color.Transparent;
-            FacultyGroupBox.Controls.Add(radioButton3);
-            FacultyGroupBox.Controls.Add(radioButton4);
-            FacultyGroupBox.Controls.Add(label2);
-            FacultyGroupBox.Controls.Add(textBox1);
-            FacultyGroupBox.Controls.Add(label3);
-            FacultyGroupBox.Controls.Add(label4);
-            FacultyGroupBox.Controls.Add(textBox2);
-            FacultyGroupBox.Controls.Add(label5);
-            FacultyGroupBox.Controls.Add(button2);
-            FacultyGroupBox.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            FacultyGroupBox.ForeColor = SystemColors.ButtonHighlight;
-            FacultyGroupBox.Location = new Point(220, 119);
-            FacultyGroupBox.Name = "FacultyGroupBox";
-            FacultyGroupBox.Size = new Size(437, 367);
-            FacultyGroupBox.TabIndex = 27;
-            FacultyGroupBox.TabStop = false;
-            FacultyGroupBox.Text = "Registration";
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton3.Location = new Point(139, 208);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(70, 34);
-            radioButton3.TabIndex = 26;
-            radioButton3.Text = "Paid";
-            radioButton3.UseVisualStyleBackColor = true;
-            radioButton3.Visible = false;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton4.Location = new Point(20, 208);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(103, 34);
-            radioButton4.TabIndex = 25;
-            radioButton4.Text = "Pending";
-            radioButton4.UseVisualStyleBackColor = true;
-            radioButton4.Visible = false;
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Poppins", 10.2F);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(20, 168);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 37);
-            label2.TabIndex = 24;
-            label2.Text = "Fee: 500";
-            label2.Visible = false;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.LightGray;
-            textBox1.Font = new Font("Poppins", 10.2F);
-            textBox1.ForeColor = SystemColors.ActiveCaptionText;
-            textBox1.Location = new Point(20, 68);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(375, 33);
-            textBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Poppins", 10.2F);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(20, 39);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 30);
-            label3.TabIndex = 22;
-            label3.Text = "label3";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Cursor = Cursors.Hand;
-            label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Poppins", 9F, FontStyle.Underline);
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(160, 306);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 26);
-            label4.TabIndex = 4;
-            label4.Text = "Go To Home";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.LightGray;
-            textBox2.Font = new Font("Poppins", 10.2F);
-            textBox2.ForeColor = SystemColors.ActiveCaptionText;
-            textBox2.Location = new Point(20, 132);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(375, 33);
-            textBox2.TabIndex = 2;
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Poppins", 10.2F);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(20, 104);
-            label5.Name = "label5";
-            label5.Size = new Size(150, 22);
-            label5.TabIndex = 18;
-            label5.Text = "label5";
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.LightGray;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(82, 257);
-            button2.Name = "button2";
-            button2.Size = new Size(241, 37);
-            button2.TabIndex = 0;
-            button2.Text = "Register";
-            button2.UseVisualStyleBackColor = false;
             // 
             // errorProvider5
             // 
@@ -578,7 +441,6 @@
             BackColor = Color.FromArgb(10, 25, 47);
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(845, 840);
-            Controls.Add(FacultyGroupBox);
             Controls.Add(label1);
             Controls.Add(groupBox2);
             Name = "EventRegistrationForm";
@@ -591,8 +453,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
-            FacultyGroupBox.ResumeLayout(false);
-            FacultyGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider6).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider7).EndInit();
@@ -619,16 +479,6 @@
         private ErrorProvider errorProvider4;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
-        private GroupBox FacultyGroupBox;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private Label label2;
-        private TextBox textBox1;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox2;
-        private Label label5;
-        private Button button2;
         private TextBox textBox3;
         private Label NameOfStudent;
         private Label RegisterAs;

@@ -20,24 +20,31 @@ namespace DBS25P156
         }
         private void EventRegistrationForm_Load(object sender, EventArgs e)
         {
-            if (UserSession.UserLoginRoleID == 1)
-            {
-                ShowStudentInterface();
-            }
-            else if (UserSession.UserLoginRoleID == 2)
-            {
-                ShowFacultyInterface();
-            }
-            else if (UserSession.UserLoginRoleID == 3)
-            {
-                //ShowAdminInterface();
-            }
+            groupBox2.Visible = true;
+
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
+            textBox6.Visible = false;
+            textBox7.Visible = false;
+            Fee.Location = new Point(20, 294);
+            radioButton1.Location = new Point(20, 328);
+            radioButton2.Location = new Point(129, 328);
+            button1.Location = new Point(82, 381);
+            BackToLogin.Location = new Point(160, 430);
+            groupBox2.Location = new Point(209, 62);
+            groupBox2.Size = new Size(437, 487);
+            this.Size = new Size(860, 620);
         }
 
         private void ShowStudentInterface()
         {
             // code of student interface
-            FacultyGroupBox.Visible = false;
+            //FacultyGroupBox.Visible = false;
             groupBox2.Visible = true;
 
             label6.Visible = false;
@@ -60,14 +67,7 @@ namespace DBS25P156
             //groupBox2.Location = new Point(196, 62);
         }
 
-        private void ShowFacultyInterface()
-        {
-            // code of faculty interface
-            groupBox2.Visible = false;
-            FacultyGroupBox.Visible = true;
-
-            FacultyGroupBox.Location = new Point(196, 62);
-        }
+        
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
@@ -122,27 +122,39 @@ namespace DBS25P156
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
-       string.IsNullOrWhiteSpace(ContactTextBox.Text))
+            if (UserSession.UserLoginRoleID == 1)
             {
-                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
+               string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+                    {
+                        MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (comboBox1.SelectedIndex == 1)
+                {
+                    if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
+               string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || string.IsNullOrWhiteSpace(textBox6.Text) || string.IsNullOrWhiteSpace(textBox7.Text))
+                    {
+                        MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                }
             }
+                button1.Enabled = false;
 
+                await Task.Delay(500);
+                UserHomePageForm userHomePageForm = new UserHomePageForm();
+                this.Hide();
+                userHomePageForm.ShowDialog();
 
-            MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            button1.Enabled = false;
-
-            await Task.Delay(500);
-
-
-            UserHomePageForm userHomePageForm = new UserHomePageForm();
-            this.Hide();
-            userHomePageForm.ShowDialog();
-
-        }
+            } 
         private void radioButton1_Enter(object sender, EventArgs e)
         {
             Fee.Font = new Font(Fee.Font.FontFamily, 12);
@@ -242,6 +254,7 @@ namespace DBS25P156
                 BackToLogin.Location = new Point(160, 430);
                 groupBox2.Location = new Point(209, 62);
                 groupBox2.Size = new Size(437, 487);
+                this.Size = new Size(860, 620);
 
             }
 
@@ -273,6 +286,7 @@ namespace DBS25P156
                 BackToLogin.Location = new Point(160, 717);
                 button1.Location = new Point(82, 668);
                 groupBox2.Size = new Size(437, 749);
+                this.Size = new Size(860, 900);
             }
         }
 
