@@ -89,6 +89,8 @@
             errorProvider7 = new ErrorProvider(components);
             errorProvider8 = new ErrorProvider(components);
             errorProvider9 = new ErrorProvider(components);
+            comboBox7 = new ComboBox();
+            label22 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -347,6 +349,8 @@
             // 
             // groupBoxAdd
             // 
+            groupBoxAdd.Controls.Add(comboBox7);
+            groupBoxAdd.Controls.Add(label22);
             groupBoxAdd.Controls.Add(button4);
             groupBoxAdd.Controls.Add(comboBox2);
             groupBoxAdd.Controls.Add(label13);
@@ -360,9 +364,9 @@
             groupBoxAdd.Controls.Add(label9);
             groupBoxAdd.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxAdd.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxAdd.Location = new Point(424, 198);
+            groupBoxAdd.Location = new Point(330, 174);
             groupBoxAdd.Name = "groupBoxAdd";
-            groupBoxAdd.Size = new Size(465, 453);
+            groupBoxAdd.Size = new Size(465, 500);
             groupBoxAdd.TabIndex = 12;
             groupBoxAdd.TabStop = false;
             groupBoxAdd.Text = "Add Event";
@@ -375,7 +379,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.Location = new Point(118, 381);
+            button4.Location = new Point(121, 441);
             button4.Name = "button4";
             button4.Size = new Size(241, 37);
             button4.TabIndex = 0;
@@ -501,7 +505,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(378, 250);
+            groupBoxUpdate.Location = new Point(828, 193);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 313);
             groupBoxUpdate.TabIndex = 21;
@@ -594,7 +598,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(48, 643);
+            panel2.Location = new Point(12, 680);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 20;
@@ -630,7 +634,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(339, 320);
+            groupBoxDelete.Location = new Point(828, 522);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 313);
             groupBoxDelete.TabIndex = 23;
@@ -754,6 +758,28 @@
             // 
             errorProvider9.ContainerControl = this;
             // 
+            // comboBox7
+            // 
+            comboBox7.BackColor = Color.LightGray;
+            comboBox7.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { "Add New Committee" });
+            comboBox7.Location = new Point(16, 380);
+            comboBox7.Name = "comboBox7";
+            comboBox7.Size = new Size(157, 34);
+            comboBox7.TabIndex = 9;
+            comboBox7.SelectedIndexChanged += comboBox7_SelectedIndexChanged;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(16, 357);
+            label22.Name = "label22";
+            label22.Size = new Size(129, 23);
+            label22.TabIndex = 10;
+            label22.Text = "Assign Committee";
+            // 
             // AdminEventPageForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -860,5 +886,7 @@
         private ErrorProvider errorProvider7;
         private ErrorProvider errorProvider8;
         private ErrorProvider errorProvider9;
+        private ComboBox comboBox7;
+        private Label label22;
     }
 }

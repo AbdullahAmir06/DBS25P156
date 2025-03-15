@@ -350,5 +350,13 @@ namespace DBS25P156
         {
 
         }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox7.SelectedItem != null && comboBox7.SelectedItem.ToString() == "Add New Committee")
+            {
+                // open committee form
+            }
+        }
     }
 }
