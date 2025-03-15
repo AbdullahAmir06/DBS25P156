@@ -32,7 +32,7 @@ namespace DBS25P156
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            UserSession.UserLoginRoleID = 5;
+            UserSession.UserLoginRoleID = 1;
         }
 
 

@@ -245,5 +245,10 @@ namespace DBS25P156
             groupBox4.Visible = true;
             groupBox4.Location = new Point(367, 159);
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

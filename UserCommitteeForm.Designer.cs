@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserCommitteeForm));
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -42,11 +43,28 @@
             panel1 = new Panel();
             label4 = new Label();
             label8 = new Label();
+            bindingSource1 = new BindingSource(components);
+            groupBox1 = new GroupBox();
+            button5 = new Button();
+            comboBox1 = new ComboBox();
+            label12 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label11 = new Label();
+            textBox2 = new TextBox();
+            label10 = new Label();
+            textBox1 = new TextBox();
+            label9 = new Label();
+            bindingSource2 = new BindingSource(components);
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -223,9 +241,132 @@
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(320, 65);
             label8.Name = "label8";
-            label8.Size = new Size(320, 80);
+            label8.Size = new Size(296, 80);
             label8.TabIndex = 3;
-            label8.Text = "Committees";
+            label8.Text = "Committee";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(button5);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            groupBox1.Location = new Point(246, 178);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(435, 363);
+            groupBox1.TabIndex = 4;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Duty Tracking";
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.LightGray;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ActiveCaptionText;
+            button5.Location = new Point(93, 298);
+            button5.Name = "button5";
+            button5.Size = new Size(241, 37);
+            button5.TabIndex = 8;
+            button5.Text = "Update Progress";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Pending", "In Progress", "Completed" });
+            comboBox1.Location = new Point(26, 249);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(146, 31);
+            comboBox1.TabIndex = 7;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Leave += comboBox1_Leave;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(26, 216);
+            label12.Name = "label12";
+            label12.Size = new Size(66, 30);
+            label12.TabIndex = 6;
+            label12.Text = "Status";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarMonthBackground = Color.LightGray;
+            dateTimePicker1.CustomFormat = "";
+            dateTimePicker1.Enabled = false;
+            dateTimePicker1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(26, 179);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(353, 33);
+            dateTimePicker1.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(26, 146);
+            label11.Name = "label11";
+            label11.Size = new Size(88, 30);
+            label11.TabIndex = 4;
+            label11.Text = "Deadline";
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.LightGray;
+            textBox2.Enabled = false;
+            textBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(26, 116);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(353, 27);
+            textBox2.TabIndex = 3;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(26, 83);
+            label10.Name = "label10";
+            label10.Size = new Size(151, 30);
+            label10.TabIndex = 2;
+            label10.Text = "Task Description";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.LightGray;
+            textBox1.Enabled = false;
+            textBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(164, 46);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(79, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(26, 46);
+            label9.Name = "label9";
+            label9.Size = new Size(136, 30);
+            label9.TabIndex = 0;
+            label9.Text = "Committee ID:";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // UserCommitteeForm
             // 
@@ -233,7 +374,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(925, 450);
+            ClientSize = new Size(925, 584);
+            Controls.Add(groupBox1);
             Controls.Add(label8);
             Controls.Add(panel1);
             Name = "UserCommitteeForm";
@@ -246,6 +388,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,5 +412,18 @@
         private Panel panel1;
         private Label label4;
         private Label label8;
+        private BindingSource bindingSource1;
+        private GroupBox groupBox1;
+        private Label label9;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label10;
+        private DateTimePicker dateTimePicker1;
+        private Label label11;
+        private Label label12;
+        private BindingSource bindingSource2;
+        private ComboBox comboBox1;
+        private Button button5;
+        private ErrorProvider errorProvider1;
     }
 }
