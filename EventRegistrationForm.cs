@@ -39,35 +39,7 @@ namespace DBS25P156
             groupBox2.Location = new Point(209, 62);
             groupBox2.Size = new Size(437, 487);
             this.Size = new Size(860, 620);
-        }
-
-        private void ShowStudentInterface()
-        {
-            // code of student interface
-            //FacultyGroupBox.Visible = false;
-            groupBox2.Visible = true;
-
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            label9.Visible = false;
-            label10.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox6.Visible = false;
-            textBox7.Visible = false;
-            Fee.Location = new Point(20, 294);
-            radioButton1.Location = new Point(20, 328);
-            radioButton2.Location = new Point(129, 328);
-            button1.Location = new Point(82, 381);
-            BackToLogin.Location = new Point(160, 430);
-            groupBox2.Location = new Point(209, 62);
-            groupBox2.Size = new Size(437, 487);
-
-            //groupBox2.Location = new Point(196, 62);
-        }
-
-        
+        }        
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
@@ -122,8 +94,8 @@ namespace DBS25P156
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (UserSession.UserLoginRoleID == 1)
-            {
+            //if (UserSession.UserLoginRoleID == 1)
+            //{
                 if (comboBox1.SelectedIndex == 0)
                 {
                     if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
@@ -146,7 +118,7 @@ namespace DBS25P156
 
 
                 }
-            }
+            //}
                 button1.Enabled = false;
 
                 await Task.Delay(500);

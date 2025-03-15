@@ -38,10 +38,23 @@ namespace DBS25P156
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
-            this.Hide();
-            eventRegistrationForm.ShowDialog();
-            //this.Show();
+            if (UserSession.UserLoginRoleID == 1)
+            {
+                EventRegistrationForm eventRegistrationForm = new EventRegistrationForm();
+                this.Hide();
+                eventRegistrationForm.ShowDialog();
+                //this.Show();
+            }
+            else if (UserSession.UserLoginRoleID == 2)
+            {
+                FacultyEventRegistrationForm facultyEventRegistrationForm = new FacultyEventRegistrationForm();
+                this.Hide();
+                facultyEventRegistrationForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You are not authorized to register for an event");
+            }
         }
 
         private void UserEventForm_Load(object sender, EventArgs e)

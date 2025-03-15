@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             groupBox2 = new GroupBox();
             comboBox1 = new ComboBox();
@@ -40,7 +41,15 @@
             InstituteTextBox = new TextBox();
             Institute = new Label();
             button1 = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
+            errorProvider4 = new ErrorProvider(components);
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -49,7 +58,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Poppins", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(264, 9);
+            label1.Location = new Point(255, 10);
             label1.Name = "label1";
             label1.Size = new Size(299, 40);
             label1.TabIndex = 4;
@@ -70,7 +79,7 @@
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
-            groupBox2.Location = new Point(204, 70);
+            groupBox2.Location = new Point(195, 71);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(437, 398);
             groupBox2.TabIndex = 5;
@@ -87,6 +96,8 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(140, 31);
             comboBox1.TabIndex = 31;
+            comboBox1.Enter += comboBox1_Enter;
+            comboBox1.Leave += comboBox1_Leave;
             // 
             // RegisterAs
             // 
@@ -108,6 +119,9 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(375, 33);
             textBox3.TabIndex = 1;
+            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.Enter += textBox3_Enter;
+            textBox3.Leave += textBox3_Leave;
             // 
             // Names
             // 
@@ -129,6 +143,8 @@
             ContactTextBox.Name = "ContactTextBox";
             ContactTextBox.Size = new Size(375, 33);
             ContactTextBox.TabIndex = 2;
+            ContactTextBox.Enter += ContactTextBox_Enter;
+            ContactTextBox.Leave += ContactTextBox_Leave;
             // 
             // Contact
             // 
@@ -147,11 +163,11 @@
             BackToLogin.BackColor = Color.Transparent;
             BackToLogin.Cursor = Cursors.Hand;
             BackToLogin.FlatStyle = FlatStyle.Flat;
-            BackToLogin.Font = new Font("Poppins", 9F, FontStyle.Underline);
+            BackToLogin.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             BackToLogin.ForeColor = SystemColors.ButtonHighlight;
-            BackToLogin.Location = new Point(160, 357);
+            BackToLogin.Location = new Point(146, 348);
             BackToLogin.Name = "BackToLogin";
-            BackToLogin.Size = new Size(104, 26);
+            BackToLogin.Size = new Size(119, 30);
             BackToLogin.TabIndex = 0;
             BackToLogin.Text = "Go To Home";
             // 
@@ -164,6 +180,8 @@
             InstituteTextBox.Name = "InstituteTextBox";
             InstituteTextBox.Size = new Size(375, 33);
             InstituteTextBox.TabIndex = 3;
+            InstituteTextBox.Enter += InstituteTextBox_Enter;
+            InstituteTextBox.Leave += InstituteTextBox_Leave;
             // 
             // Institute
             // 
@@ -188,13 +206,30 @@
             button1.TabIndex = 5;
             button1.Text = "Register";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            errorProvider4.ContainerControl = this;
             // 
             // FacultyEventRegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(800, 563);
+            ClientSize = new Size(800, 516);
             Controls.Add(groupBox2);
             Controls.Add(label1);
             Name = "FacultyEventRegistrationForm";
@@ -203,6 +238,10 @@
             Load += FacultyEventRegistrationForm_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,5 +260,9 @@
         private TextBox InstituteTextBox;
         private Label Institute;
         private Button button1;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
+        private ErrorProvider errorProvider4;
     }
 }

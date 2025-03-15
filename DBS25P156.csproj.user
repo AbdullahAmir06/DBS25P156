@@ -40,5 +40,8 @@
     <Compile Update="UserPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vendor&amp;SponserHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

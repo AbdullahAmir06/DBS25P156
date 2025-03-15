@@ -360,7 +360,7 @@
             groupBoxAdd.Controls.Add(label9);
             groupBoxAdd.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxAdd.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxAdd.Location = new Point(405, 165);
+            groupBoxAdd.Location = new Point(424, 198);
             groupBoxAdd.Name = "groupBoxAdd";
             groupBoxAdd.Size = new Size(465, 453);
             groupBoxAdd.TabIndex = 12;

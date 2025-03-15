@@ -116,11 +116,11 @@
             BackToLogin.BackColor = Color.Transparent;
             BackToLogin.Cursor = Cursors.Hand;
             BackToLogin.FlatStyle = FlatStyle.Flat;
-            BackToLogin.Font = new Font("Poppins", 9F, FontStyle.Underline);
+            BackToLogin.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             BackToLogin.ForeColor = SystemColors.ButtonHighlight;
-            BackToLogin.Location = new Point(160, 717);
+            BackToLogin.Location = new Point(151, 708);
             BackToLogin.Name = "BackToLogin";
-            BackToLogin.Size = new Size(104, 26);
+            BackToLogin.Size = new Size(119, 30);
             BackToLogin.TabIndex = 0;
             BackToLogin.Text = "Go To Home";
             BackToLogin.Click += BackToLogin_Click;
@@ -154,7 +154,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(82, 668);
+            button1.Location = new Point(88, 668);
             button1.Name = "button1";
             button1.Size = new Size(241, 37);
             button1.TabIndex = 5;

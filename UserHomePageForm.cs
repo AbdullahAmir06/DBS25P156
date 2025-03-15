@@ -20,6 +20,10 @@ namespace DBS25P156
         }
         private void UserHomePageForm_Load(object sender, EventArgs e)
         {
+            if(UserSession.UserLoginRoleID==1)
+            {
+                this.Size = new Size(1000, 600);
+            }
             // Your initialization code here
         }
 
