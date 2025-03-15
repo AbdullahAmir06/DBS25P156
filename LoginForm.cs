@@ -123,6 +123,8 @@ namespace DBS25P156
         {
             if (textBox3.Text == "admin" && textBox2.Text == "123")
             {
+                textBox2.Clear();
+                textBox3.Clear();
                 ItecEditionForm itecEditionForm = new ItecEditionForm();
                 this.Hide();
                 itecEditionForm.ShowDialog();
@@ -131,6 +133,8 @@ namespace DBS25P156
             }
             else if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
             {
+                textBox2.Clear();
+                textBox3.Clear();
                 UserHomePageForm userHomePageForm = new UserHomePageForm();
                 this.Hide();
                 userHomePageForm.ShowDialog();
@@ -138,6 +142,8 @@ namespace DBS25P156
             }
             else if (UserSession.UserLoginRoleID == 3 || UserSession.UserLoginRoleID == 4)
             {
+                textBox2.Clear();
+                textBox3.Clear();
                 Vendor_SponserHomePage vendorAndSponserHomePage = new Vendor_SponserHomePage();
                 this.Hide();
                 vendorAndSponserHomePage.ShowDialog();

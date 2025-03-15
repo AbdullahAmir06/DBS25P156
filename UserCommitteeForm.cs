@@ -130,7 +130,7 @@ namespace DBS25P156
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private async void button5_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
             {
@@ -138,7 +138,9 @@ namespace DBS25P156
             }
             else
             {
-                MessageBox.Show("Venue Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Duty Status Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
             }
         }
     }
