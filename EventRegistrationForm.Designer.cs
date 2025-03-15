@@ -205,7 +205,7 @@
             textBox7.Location = new Point(20, 541);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(375, 33);
-            textBox7.TabIndex = 39;
+            textBox7.TabIndex = 8;
             textBox7.Visible = false;
             textBox7.Enter += textBox7_Enter;
             textBox7.Leave += textBox7_Leave;
@@ -242,7 +242,7 @@
             textBox4.Location = new Point(20, 353);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(375, 33);
-            textBox4.TabIndex = 32;
+            textBox4.TabIndex = 5;
             textBox4.Visible = false;
             textBox4.Enter += textBox4_Enter;
             textBox4.Leave += textBox4_Leave;
@@ -267,7 +267,7 @@
             textBox5.Location = new Point(20, 419);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(375, 33);
-            textBox5.TabIndex = 33;
+            textBox5.TabIndex = 6;
             textBox5.Visible = false;
             textBox5.Enter += textBox5_Enter;
             textBox5.Leave += textBox5_Leave;
@@ -292,7 +292,7 @@
             textBox6.Location = new Point(20, 479);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(375, 33);
-            textBox6.TabIndex = 34;
+            textBox6.TabIndex = 7;
             textBox6.Visible = false;
             textBox6.Enter += textBox6_Enter;
             textBox6.Leave += textBox6_Leave;
@@ -318,7 +318,7 @@
             comboBox1.Location = new Point(20, 256);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(140, 31);
-            comboBox1.TabIndex = 31;
+            comboBox1.TabIndex = 4;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
@@ -365,7 +365,7 @@
             radioButton2.Location = new Point(129, 627);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(70, 34);
-            radioButton2.TabIndex = 26;
+            radioButton2.TabIndex = 4;
             radioButton2.Text = "Paid";
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged_1;

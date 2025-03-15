@@ -32,6 +32,7 @@ namespace DBS25P156
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            UserSession.UserLoginRoleID = 3;
         }
 
 
@@ -128,15 +129,25 @@ namespace DBS25P156
                 this.Show();
 
             }
-            else
+            else if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
             {
-                UserSession.UserLoginRoleID = 1;
-
                 UserHomePageForm userHomePageForm = new UserHomePageForm();
                 this.Hide();
                 userHomePageForm.ShowDialog();
                 this.Show();
             }
+            else if (UserSession.UserLoginRoleID == 3 || UserSession.UserLoginRoleID == 4)
+            {
+                Vendor_SponserHomePage vendorAndSponserHomePage = new Vendor_SponserHomePage();
+                this.Hide();
+                vendorAndSponserHomePage.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

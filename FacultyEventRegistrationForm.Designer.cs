@@ -170,6 +170,7 @@
             BackToLogin.Size = new Size(119, 30);
             BackToLogin.TabIndex = 0;
             BackToLogin.Text = "Go To Home";
+            BackToLogin.Click += BackToLogin_Click;
             // 
             // InstituteTextBox
             // 

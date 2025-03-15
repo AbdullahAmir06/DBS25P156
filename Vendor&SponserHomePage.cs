@@ -92,7 +92,7 @@ namespace DBS25P156
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(ServiceTypeTextBox.Text))
             {
@@ -101,13 +101,19 @@ namespace DBS25P156
             else
             {
                 MessageBox.Show("Vendor Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
             }
-            this.Close();
         }
 
         private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BackToLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

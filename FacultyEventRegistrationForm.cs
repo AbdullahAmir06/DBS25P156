@@ -126,5 +126,10 @@ namespace DBS25P156
             userHomePageForm.ShowDialog();
 
         }
+
+        private void BackToLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

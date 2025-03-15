@@ -79,6 +79,7 @@
             BackToLogin.Size = new Size(70, 30);
             BackToLogin.TabIndex = 0;
             BackToLogin.Text = "Logout";
+            BackToLogin.Click += BackToLogin_Click;
             // 
             // button1
             // 
