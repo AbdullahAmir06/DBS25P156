@@ -165,7 +165,7 @@ namespace DBS25P156
 
         private void label9_Click(object sender, EventArgs e)
         {
-            label2_Click(sender, e);
+            label2_Click_1(sender, e);
         }
 
 
@@ -225,7 +225,10 @@ namespace DBS25P156
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-
+            AdminCommitteeRegistrationForm adminCommitteeRegistrationForm = new AdminCommitteeRegistrationForm();   
+            this.Hide();
+            adminCommitteeRegistrationForm.ShowDialog();
+            this.Show();
         }
 
         private void label6_Click_1(object sender, EventArgs e)

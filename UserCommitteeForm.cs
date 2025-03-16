@@ -21,8 +21,8 @@ namespace DBS25P156
         private void label7_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginForm lf = new LoginForm();
-            lf.ShowDialog();
+            //LoginForm lf = new LoginForm();
+            //lf.ShowDialog();
         }
 
         private void UserCommitteeForm_Load(object sender, EventArgs e)

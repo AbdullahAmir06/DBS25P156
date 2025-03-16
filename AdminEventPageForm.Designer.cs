@@ -48,6 +48,8 @@
             button1 = new Button();
             label8 = new Label();
             groupBoxAdd = new GroupBox();
+            comboBox7 = new ComboBox();
+            label22 = new Label();
             button4 = new Button();
             comboBox2 = new ComboBox();
             label13 = new Label();
@@ -89,8 +91,7 @@
             errorProvider7 = new ErrorProvider(components);
             errorProvider8 = new ErrorProvider(components);
             errorProvider9 = new ErrorProvider(components);
-            comboBox7 = new ComboBox();
-            label22 = new Label();
+            errorProvider10 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -110,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider10).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -372,6 +374,30 @@
             groupBoxAdd.Text = "Add Event";
             groupBoxAdd.Visible = false;
             groupBoxAdd.Enter += groupBoxAdd_Enter;
+            // 
+            // comboBox7
+            // 
+            comboBox7.BackColor = Color.LightGray;
+            comboBox7.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { "Add New Committee" });
+            comboBox7.Location = new Point(16, 380);
+            comboBox7.Name = "comboBox7";
+            comboBox7.Size = new Size(157, 34);
+            comboBox7.TabIndex = 9;
+            comboBox7.SelectedIndexChanged += comboBox7_SelectedIndexChanged;
+            comboBox7.Enter += comboBox7_Enter;
+            comboBox7.Leave += comboBox7_Leave;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(16, 357);
+            label22.Name = "label22";
+            label22.Size = new Size(129, 23);
+            label22.TabIndex = 10;
+            label22.Text = "Assign Committee";
             // 
             // button4
             // 
@@ -758,27 +784,9 @@
             // 
             errorProvider9.ContainerControl = this;
             // 
-            // comboBox7
+            // errorProvider10
             // 
-            comboBox7.BackColor = Color.LightGray;
-            comboBox7.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Items.AddRange(new object[] { "Add New Committee" });
-            comboBox7.Location = new Point(16, 380);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(157, 34);
-            comboBox7.TabIndex = 9;
-            comboBox7.SelectedIndexChanged += comboBox7_SelectedIndexChanged;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.Location = new Point(16, 357);
-            label22.Name = "label22";
-            label22.Size = new Size(129, 23);
-            label22.TabIndex = 10;
-            label22.Text = "Assign Committee";
+            errorProvider10.ContainerControl = this;
             // 
             // AdminEventPageForm
             // 
@@ -821,6 +829,7 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider7).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider8).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -888,5 +897,6 @@
         private ErrorProvider errorProvider9;
         private ComboBox comboBox7;
         private Label label22;
+        private ErrorProvider errorProvider10;
     }
 }

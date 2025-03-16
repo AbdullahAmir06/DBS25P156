@@ -89,8 +89,8 @@ namespace DBS25P156
         private void label7_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.ShowDialog();
         }
 
         private void UserPaymentForm_Load(object sender, EventArgs e)

@@ -34,3 +34,4 @@ D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\D
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.AdminVenueForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.FacultyEventRegistrationForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.Vendor_SponserHomePage.resources
+D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.AdminCommitteeRegistrationForm.resources

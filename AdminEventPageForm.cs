@@ -358,5 +358,24 @@ namespace DBS25P156
                 // open committee form
             }
         }
+
+        private void comboBox7_Leave(object sender, EventArgs e)
+        {
+            label22.Font = new Font(label22.Font.FontFamily, 8);
+            if (comboBox7.SelectedIndex == -1)
+            {
+                comboBox7.Focus();
+                errorProvider10.SetError(comboBox7, "Please Select Committee");
+            }
+            else
+            {
+                errorProvider10.Clear();
+            }
+        }
+
+        private void comboBox7_Enter(object sender, EventArgs e)
+        {
+            label22.Font = new Font(label22.Font.FontFamily, 9);
+        }
     }
 }

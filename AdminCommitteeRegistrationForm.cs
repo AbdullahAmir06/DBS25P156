@@ -21,5 +21,16 @@ namespace DBS25P156
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void AdminCommitteeRegistrationForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add(false, "Anas", "Student", "Volunteer", "Photography", "2025-03-20");
+            dataGridView1.Rows.Add(false, "Tasawar", "Student", "Volunteer");
+        }
     }
 }
