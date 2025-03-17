@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            GoBack = new Label();
+            button1 = new Button();
             checkBox1 = new CheckBox();
             dataGridView1 = new DataGridView();
             Select = new DataGridViewCheckBoxColumn();
@@ -45,10 +48,12 @@
             Deadline = new DataGridViewTextBoxColumn();
             textBox1 = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            GoBack = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -63,11 +68,41 @@
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
             groupBox1.Location = new Point(38, 54);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(892, 465);
+            groupBox1.Size = new Size(891, 529);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Add New Committee";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // GoBack
+            // 
+            GoBack.AutoSize = true;
+            GoBack.BackColor = Color.Transparent;
+            GoBack.Cursor = Cursors.Hand;
+            GoBack.FlatStyle = FlatStyle.Flat;
+            GoBack.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            GoBack.ForeColor = SystemColors.ButtonHighlight;
+            GoBack.Location = new Point(430, 498);
+            GoBack.Name = "GoBack";
+            GoBack.Size = new Size(82, 30);
+            GoBack.TabIndex = 0;
+            GoBack.Text = "Go Back";
+            GoBack.Click += GoBack_Click;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button1.BackColor = Color.LightGray;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(348, 457);
+            button1.Name = "button1";
+            button1.Size = new Size(237, 38);
+            button1.TabIndex = 3;
+            button1.Text = "Register";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // checkBox1
             // 
@@ -75,61 +110,65 @@
             checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox1.Location = new Point(26, 121);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(179, 40);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Show Member";
+            checkBox1.Size = new Size(176, 40);
+            checkBox1.TabIndex = 2;
+            checkBox1.Text = "Add Members";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Select, Names, Category, Role, Duty, Deadline });
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = SystemColors.Window;
-            dataGridViewCellStyle10.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.Location = new Point(17, 167);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = "0";
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Poppins Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "0";
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = SystemColors.Window;
-            dataGridViewCellStyle12.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle12.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(10, 25, 47);
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(852, 205);
+            dataGridView1.Size = new Size(853, 268);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            dataGridView1.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
+            dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
+            dataGridView1.Leave += dataGridView1_Leave;
             // 
             // Select
             // 
@@ -160,6 +199,7 @@
             Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
             Role.MinimumWidth = 6;
             Role.Name = "Role";
+            Role.ReadOnly = true;
             Role.Width = 125;
             // 
             // Duty
@@ -167,17 +207,19 @@
             Duty.HeaderText = "Duty";
             Duty.MinimumWidth = 6;
             Duty.Name = "Duty";
+            Duty.ReadOnly = true;
             Duty.Width = 125;
             // 
             // Deadline
             // 
-            dataGridViewCellStyle9.Format = "f";
-            dataGridViewCellStyle9.NullValue = null;
-            Deadline.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "f";
+            dataGridViewCellStyle3.NullValue = null;
+            Deadline.DefaultCellStyle = dataGridViewCellStyle3;
             Deadline.HeaderText = "Deadline";
             Deadline.MinimumWidth = 6;
             Deadline.Name = "Deadline";
-            Deadline.Width = 175;
+            Deadline.ReadOnly = true;
+            Deadline.Width = 150;
             // 
             // textBox1
             // 
@@ -187,6 +229,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(288, 33);
             textBox1.TabIndex = 1;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
             // label1
             // 
@@ -198,41 +242,20 @@
             label1.TabIndex = 0;
             label1.Text = "Committee Name";
             // 
-            // button1
+            // errorProvider1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.BackColor = Color.LightGray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(323, 385);
-            button1.Name = "button1";
-            button1.Size = new Size(238, 38);
-            button1.TabIndex = 5;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = false;
+            errorProvider1.ContainerControl = this;
             // 
-            // GoBack
+            // errorProvider2
             // 
-            GoBack.AutoSize = true;
-            GoBack.BackColor = Color.Transparent;
-            GoBack.Cursor = Cursors.Hand;
-            GoBack.FlatStyle = FlatStyle.Flat;
-            GoBack.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            GoBack.ForeColor = SystemColors.ButtonHighlight;
-            GoBack.Location = new Point(405, 426);
-            GoBack.Name = "GoBack";
-            GoBack.Size = new Size(82, 30);
-            GoBack.TabIndex = 6;
-            GoBack.Text = "Go Back";
-            GoBack.Click += GoBack_Click;
+            errorProvider2.ContainerControl = this;
             // 
             // AdminCommitteeRegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(986, 547);
+            ClientSize = new Size(986, 617);
             Controls.Add(groupBox1);
             Name = "AdminCommitteeRegistrationForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -241,6 +264,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ResumeLayout(false);
         }
 
@@ -250,14 +275,16 @@
         private TextBox textBox1;
         private Label label1;
         private DataGridView dataGridView1;
+        private CheckBox checkBox1;
+        private Button button1;
+        private Label GoBack;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
         private DataGridViewCheckBoxColumn Select;
         private DataGridViewTextBoxColumn Names;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewComboBoxColumn Role;
         private DataGridViewTextBoxColumn Duty;
         private DataGridViewTextBoxColumn Deadline;
-        private CheckBox checkBox1;
-        private Button button1;
-        private Label GoBack;
     }
 }
