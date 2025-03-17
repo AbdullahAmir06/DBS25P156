@@ -16,7 +16,7 @@ namespace DBS25P156
 
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
-            //Application.Run(new AdminHomePageForm());
+            //Application.Run(new AdminEditCommitteeForm());
 
         }
     }

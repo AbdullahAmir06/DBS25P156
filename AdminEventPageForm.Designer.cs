@@ -661,7 +661,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(828, 522);
+            groupBoxDelete.Location = new Point(811, 468);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 313);
             groupBoxDelete.TabIndex = 23;
