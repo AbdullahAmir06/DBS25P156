@@ -16,7 +16,7 @@ namespace DBS25P156
         private readonly string connectionString;
         private DatabaseHelper()
         {
-            connectionString = "server=127.0.0.1;port=3306;user=root;database=Lab2;password=2002;SslMode=None;";
+            connectionString = "server=127.0.0.1;port=3306;user=root;database=projecta;password=Abdullahx12345678909_;SslMode=None;";
         }
 
         private static DatabaseHelper _instance;

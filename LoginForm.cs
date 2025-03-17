@@ -17,10 +17,11 @@ namespace DBS25P156
 {
     public partial class LoginForm : Form
     {
-
+        private LoginHandler loginHandler;
         public LoginForm()
         {
             InitializeComponent();
+            loginHandler = new LoginHandler();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -121,7 +122,10 @@ namespace DBS25P156
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox3.Text == "admin" && textBox2.Text == "123")
+            string username = textBox3.Text;
+            string password = textBox2.Text;
+
+            if (username == "admin" && password == "123")
             {
                 textBox2.Clear();
                 textBox3.Clear();
@@ -131,23 +135,26 @@ namespace DBS25P156
                 this.Show();
 
             }
-            else if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
+            else if (loginHandler.ValidateUser(username,password))
             {
-                textBox2.Clear();
-                textBox3.Clear();
-                UserHomePageForm userHomePageForm = new UserHomePageForm();
-                this.Hide();
-                userHomePageForm.ShowDialog();
-                this.Show();
-            }
-            else if (UserSession.UserLoginRoleID == 3 || UserSession.UserLoginRoleID == 4)
-            {
-                textBox2.Clear();
-                textBox3.Clear();
-                Vendor_SponserHomePage vendorAndSponserHomePage = new Vendor_SponserHomePage();
-                this.Hide();
-                vendorAndSponserHomePage.ShowDialog();
-                this.Show();
+                if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
+                {
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    UserHomePageForm userHomePageForm = new UserHomePageForm();
+                    this.Hide();
+                    userHomePageForm.ShowDialog();
+                    this.Show();
+                }
+                else if (UserSession.UserLoginRoleID == 3 || UserSession.UserLoginRoleID == 4)
+                {
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    Vendor_SponserHomePage vendorAndSponserHomePage = new Vendor_SponserHomePage();
+                    this.Hide();
+                    vendorAndSponserHomePage.ShowDialog();
+                    this.Show();
+                }
             }
             else
             {
