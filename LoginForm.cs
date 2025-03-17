@@ -135,7 +135,7 @@ namespace DBS25P156
                 this.Show();
 
             }
-            else if (loginHandler.ValidateUser(username,password))
+            else if (loginHandler.ValidateUser(username, password))
             {
                 if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
                 {

@@ -13,9 +13,12 @@ namespace DBS25P156
 {
     public partial class ForgetPasswordForm : Form
     {
+        ForgetPasswordHandler forgetPasswordHandler;
         public ForgetPasswordForm()
         {
             InitializeComponent();
+            forgetPasswordHandler = new ForgetPasswordHandler();
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -116,10 +119,19 @@ namespace DBS25P156
             }
             else
             {
-                button2.Enabled = false;
-                MessageBox.Show("Password Reset Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                string username = textBox3.Text;
+                if (forgetPasswordHandler.UserCheck(username))
+                {
+                    UserSession.UserLoginUserName_Email = username;
+                    button2.Enabled = false;
+                    MessageBox.Show("Password Reset Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await Task.Delay(500);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
             }
         }
