@@ -113,13 +113,15 @@ namespace DBS25P156
             {
                 groupBox2.Visible = false;
                 groupBox1.Visible = true;
+                this.Size = new Size(818, 497);
                 groupBox1.Location = new Point(203, 34);
             }
             else if (UserSession.UserLoginRoleID == 4)
             {
                 groupBox1.Visible = false;
                 groupBox2.Visible = true;
-                groupBox2.Location = new Point(203, 34);
+                this.Size = new Size(818, 603);
+                groupBox2.Location = new Point(189, 12);
 
             }
         }
@@ -185,7 +187,7 @@ namespace DBS25P156
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -194,7 +196,12 @@ namespace DBS25P156
                 MessageBox.Show("Sponser Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await Task.Delay(500);
                 this.Close();
-            }   
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
