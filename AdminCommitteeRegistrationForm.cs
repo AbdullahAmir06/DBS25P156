@@ -117,7 +117,7 @@ namespace DBS25P156
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             bool valid = true;
             int counter = 0;
@@ -158,6 +158,8 @@ namespace DBS25P156
             if (valid)
             {
                 MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Delay(500);
+                this.Close();
             }
             else
             {

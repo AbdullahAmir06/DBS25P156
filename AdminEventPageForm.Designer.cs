@@ -232,6 +232,7 @@
             label2.Size = new Size(138, 36);
             label2.TabIndex = 1;
             label2.Text = "Committees";
+            label2.Click += label2_Click;
             label2.MouseLeave += label2_MouseLeave;
             label2.MouseHover += label2_MouseHover;
             // 

@@ -225,9 +225,9 @@ namespace DBS25P156
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-            AdminCommitteeRegistrationForm adminCommitteeRegistrationForm = new AdminCommitteeRegistrationForm();   
+            AdminCommitteeForm adminCommitteeForm = new AdminCommitteeForm();   
             this.Hide();
-            adminCommitteeRegistrationForm.ShowDialog();
+            adminCommitteeForm.ShowDialog();
             this.Show();
         }
 

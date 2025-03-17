@@ -35,86 +35,55 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            groupBox1 = new GroupBox();
-            GoBack = new Label();
-            button1 = new Button();
-            checkBox1 = new CheckBox();
-            dataGridView1 = new DataGridView();
-            Select = new DataGridViewCheckBoxColumn();
-            Names = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewComboBoxColumn();
-            Duty = new DataGridViewTextBoxColumn();
-            Deadline = new DataGridViewTextBoxColumn();
-            textBox1 = new TextBox();
-            label1 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            dataGridView1 = new DataGridView();
+            Deadline = new DataGridViewTextBoxColumn();
+            Duty = new DataGridViewTextBoxColumn();
+            Role = new DataGridViewComboBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Names = new DataGridViewTextBoxColumn();
+            Select = new DataGridViewCheckBoxColumn();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            GoBack = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // errorProvider1
             // 
-            groupBox1.Controls.Add(GoBack);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = SystemColors.ButtonHighlight;
-            groupBox1.Location = new Point(38, 54);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(891, 529);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Add New Committee";
-            groupBox1.Enter += groupBox1_Enter;
+            errorProvider1.ContainerControl = this;
             // 
-            // GoBack
+            // errorProvider2
             // 
-            GoBack.AutoSize = true;
-            GoBack.BackColor = Color.Transparent;
-            GoBack.Cursor = Cursors.Hand;
-            GoBack.FlatStyle = FlatStyle.Flat;
-            GoBack.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            GoBack.ForeColor = SystemColors.ButtonHighlight;
-            GoBack.Location = new Point(430, 498);
-            GoBack.Name = "GoBack";
-            GoBack.Size = new Size(82, 30);
-            GoBack.TabIndex = 0;
-            GoBack.Text = "Go Back";
-            GoBack.Click += GoBack_Click;
+            errorProvider2.ContainerControl = this;
             // 
-            // button1
+            // label1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.BackColor = Color.LightGray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(348, 457);
-            button1.Name = "button1";
-            button1.Size = new Size(237, 38);
-            button1.TabIndex = 3;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(17, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(168, 30);
+            label1.TabIndex = 0;
+            label1.Text = "Committee Name";
             // 
-            // checkBox1
+            // textBox1
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(26, 121);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(176, 40);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "Add Members";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            textBox1.BackColor = Color.LightGray;
+            textBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(17, 71);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(288, 33);
+            textBox1.TabIndex = 1;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
             // dataGridView1
             // 
@@ -170,46 +139,6 @@
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             dataGridView1.Leave += dataGridView1_Leave;
             // 
-            // Select
-            // 
-            Select.HeaderText = "Select";
-            Select.MinimumWidth = 6;
-            Select.Name = "Select";
-            Select.Width = 125;
-            // 
-            // Names
-            // 
-            Names.HeaderText = "Name";
-            Names.MinimumWidth = 6;
-            Names.Name = "Names";
-            Names.ReadOnly = true;
-            Names.Width = 125;
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            Category.Width = 125;
-            // 
-            // Role
-            // 
-            Role.HeaderText = "Role";
-            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
-            Role.MinimumWidth = 6;
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            Role.Width = 125;
-            // 
-            // Duty
-            // 
-            Duty.HeaderText = "Duty";
-            Duty.MinimumWidth = 6;
-            Duty.Name = "Duty";
-            Duty.ReadOnly = true;
-            Duty.Width = 125;
-            // 
             // Deadline
             // 
             dataGridViewCellStyle3.Format = "f";
@@ -221,34 +150,105 @@
             Deadline.ReadOnly = true;
             Deadline.Width = 150;
             // 
-            // textBox1
+            // Duty
             // 
-            textBox1.BackColor = Color.LightGray;
-            textBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(17, 71);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(288, 33);
-            textBox1.TabIndex = 1;
-            textBox1.Enter += textBox1_Enter;
-            textBox1.Leave += textBox1_Leave;
+            Duty.HeaderText = "Duty";
+            Duty.MinimumWidth = 6;
+            Duty.Name = "Duty";
+            Duty.ReadOnly = true;
+            Duty.Width = 125;
             // 
-            // label1
+            // Role
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(168, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Committee Name";
+            Role.HeaderText = "Role";
+            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
+            Role.MinimumWidth = 6;
+            Role.Name = "Role";
+            Role.ReadOnly = true;
+            Role.Width = 125;
             // 
-            // errorProvider1
+            // Category
             // 
-            errorProvider1.ContainerControl = this;
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            Category.Width = 125;
             // 
-            // errorProvider2
+            // Names
             // 
-            errorProvider2.ContainerControl = this;
+            Names.HeaderText = "Name";
+            Names.MinimumWidth = 6;
+            Names.Name = "Names";
+            Names.ReadOnly = true;
+            Names.Width = 125;
+            // 
+            // Select
+            // 
+            Select.HeaderText = "Select";
+            Select.MinimumWidth = 6;
+            Select.Name = "Select";
+            Select.Width = 125;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBox1.Location = new Point(26, 121);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(176, 40);
+            checkBox1.TabIndex = 2;
+            checkBox1.Text = "Add Members";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button1.BackColor = Color.LightGray;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(348, 457);
+            button1.Name = "button1";
+            button1.Size = new Size(237, 38);
+            button1.TabIndex = 3;
+            button1.Text = "Register";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // GoBack
+            // 
+            GoBack.AutoSize = true;
+            GoBack.BackColor = Color.Transparent;
+            GoBack.Cursor = Cursors.Hand;
+            GoBack.FlatStyle = FlatStyle.Flat;
+            GoBack.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            GoBack.ForeColor = SystemColors.ButtonHighlight;
+            GoBack.Location = new Point(430, 498);
+            GoBack.Name = "GoBack";
+            GoBack.Size = new Size(82, 30);
+            GoBack.TabIndex = 0;
+            GoBack.Text = "Go Back";
+            GoBack.Click += GoBack_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(GoBack);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            groupBox1.Location = new Point(38, 54);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(891, 529);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Add New Committee";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // AdminCommitteeRegistrationForm
             // 
@@ -261,30 +261,29 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminCommitteeRegistrationForm";
             Load += AdminCommitteeRegistrationForm_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private TextBox textBox1;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private CheckBox checkBox1;
-        private Button button1;
-        private Label GoBack;
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
+        private GroupBox groupBox1;
+        private Label GoBack;
+        private Button button1;
+        private CheckBox checkBox1;
+        private DataGridView dataGridView1;
         private DataGridViewCheckBoxColumn Select;
         private DataGridViewTextBoxColumn Names;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewComboBoxColumn Role;
         private DataGridViewTextBoxColumn Duty;
         private DataGridViewTextBoxColumn Deadline;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

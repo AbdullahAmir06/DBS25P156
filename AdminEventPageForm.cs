@@ -355,7 +355,11 @@ namespace DBS25P156
         {
             if (comboBox7.SelectedItem != null && comboBox7.SelectedItem.ToString() == "Add New Committee")
             {
-                // open committee form
+
+                AdminCommitteeRegistrationForm form = new AdminCommitteeRegistrationForm();
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
             }
         }
 
@@ -376,6 +380,13 @@ namespace DBS25P156
         private void comboBox7_Enter(object sender, EventArgs e)
         {
             label22.Font = new Font(label22.Font.FontFamily, 9);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AdminCommitteeForm form = new AdminCommitteeForm();
+            this.Close();
+            form.ShowDialog();
         }
     }
 }
