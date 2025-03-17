@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AdminFinanceForm";
+            SuspendLayout();
+            // 
+            // AdminFinanceForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(10, 25, 47);
+            ClientSize = new Size(937, 536);
+            Name = "AdminFinanceForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AdminFinanceForm";
+            ResumeLayout(false);
         }
 
         #endregion
