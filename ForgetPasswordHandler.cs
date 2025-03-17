@@ -16,6 +16,8 @@ namespace DBS25P156
             return count > 0;
         }
 
+
+
         public bool UpdatePassword(string password)
         {
             string query = $"UPDATE users SET password = '{password}' WHERE username = '{UserSession.UserLoginUserName_Email}' OR email = '{UserSession.UserLoginUserName_Email}'";
