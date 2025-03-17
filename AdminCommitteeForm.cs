@@ -93,5 +93,14 @@ namespace DBS25P156
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            groupBoxDelete.Visible = false;
+            AdminEditCommitteeForm adminEditCommitteeForm = new AdminEditCommitteeForm();
+            this.Hide();
+            adminEditCommitteeForm.ShowDialog();
+            this.Show();
+        }
     }
 }

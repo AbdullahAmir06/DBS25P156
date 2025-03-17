@@ -38,18 +38,18 @@
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             label1 = new Label();
-            textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            Deadline = new DataGridViewTextBoxColumn();
-            Duty = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewComboBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Names = new DataGridViewTextBoxColumn();
             Select = new DataGridViewCheckBoxColumn();
+            Names = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Role = new DataGridViewComboBoxColumn();
+            Duty = new DataGridViewTextBoxColumn();
+            Deadline = new DataGridViewTextBoxColumn();
             checkBox1 = new CheckBox();
             button1 = new Button();
             GoBack = new Label();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -73,17 +73,6 @@
             label1.Size = new Size(168, 30);
             label1.TabIndex = 0;
             label1.Text = "Committee Name";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.LightGray;
-            textBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(17, 71);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(288, 33);
-            textBox1.TabIndex = 1;
-            textBox1.Enter += textBox1_Enter;
-            textBox1.Leave += textBox1_Leave;
             // 
             // dataGridView1
             // 
@@ -139,6 +128,46 @@
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             dataGridView1.Leave += dataGridView1_Leave;
             // 
+            // Select
+            // 
+            Select.HeaderText = "Select";
+            Select.MinimumWidth = 6;
+            Select.Name = "Select";
+            Select.Width = 125;
+            // 
+            // Names
+            // 
+            Names.HeaderText = "Name";
+            Names.MinimumWidth = 6;
+            Names.Name = "Names";
+            Names.ReadOnly = true;
+            Names.Width = 125;
+            // 
+            // Category
+            // 
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            Category.Width = 125;
+            // 
+            // Role
+            // 
+            Role.HeaderText = "Role";
+            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
+            Role.MinimumWidth = 6;
+            Role.Name = "Role";
+            Role.ReadOnly = true;
+            Role.Width = 125;
+            // 
+            // Duty
+            // 
+            Duty.HeaderText = "Duty";
+            Duty.MinimumWidth = 6;
+            Duty.Name = "Duty";
+            Duty.ReadOnly = true;
+            Duty.Width = 125;
+            // 
             // Deadline
             // 
             dataGridViewCellStyle3.Format = "f";
@@ -150,51 +179,11 @@
             Deadline.ReadOnly = true;
             Deadline.Width = 150;
             // 
-            // Duty
-            // 
-            Duty.HeaderText = "Duty";
-            Duty.MinimumWidth = 6;
-            Duty.Name = "Duty";
-            Duty.ReadOnly = true;
-            Duty.Width = 125;
-            // 
-            // Role
-            // 
-            Role.HeaderText = "Role";
-            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
-            Role.MinimumWidth = 6;
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            Role.Width = 125;
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            Category.Width = 125;
-            // 
-            // Names
-            // 
-            Names.HeaderText = "Name";
-            Names.MinimumWidth = 6;
-            Names.Name = "Names";
-            Names.ReadOnly = true;
-            Names.Width = 125;
-            // 
-            // Select
-            // 
-            Select.HeaderText = "Select";
-            Select.MinimumWidth = 6;
-            Select.Name = "Select";
-            Select.Width = 125;
-            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(26, 121);
+            checkBox1.Location = new Point(26, 118);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(176, 40);
             checkBox1.TabIndex = 2;
@@ -213,7 +202,7 @@
             button1.Name = "button1";
             button1.Size = new Size(237, 38);
             button1.TabIndex = 3;
-            button1.Text = "Register";
+            button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -234,11 +223,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(GoBack);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
@@ -247,10 +236,22 @@
             groupBox1.Size = new Size(891, 529);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Add New Committee";
+            groupBox1.Text = "Update Committee";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // AdminCommitteeRegistrationForm
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(17, 71);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(260, 31);
+            comboBox1.TabIndex = 4;
+            comboBox1.Enter += comboBox1_Enter;
+            comboBox1.Leave += comboBox1_Leave;
+            // 
+            // AdminEditCommitteeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -283,7 +284,7 @@
         private DataGridViewComboBoxColumn Role;
         private DataGridViewTextBoxColumn Duty;
         private DataGridViewTextBoxColumn Deadline;
-        private TextBox textBox1;
         private Label label1;
+        private ComboBox comboBox1;
     }
 }

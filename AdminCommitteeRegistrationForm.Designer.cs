@@ -40,12 +40,12 @@
             label1 = new Label();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            Deadline = new DataGridViewTextBoxColumn();
-            Duty = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewComboBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Names = new DataGridViewTextBoxColumn();
             Select = new DataGridViewCheckBoxColumn();
+            Names = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Role = new DataGridViewComboBoxColumn();
+            Duty = new DataGridViewTextBoxColumn();
+            Deadline = new DataGridViewTextBoxColumn();
             checkBox1 = new CheckBox();
             button1 = new Button();
             GoBack = new Label();
@@ -139,24 +139,28 @@
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             dataGridView1.Leave += dataGridView1_Leave;
             // 
-            // Deadline
+            // Select
             // 
-            dataGridViewCellStyle3.Format = "f";
-            dataGridViewCellStyle3.NullValue = null;
-            Deadline.DefaultCellStyle = dataGridViewCellStyle3;
-            Deadline.HeaderText = "Deadline";
-            Deadline.MinimumWidth = 6;
-            Deadline.Name = "Deadline";
-            Deadline.ReadOnly = true;
-            Deadline.Width = 150;
+            Select.HeaderText = "Select";
+            Select.MinimumWidth = 6;
+            Select.Name = "Select";
+            Select.Width = 125;
             // 
-            // Duty
+            // Names
             // 
-            Duty.HeaderText = "Duty";
-            Duty.MinimumWidth = 6;
-            Duty.Name = "Duty";
-            Duty.ReadOnly = true;
-            Duty.Width = 125;
+            Names.HeaderText = "Name";
+            Names.MinimumWidth = 6;
+            Names.Name = "Names";
+            Names.ReadOnly = true;
+            Names.Width = 125;
+            // 
+            // Category
+            // 
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            Category.Width = 125;
             // 
             // Role
             // 
@@ -167,28 +171,24 @@
             Role.ReadOnly = true;
             Role.Width = 125;
             // 
-            // Category
+            // Duty
             // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            Category.Width = 125;
+            Duty.HeaderText = "Duty";
+            Duty.MinimumWidth = 6;
+            Duty.Name = "Duty";
+            Duty.ReadOnly = true;
+            Duty.Width = 125;
             // 
-            // Names
+            // Deadline
             // 
-            Names.HeaderText = "Name";
-            Names.MinimumWidth = 6;
-            Names.Name = "Names";
-            Names.ReadOnly = true;
-            Names.Width = 125;
-            // 
-            // Select
-            // 
-            Select.HeaderText = "Select";
-            Select.MinimumWidth = 6;
-            Select.Name = "Select";
-            Select.Width = 125;
+            dataGridViewCellStyle3.Format = "f";
+            dataGridViewCellStyle3.NullValue = null;
+            Deadline.DefaultCellStyle = dataGridViewCellStyle3;
+            Deadline.HeaderText = "Deadline";
+            Deadline.MinimumWidth = 6;
+            Deadline.Name = "Deadline";
+            Deadline.ReadOnly = true;
+            Deadline.Width = 150;
             // 
             // checkBox1
             // 

@@ -144,11 +144,11 @@ namespace DBS25P156
                 errorProvider2.Clear(); // Clear the error if selection is 
             }
 
-            if(string.IsNullOrEmpty(textBox1.Text))
+            if (comboBox1.SelectedIndex == -1)
             {
-                errorProvider1.SetError(textBox1, "Please Enter Name");
+                errorProvider1.SetError(comboBox1, "Please Enter Committee Name");
                 valid = false;
-                textBox1.Focus();
+                comboBox1.Focus();
             }
             else
             {
@@ -176,13 +176,23 @@ namespace DBS25P156
 
 
         // force user to enter name
-        private void textBox1_Leave(object sender, EventArgs e)
+
+        private void dataGridView1_Leave(object sender, EventArgs e)
+        {
+
+        }
+        private void comboBox1_Enter(object sender, EventArgs e)
+        {
+            label1.Font = new Font(label1.Font.FontFamily, 9);
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
         {
             label1.Font = new Font(label1.Font.FontFamily, 8);
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (comboBox1.SelectedIndex == -1)
             {
-                textBox1.Focus();
-                errorProvider1.SetError(textBox1, "Please Enter Name");
+                comboBox1.Focus();
+                errorProvider1.SetError(comboBox1, "Please Select Committee Name");
             }
             else
             {
@@ -190,9 +200,7 @@ namespace DBS25P156
             }
         }
 
-        private void dataGridView1_Leave(object sender, EventArgs e)
-        {
-        
-        }
+
+
     }
 }

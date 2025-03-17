@@ -385,8 +385,9 @@ namespace DBS25P156
         private void label2_Click(object sender, EventArgs e)
         {
             AdminCommitteeForm form = new AdminCommitteeForm();
-            this.Close();
+            this.Hide();
             form.ShowDialog();
+            this.Show();
         }
     }
 }
