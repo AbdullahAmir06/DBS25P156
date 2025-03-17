@@ -220,6 +220,7 @@ namespace DBS25P156
                 textBox6.Visible = false;
                 textBox7.Visible = false;
                 Fee.Location = new Point(20, 294);
+                Fee.Text = "500";
                 radioButton1.Location = new Point(20, 328);
                 radioButton2.Location = new Point(129, 328);
                 button1.Location = new Point(82, 381);

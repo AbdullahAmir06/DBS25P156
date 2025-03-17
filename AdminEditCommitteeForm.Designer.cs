@@ -185,9 +185,9 @@
             checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox1.Location = new Point(26, 118);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(176, 40);
+            checkBox1.Size = new Size(210, 40);
             checkBox1.TabIndex = 2;
-            checkBox1.Text = "Add Members";
+            checkBox1.Text = "Update Members";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
