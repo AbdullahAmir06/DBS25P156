@@ -15,10 +15,12 @@ namespace DBS25P156
 {
     public partial class Sign_Up : Form
     {
+        SignUpHandler signUpHandler;
         string Pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";    // check if the email is in the correct format i.e it contain in @ and .
         public Sign_Up()
         {
             InitializeComponent();
+            signUpHandler = new SignUpHandler();
         }
 
 
@@ -78,12 +80,17 @@ namespace DBS25P156
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+            else if (signUpHandler.UserCheck(UsernameTextBox.Text, EmailTextBox.Text) == false)
             {
                 button1.Enabled = false;
+                signUpHandler.AddUser( UsernameTextBox.Text, PasswordTextBox.Text, EmailTextBox.Text, comboBox1.SelectedItem.ToString());
                 MessageBox.Show("Account Created Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await Task.Delay(500);
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("User Already Exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -190,6 +197,3 @@ namespace DBS25P156
     }
 }
 
-
-
-// (Regex.IsMatch(textBox3.Text,Pattern)==false))

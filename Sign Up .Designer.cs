@@ -96,7 +96,7 @@
             comboBox1.BackColor = Color.LightGray;
             comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Student", "Faculty", "Sponser", "Vendor" });
+            comboBox1.Items.AddRange(new object[] { "Student", "Faculty", "Sponsor", "Vendor" });
             comboBox1.Location = new Point(20, 249);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 31);
