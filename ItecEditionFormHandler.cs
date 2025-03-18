@@ -10,7 +10,7 @@ namespace DBS25P156
     {
         public void AddEdition(int editionYear, string editionTheme, string editionDescription)
         {
-            string query = $"INSERT INTO itec_editions (year, theme, description) VALUES ('{editionYear}', '{editionTheme}', '{editionDescription}')";
+            string query = $"INSERT INTO itec_editions (year, theme, description) VALUES ({editionYear}, '{editionTheme}', '{editionDescription}')";
             DatabaseHelper.Instance.ExecuteQuery(query);
         }
 
@@ -22,8 +22,13 @@ namespace DBS25P156
 
         public bool CheckEdition(int editionYear)
         {
-            string query = $"SELECT COUNT(*) FROM itec_editions WHERE name = '{editionYear}'";
+            string query = $"SELECT COUNT(*) FROM itec_editions WHERE year = {editionYear}";
+
+            Console.WriteLine("Executing Query: " + query);
+
             int count = Convert.ToInt32(DatabaseHelper.Instance.CheckIfExists(query));
+
+            MessageBox.Show("Year Checked: " + editionYear + "\nSQL Count: " + count);
             return count > 0;
         }
 

@@ -148,9 +148,18 @@ namespace DBS25P156
             }
             else
             {
-                handler.DeleteEdition(Convert.ToInt32(comboBox2.SelectedItem));
-                MessageBox.Show("Edition Deleted Successfully");
-                LoadYearsIntoComboBox();
+                if (handler.CheckEdition(Convert.ToInt32(comboBox2.Text)))
+                {
+                    handler.DeleteEdition(Convert.ToInt32(comboBox2.SelectedItem));
+                    MessageBox.Show("Edition Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Edition Deleted Successfully");
+                    LoadYearsIntoComboBox();
+                }
+                else
+                {
+                    MessageBox.Show("Edition not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Edition not found");
+                }
             }
         }
 
@@ -253,15 +262,28 @@ namespace DBS25P156
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && dateTimePicker1 != null)
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && dateTimePicker1 != null)
             {
-                handler.AddEdition(Convert.ToInt32(dateTimePicker1.Value), textBox1.Text, textBox2.Text);
-                MessageBox.Show("Edition Added Successfully");
-                LoadYearsIntoComboBox();
+                if (handler.CheckEdition(dateTimePicker1.Value.Year))
+                {
+                    MessageBox.Show("Edition already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Edition already exists");
+                    return;
+                }
+                else
+                {
+                    handler.AddEdition((dateTimePicker1.Value.Year), textBox1.Text, textBox2.Text);
+                    //MessageBox.Show("Edition Added Successfully");
+                    MessageBox.Show("Edition Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    LoadYearsIntoComboBox();
+                }
             }
             else
             {
-                MessageBox.Show("Please fill all the fields");
+                //MessageBox.Show("Please fill all the fields");
+                MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

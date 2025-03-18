@@ -146,7 +146,10 @@ namespace DBS25P156
                 connection.Open();
                 using (var command = new MySqlCommand(query, connection))
                 {
-                    return command.ExecuteScalar() != null;
+                    //return command.ExecuteScalar() != null;
+                    object result = command.ExecuteScalar();
+                    int count = result != null ? Convert.ToInt32(result) : 0; // Ensure it's an integer
+                    return count > 0; // Only return true if count is greater than 0
                 }
             }
         }

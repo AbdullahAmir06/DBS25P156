@@ -303,12 +303,12 @@
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(24, 64);
             dateTimePicker1.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
-            dateTimePicker1.MinDate = new DateTime(2026, 1, 1, 0, 0, 0, 0);
+            dateTimePicker1.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.ShowUpDown = true;
             dateTimePicker1.Size = new Size(250, 33);
             dateTimePicker1.TabIndex = 14;
-            dateTimePicker1.Value = new DateTime(2026, 1, 1, 0, 0, 0, 0);
+            dateTimePicker1.Value = new DateTime(2025, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             dateTimePicker1.Leave += dateTimePicker1_Leave;
             // 
@@ -360,7 +360,7 @@
             groupBoxSelect.Controls.Add(label13);
             groupBoxSelect.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxSelect.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxSelect.Location = new Point(699, 121);
+            groupBoxSelect.Location = new Point(677, 121);
             groupBoxSelect.Name = "groupBoxSelect";
             groupBoxSelect.Size = new Size(412, 246);
             groupBoxSelect.TabIndex = 16;
