@@ -90,7 +90,7 @@ namespace DBS25P156
             }
             else
             {
-                MessageBox.Show("User Already Exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("User Already Exists with the same Username or Email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

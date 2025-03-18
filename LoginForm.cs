@@ -137,6 +137,9 @@ namespace DBS25P156
             }
             else if (loginHandler.ValidateUser(username, password))
             {
+                UserSession.UserLoginUserName_Email = username;
+                UserSession.UserLoginRoleID = loginHandler.GetRoleID(username);
+
                 if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
                 {
                     textBox2.Clear();

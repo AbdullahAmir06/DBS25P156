@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItecEditionForm));
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -50,12 +51,12 @@
             label9 = new Label();
             label8 = new Label();
             groupBoxSelect = new GroupBox();
+            comboBox1 = new ComboBox();
             button5 = new Button();
-            dateTimePicker2 = new DateTimePicker();
             label13 = new Label();
             groupBoxDelete = new GroupBox();
+            comboBox2 = new ComboBox();
             button6 = new Button();
-            dateTimePicker3 = new DateTimePicker();
             label11 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -65,6 +66,11 @@
             panel2 = new Panel();
             label15 = new Label();
             label14 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
+            errorProvider4 = new ErrorProvider(components);
+            errorProvider5 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,6 +81,11 @@
             groupBoxDelete.SuspendLayout();
             groupBox2.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -252,7 +263,7 @@
             groupBoxADD.Controls.Add(label8);
             groupBoxADD.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxADD.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxADD.Location = new Point(424, 167);
+            groupBoxADD.Location = new Point(311, 167);
             groupBoxADD.Name = "groupBoxADD";
             groupBoxADD.Size = new Size(430, 345);
             groupBoxADD.TabIndex = 6;
@@ -273,6 +284,7 @@
             button4.TabIndex = 10;
             button4.Text = "Add New Edition";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // textBox2
             // 
@@ -282,6 +294,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(367, 40);
             textBox2.TabIndex = 15;
+            textBox2.Leave += textBox2_Leave;
             // 
             // dateTimePicker1
             // 
@@ -289,13 +302,15 @@
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(24, 64);
-            dateTimePicker1.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dateTimePicker1.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
+            dateTimePicker1.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
+            dateTimePicker1.MinDate = new DateTime(2026, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.ShowUpDown = true;
             dateTimePicker1.Size = new Size(250, 33);
             dateTimePicker1.TabIndex = 14;
+            dateTimePicker1.Value = new DateTime(2026, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            dateTimePicker1.Leave += dateTimePicker1_Leave;
             // 
             // textBox1
             // 
@@ -305,6 +320,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(367, 40);
             textBox1.TabIndex = 11;
+            textBox1.Leave += textBox1_Leave;
             // 
             // label10
             // 
@@ -339,12 +355,12 @@
             // 
             // groupBoxSelect
             // 
+            groupBoxSelect.Controls.Add(comboBox1);
             groupBoxSelect.Controls.Add(button5);
-            groupBoxSelect.Controls.Add(dateTimePicker2);
             groupBoxSelect.Controls.Add(label13);
             groupBoxSelect.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxSelect.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxSelect.Location = new Point(379, 219);
+            groupBoxSelect.Location = new Point(699, 121);
             groupBoxSelect.Name = "groupBoxSelect";
             groupBoxSelect.Size = new Size(412, 246);
             groupBoxSelect.TabIndex = 16;
@@ -352,6 +368,16 @@
             groupBoxSelect.Text = "Edition Form";
             groupBoxSelect.Visible = false;
             groupBoxSelect.Enter += groupBoxSelect_Enter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(24, 65);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(249, 34);
+            comboBox1.TabIndex = 1;
             // 
             // button5
             // 
@@ -367,19 +393,6 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.CalendarMonthBackground = Color.LightGray;
-            dateTimePicker2.CustomFormat = "yyyy";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(24, 64);
-            dateTimePicker2.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dateTimePicker2.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.ShowUpDown = true;
-            dateTimePicker2.Size = new Size(250, 33);
-            dateTimePicker2.TabIndex = 14;
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -392,12 +405,12 @@
             // 
             // groupBoxDelete
             // 
+            groupBoxDelete.Controls.Add(comboBox2);
             groupBoxDelete.Controls.Add(button6);
-            groupBoxDelete.Controls.Add(dateTimePicker3);
             groupBoxDelete.Controls.Add(label11);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(379, 237);
+            groupBoxDelete.Location = new Point(766, 218);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(418, 248);
             groupBoxDelete.TabIndex = 17;
@@ -405,6 +418,16 @@
             groupBoxDelete.Text = "Edition Form";
             groupBoxDelete.Visible = false;
             groupBoxDelete.Enter += groupBoxDelete_Enter;
+            // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.LightGray;
+            comboBox2.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(24, 64);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(249, 34);
+            comboBox2.TabIndex = 11;
             // 
             // button6
             // 
@@ -419,19 +442,6 @@
             button6.Text = "Delete This Edition";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.CalendarMonthBackground = Color.LightGray;
-            dateTimePicker3.CustomFormat = "yyyy";
-            dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.Location = new Point(24, 64);
-            dateTimePicker3.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dateTimePicker3.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.ShowUpDown = true;
-            dateTimePicker3.Size = new Size(250, 33);
-            dateTimePicker3.TabIndex = 14;
             // 
             // label11
             // 
@@ -520,7 +530,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(328, 270);
+            panel2.Location = new Point(12, 518);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 19;
@@ -545,6 +555,26 @@
             label14.Size = new Size(0, 20);
             label14.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            errorProvider5.ContainerControl = this;
+            // 
             // ItecEditionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -555,8 +585,8 @@
             Controls.Add(label12);
             Controls.Add(groupBoxSelect);
             Controls.Add(groupBoxDelete);
-            Controls.Add(groupBox2);
             Controls.Add(groupBoxADD);
+            Controls.Add(groupBox2);
             Controls.Add(panel1);
             Name = "ItecEditionForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -577,6 +607,11 @@
             groupBox2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -609,15 +644,20 @@
         private GroupBox groupBox2;
         private GroupBox groupBoxSelect;
         private Button button5;
-        private DateTimePicker dateTimePicker2;
         private Label label13;
         private GroupBox groupBoxDelete;
         private Button button6;
-        private DateTimePicker dateTimePicker3;
         private Label label11;
         private Label label12;
         private Panel panel2;
         private Label label15;
         private Label label14;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
+        private ErrorProvider errorProvider4;
+        private ErrorProvider errorProvider5;
     }
 }
