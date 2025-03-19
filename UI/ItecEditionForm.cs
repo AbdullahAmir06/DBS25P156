@@ -8,17 +8,18 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.DAL;
+using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBS25P156.UI
 {
     public partial class ItecEditionForm : Form
     {
-        ItecEditionFormHandler handler;
+        EditionDAL handler = new EditionDAL();
         public ItecEditionForm()
         {
             InitializeComponent();
-            handler = new ItecEditionFormHandler();
         }
         private void ItecEditionForm_Load(object sender, EventArgs e)
         {
@@ -200,6 +201,10 @@ namespace DBS25P156.UI
             }
             else
             {
+                int selectedYear = Convert.ToInt32(comboBox1.SelectedItem);
+                int editionId = handler.GetEditionIdByYear(selectedYear);
+                UserSession.SelectedEdition(editionId);
+
                 AdminHomePageForm adminHomePageForm = new AdminHomePageForm();
                 this.Hide();
                 adminHomePageForm.ShowDialog();

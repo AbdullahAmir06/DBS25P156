@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBS25P156
+namespace DBS25P156.DAL
 {
-    public class ItecEditionFormHandler
+    public class EditionDAL
     {
         public void AddEdition(int editionYear, string editionTheme, string editionDescription)
         {
@@ -32,14 +32,24 @@ namespace DBS25P156
             return count > 0;
         }
 
-        public List <int> GetEdition()
+        public List<int> GetEdition()
         {
             string query = $"SELECT year FROM itec_editions";
-            List<object> columnValues =  DatabaseHelper.Instance.GetColumn(query);
+            List<object> columnValues = DatabaseHelper.Instance.GetColumn(query);
 
             List<int> editionYears = columnValues.Select(value => Convert.ToInt32(value)).ToList();
 
             return editionYears;
         }
-}
+
+        public int GetEditionIdByYear(int year)
+        {
+            string query = "SELECT itec_id FROM itec_editions WHERE year = @year";
+            object result = DatabaseHelper.Instance.GetSingleValue(query, new object[] { year });
+
+            return result != null ? Convert.ToInt32(result) : -1; // Return -1 if not found
+        }
+
+
+    }
 }
