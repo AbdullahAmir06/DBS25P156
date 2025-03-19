@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DBS25P156.BLL;
 
 namespace DBS25P156.UI
 {
     public partial class AdminEventPageForm : Form
     {
+        EventBLL eventBLL = new EventBLL();
         public AdminEventPageForm()
         {
             InitializeComponent();
@@ -221,6 +223,9 @@ namespace DBS25P156.UI
             else
             {
                 button2.Enabled = false;
+                //public bool CreateEvent(string name, string description, DateTime date, string categoryName, string venueName, string committeeName)
+
+                eventBLL.CreateEvent(textBox1.Text, textBox2.Text, dateTimePicker1.Value, comboBox1.Text, comboBox2.Text, comboBox7.Text);
                 MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await Task.Delay(500);
                 this.Close();
@@ -330,6 +335,10 @@ namespace DBS25P156.UI
             }
             else
             {
+                string name = comboBox3.Text;
+                string venue = comboBox4.Text;
+                DateTime date = dateTimePicker2.Value;
+                eventBLL.UpdateEvent(name,date,venue);
                 button5.Enabled = false;
                 MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

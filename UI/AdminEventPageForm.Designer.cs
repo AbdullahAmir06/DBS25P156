@@ -532,7 +532,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(828, 193);
+            groupBoxUpdate.Location = new Point(598, 73);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 313);
             groupBoxUpdate.TabIndex = 21;
@@ -625,7 +625,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(12, 680);
+            panel2.Location = new Point(16, 637);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 20;
@@ -661,7 +661,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(811, 468);
+            groupBoxDelete.Location = new Point(283, 339);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 313);
             groupBoxDelete.TabIndex = 23;
