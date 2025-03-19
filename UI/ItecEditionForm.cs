@@ -23,6 +23,7 @@ namespace DBS25P156.UI
         private void ItecEditionForm_Load(object sender, EventArgs e)
         {
             LoadYearsIntoComboBox();
+
             groupBoxSelect.Visible = false;
             groupBoxADD.Visible = false;
             groupBoxDelete.Visible = false;

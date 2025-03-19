@@ -8,6 +8,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.BLL;
+using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -17,11 +19,14 @@ namespace DBS25P156.UI
 {
     public partial class LoginForm : Form
     {
-        private LoginHandler loginHandler;
+        //private LoginHandler loginHandler;
+
+        private UserBLL userBLL = new UserBLL();
         public LoginForm()
         {
             InitializeComponent();
-            loginHandler = new LoginHandler();
+            //loginHandler = new LoginHandler();
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -32,8 +37,7 @@ namespace DBS25P156.UI
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            UserSession.UserLoginRoleID = 1;
+            UserSession.UserLoginRoleID = 1;    // this need to be changed this is used for reference only
         }
 
 
@@ -133,26 +137,30 @@ namespace DBS25P156.UI
                 this.Hide();
                 itecEditionForm.ShowDialog();
                 this.Show();
+                return;
 
             }
-            else if (loginHandler.ValidateUser(username, password))
-            {
-                UserSession.UserLoginUserName_Email = username;
-                UserSession.UserLoginRoleID = loginHandler.GetRoleID(username);
 
-                if (UserSession.UserLoginRoleID == 1 || UserSession.UserLoginRoleID == 2)
+            User user = userBLL.AuthenticateUser(username, password); // create user object which authenticates the user existance from database
+
+            if (user != null)
+            {
+                UserSession.UserLoginUserName = user.Username;
+                UserSession.UserLoginEmail = user.Email;
+                UserSession.UserLoginRoleID = user.RoleId;
+                textBox2.Clear();
+                textBox3.Clear();
+
+                if (user.RoleId == 1 || user.RoleId == 2)
                 {
-                    textBox2.Clear();
-                    textBox3.Clear();
                     UserHomePageForm userHomePageForm = new UserHomePageForm();
                     this.Hide();
                     userHomePageForm.ShowDialog();
                     this.Show();
                 }
-                else if (UserSession.UserLoginRoleID == 3 || UserSession.UserLoginRoleID == 4)
+                else if (user.RoleId == 3 || user.RoleId == 4)
                 {
-                    textBox2.Clear();
-                    textBox3.Clear();
+
                     Vendor_SponserHomePage vendorAndSponserHomePage = new Vendor_SponserHomePage();
                     this.Hide();
                     vendorAndSponserHomePage.ShowDialog();
@@ -163,7 +171,8 @@ namespace DBS25P156.UI
             {
                 MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+
     }
 }

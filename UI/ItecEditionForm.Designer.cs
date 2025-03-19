@@ -43,6 +43,9 @@
             label7 = new Label();
             label4 = new Label();
             groupBoxADD = new GroupBox();
+            panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
             button4 = new Button();
             textBox2 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
@@ -63,9 +66,6 @@
             button3 = new Button();
             groupBox2 = new GroupBox();
             label12 = new Label();
-            panel2 = new Panel();
-            label15 = new Label();
-            label14 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             errorProvider3 = new ErrorProvider(components);
@@ -77,10 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             groupBoxADD.SuspendLayout();
+            panel2.SuspendLayout();
             groupBoxSelect.SuspendLayout();
             groupBoxDelete.SuspendLayout();
             groupBox2.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
@@ -263,7 +263,7 @@
             groupBoxADD.Controls.Add(label8);
             groupBoxADD.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxADD.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxADD.Location = new Point(311, 167);
+            groupBoxADD.Location = new Point(379, 167);
             groupBoxADD.Name = "groupBoxADD";
             groupBoxADD.Size = new Size(430, 345);
             groupBoxADD.TabIndex = 6;
@@ -271,6 +271,36 @@
             groupBoxADD.Text = "Edition Form";
             groupBoxADD.Visible = false;
             groupBoxADD.Enter += groupBoxADD_Enter;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Location = new Point(322, 270);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(487, 155);
+            panel2.TabIndex = 19;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
+            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Location = new Point(39, 59);
+            label15.Name = "label15";
+            label15.Size = new Size(410, 36);
+            label15.TabIndex = 1;
+            label15.Text = "Select the option from the Left Menu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(51, 43);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 0;
             // 
             // button4
             // 
@@ -525,36 +555,6 @@
             label12.TabIndex = 18;
             label12.Text = "ITEC Edition Menu";
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(label14);
-            panel2.Location = new Point(12, 518);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(487, 155);
-            panel2.TabIndex = 19;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
-            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = SystemColors.ButtonHighlight;
-            label15.Location = new Point(39, 59);
-            label15.Name = "label15";
-            label15.Size = new Size(410, 36);
-            label15.TabIndex = 1;
-            label15.Text = "Select the option from the Left Menu";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(51, 43);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 20);
-            label14.TabIndex = 0;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -600,13 +600,13 @@
             panel1.PerformLayout();
             groupBoxADD.ResumeLayout(false);
             groupBoxADD.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             groupBoxSelect.ResumeLayout(false);
             groupBoxSelect.PerformLayout();
             groupBoxDelete.ResumeLayout(false);
             groupBoxDelete.PerformLayout();
             groupBox2.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();

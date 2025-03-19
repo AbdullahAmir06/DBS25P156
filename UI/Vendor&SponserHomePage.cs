@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace DBS25P156.UI
@@ -109,14 +110,14 @@ namespace DBS25P156.UI
 
         private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
         {
-            if (UserSession.UserLoginRoleID == 3)
+            if (UserSession.UserLoginRoleID == 4)
             {
                 groupBox2.Visible = false;
                 groupBox1.Visible = true;
                 this.Size = new Size(818, 497);
                 groupBox1.Location = new Point(203, 34);
             }
-            else if (UserSession.UserLoginRoleID == 4)
+            else if (UserSession.UserLoginRoleID == 3)
             {
                 groupBox1.Visible = false;
                 groupBox2.Visible = true;

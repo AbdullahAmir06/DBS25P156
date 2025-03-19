@@ -9,18 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-using System.Text.RegularExpressions; // To check for regular expression in email i.e @ and .
+using System.Text.RegularExpressions;
+using DBS25P156.BLL; // To check for regular expression in email i.e @ and .
 
 namespace DBS25P156.UI
 {
     public partial class Sign_Up : Form
     {
-        SignUpHandler signUpHandler;
+        //SignUpHandler signUpHandler;
+        private UserBLL userBLL = new UserBLL();
+
         string Pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";    // check if the email is in the correct format i.e it contain in @ and .
         public Sign_Up()
         {
             InitializeComponent();
-            signUpHandler = new SignUpHandler();
+            //signUpHandler = new SignUpHandler();
         }
 
 
@@ -79,19 +82,17 @@ namespace DBS25P156.UI
             if (string.IsNullOrWhiteSpace(EmailTextBox.Text) || string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text) || comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (signUpHandler.UserCheck(UsernameTextBox.Text, EmailTextBox.Text) == false)
-            {
-                button1.Enabled = false;
-                signUpHandler.AddUser( UsernameTextBox.Text, PasswordTextBox.Text, EmailTextBox.Text, comboBox1.SelectedItem.ToString());
-                MessageBox.Show("Account Created Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
-            }
-            else
+            else if (!userBLL.RegisterUser(UsernameTextBox.Text, EmailTextBox.Text, PasswordTextBox.Text,comboBox1.Text))
             {
                 MessageBox.Show("User Already Exists with the same Username or Email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            button1.Enabled = false;
+            MessageBox.Show("Account Created Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            await Task.Delay(500);
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

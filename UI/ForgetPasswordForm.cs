@@ -8,16 +8,19 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.BLL;
+using DBS25P156.Models;
 
 namespace DBS25P156.UI
 {
     public partial class ForgetPasswordForm : Form
     {
-        ForgetPasswordHandler forgetPasswordHandler;
+        //ForgetPasswordHandler forgetPasswordHandler;
+        UserBLL userBLL = new UserBLL();
         public ForgetPasswordForm()
         {
             InitializeComponent();
-            forgetPasswordHandler = new ForgetPasswordHandler();
+            //forgetPasswordHandler = new ForgetPasswordHandler();
 
         }
 
@@ -121,11 +124,11 @@ namespace DBS25P156.UI
             {
                 string username = textBox3.Text; // get the username from the textbox
                 string password = textBox2.Text; // get the password from the textbox
-                if (forgetPasswordHandler.UserCheck(username)) // check if user exists or not
+                if (userBLL.UpdatePassword(password, username)) // check if user exists or not
                 {
-                    UserSession.UserLoginUserName_Email = username; // store the userid or email in the session
+                    //UserSession.UserLoginUserName = username; // store the userid or email in the session
 
-                    forgetPasswordHandler.UpdatePassword(password); // update the password
+                    //forgetPasswordHandler.UpdatePassword(password); // update the password
                     button2.Enabled = false;
                     MessageBox.Show("Password Reset Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); // show success message
                     await Task.Delay(500); // wait for 500ms
