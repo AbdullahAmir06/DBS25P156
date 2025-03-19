@@ -24,11 +24,11 @@ namespace DBS25P156
         {
             string query = $"SELECT COUNT(*) FROM itec_editions WHERE year = {editionYear}";
 
-            Console.WriteLine("Executing Query: " + query);
+            //Console.WriteLine("Executing Query: " + query);
 
             int count = Convert.ToInt32(DatabaseHelper.Instance.CheckIfExists(query));
 
-            MessageBox.Show("Year Checked: " + editionYear + "\nSQL Count: " + count);
+            //MessageBox.Show("Year Checked: " + editionYear + "\nSQL Count: " + count);
             return count > 0;
         }
 

@@ -1,60 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="AdminCommitteeForm.cs">
+    <Compile Update="UI\AdminCommitteeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminCommitteeRegistrationForm.cs">
+    <Compile Update="UI\AdminCommitteeRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminEventPageForm.cs">
+    <Compile Update="UI\AdminEventPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminFinanceForm.cs">
+    <Compile Update="UI\AdminFinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminHomePageForm.cs">
+    <Compile Update="UI\AdminHomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminVenueForm.cs">
+    <Compile Update="UI\AdminVenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EventRegistrationForm.cs">
+    <Compile Update="UI\EventRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FacultyEventRegistrationForm.cs">
+    <Compile Update="UI\FacultyEventRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ForgetPasswordForm.cs">
+    <Compile Update="UI\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ItecEditionForm.cs">
+    <Compile Update="UI\ItecEditionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginForm.cs">
+    <Compile Update="UI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Sign Up .cs">
+    <Compile Update="UI\Sign Up .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserCommitteeForm.cs">
+    <Compile Update="UI\UserCommitteeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserEventForm.cs">
+    <Compile Update="UI\UserEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserHomePageForm.cs">
+    <Compile Update="UI\UserHomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserPaymentForm.cs">
+    <Compile Update="UI\UserPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Vendor&amp;SponserHomePage.cs">
+    <Compile Update="UI\Vendor&amp;SponserHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="UserEventForm.resx">
+    <EmbeddedResource Update="UI\UserEventForm.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
