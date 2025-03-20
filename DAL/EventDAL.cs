@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using DBS25P156.Models;
@@ -134,11 +135,11 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.GetColumn(query, new object[] { edition }).Select(e => e?.ToString() ?? "").ToList();
         }
 
-        public List<string> GetVenueNames()
-        {
-            string query = "SELECT venue_name FROM venues";
-            return DatabaseHelper.Instance.GetColumn(query).Select(e => e?.ToString() ?? "").ToList();
-        }
+        //public List<string> GetVenueNames()
+        //{
+        //    string query = "SELECT venue_name FROM venues";
+        //    return DatabaseHelper.Instance.GetColumn(query).Select(e => e?.ToString() ?? "").ToList();
+        //}
 
         //public List<Event> GetEventsByCategory(int categoryId)
         //{

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.BLL;
+using DBS25P156.Models;
 
 namespace DBS25P156.UI
 {
     public partial class AdminVenueForm : Form
     {
+        public Venue venue = new Venue(); // used only to fetch data from db
+        public VenueBLL venueBLL = new VenueBLL();
         public AdminVenueForm()
         {
             InitializeComponent();
@@ -19,7 +23,20 @@ namespace DBS25P156.UI
 
         private void AdminVenueForm_Load(object sender, EventArgs e)
         {
+            LoadVenuesIntoComboBox();
             panel2.Location = new System.Drawing.Point(342, 246);
+        }
+
+        private void LoadVenuesIntoComboBox()
+        {
+            List<string> Venue = venueBLL.GetVenueNames();
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            foreach (string venue in Venue)
+            {
+                comboBox1.Items.Add(venue);
+                comboBox2.Items.Add(venue);
+            }
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -102,13 +119,22 @@ namespace DBS25P156.UI
             }
             else
             {
-                MessageBox.Show("Venue Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string name = textBox1.Text;
+                int capacity = Convert.ToInt32(numericUpDown1.Value);
+                string address = textBox3.Text;
+
+                venueBLL.AddVenue(name, address, capacity);
+                textBox1.Clear();
+                textBox3.Clear();
+                numericUpDown1.Value = 0;
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            venue = venueBLL.GetVenueDetail(comboBox1.Text);
+            numericUpDown2.Value = venue.Capacity;
+            textBox2.Text = venue.Location.ToString();
         }
 
         private void comboBox1_Enter(object sender, EventArgs e)
@@ -176,7 +202,16 @@ namespace DBS25P156.UI
             }
             else
             {
+                string name = comboBox1.Text;
+                int capacity = Convert.ToInt32(numericUpDown2.Value);
+                string address = textBox2.Text;
+
+                venueBLL.UpdateVenue(name, address, capacity);
                 MessageBox.Show("Venue Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadVenuesIntoComboBox();
+                comboBox1.SelectedIndex = -1;
+                numericUpDown2.Value = 0;
+                textBox2.Clear();
             }
         }
 
@@ -212,12 +247,22 @@ namespace DBS25P156.UI
             }
             else
             {
+                string name = comboBox2.Text;
+                venueBLL.DeleteVenue(name);
+
                 MessageBox.Show("Venue Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadVenuesIntoComboBox();
+                comboBox2.SelectedIndex = -1;
+                numericUpDown3.Value = 0;
+                textBox4.Clear();
+
+
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LoadVenuesIntoComboBox();
             panel2.Visible = false;
             groupBox3.Visible = false;
             groupBox4.Visible = false;
@@ -228,6 +273,7 @@ namespace DBS25P156.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LoadVenuesIntoComboBox();
             panel2.Visible = false;
             groupBox1.Visible = false;
             groupBox4.Visible = false;
@@ -238,6 +284,7 @@ namespace DBS25P156.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            LoadVenuesIntoComboBox();
             panel2.Visible = false;
             groupBox1.Visible = false;
             groupBox3.Visible = false;
@@ -248,7 +295,9 @@ namespace DBS25P156.UI
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            venue = venueBLL.GetVenueDetail(comboBox2.Text);
+            numericUpDown3.Value = venue.Capacity;
+            textBox4.Text = venue.Location.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)

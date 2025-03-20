@@ -73,7 +73,7 @@
             label7.FlatStyle = FlatStyle.Flat;
             label7.Font = new Font("Poppins", 12F);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(820, 9);
+            label7.Location = new Point(1053, 6);
             label7.Name = "label7";
             label7.Size = new Size(97, 36);
             label7.TabIndex = 6;
@@ -100,14 +100,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 50);
+            panel1.Size = new Size(1151, 50);
             panel1.TabIndex = 6;
             // 
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(569, 9);
+            pictureBox4.Location = new Point(761, 8);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(27, 25);
             pictureBox4.TabIndex = 10;
@@ -117,7 +117,7 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(397, 9);
+            pictureBox3.Location = new Point(557, 8);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(27, 25);
             pictureBox3.TabIndex = 9;
@@ -127,7 +127,7 @@
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(282, 9);
+            pictureBox2.Location = new Point(408, 8);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(27, 25);
             pictureBox2.TabIndex = 8;
@@ -137,7 +137,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(174, 8);
+            pictureBox1.Location = new Point(275, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(27, 25);
             pictureBox1.TabIndex = 7;
@@ -150,7 +150,7 @@
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Poppins", 12F);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(310, 6);
+            label6.Location = new Point(436, 5);
             label6.Margin = new Padding(2);
             label6.Name = "label6";
             label6.Size = new Size(78, 36);
@@ -167,7 +167,7 @@
             label5.FlatStyle = FlatStyle.Flat;
             label5.Font = new Font("Poppins", 12F);
             label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(597, 6);
+            label5.Location = new Point(789, 5);
             label5.Margin = new Padding(2);
             label5.Name = "label5";
             label5.Size = new Size(94, 36);
@@ -180,7 +180,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(479, 0);
+            label4.Location = new Point(639, -1);
             label4.Name = "label4";
             label4.Size = new Size(0, 36);
             label4.TabIndex = 3;
@@ -192,7 +192,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Poppins", 12F);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(204, 6);
+            label3.Location = new Point(305, 6);
             label3.Margin = new Padding(2);
             label3.Name = "label3";
             label3.Size = new Size(72, 36);
@@ -209,7 +209,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Poppins", 12F);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(423, 6);
+            label2.Location = new Point(583, 5);
             label2.Margin = new Padding(2);
             label2.Name = "label2";
             label2.Size = new Size(138, 36);
@@ -234,7 +234,7 @@
             // 
             pictureBox7.Cursor = Cursors.Hand;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(66, 122);
+            pictureBox7.Location = new Point(83, 122);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(195, 149);
             pictureBox7.TabIndex = 16;
@@ -247,7 +247,7 @@
             // 
             pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(355, 122);
+            pictureBox5.Location = new Point(471, 122);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(195, 149);
             pictureBox5.TabIndex = 15;
@@ -260,7 +260,7 @@
             // 
             pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(650, 122);
+            pictureBox6.Location = new Point(857, 122);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(195, 149);
             pictureBox6.TabIndex = 14;
@@ -276,7 +276,7 @@
             label10.Cursor = Cursors.Hand;
             label10.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ActiveCaption;
-            label10.Location = new Point(649, 279);
+            label10.Location = new Point(856, 279);
             label10.Name = "label10";
             label10.Size = new Size(194, 50);
             label10.TabIndex = 13;
@@ -292,7 +292,7 @@
             label9.Cursor = Cursors.Hand;
             label9.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ActiveCaption;
-            label9.Location = new Point(317, 279);
+            label9.Location = new Point(433, 279);
             label9.Name = "label9";
             label9.Size = new Size(269, 50);
             label9.TabIndex = 12;
@@ -308,7 +308,7 @@
             label8.Cursor = Cursors.Hand;
             label8.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ActiveCaption;
-            label8.Location = new Point(71, 279);
+            label8.Location = new Point(88, 279);
             label8.Name = "label8";
             label8.Size = new Size(185, 50);
             label8.TabIndex = 11;
@@ -321,7 +321,7 @@
             // 
             pictureBox8.Cursor = Cursors.Hand;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(82, 357);
+            pictureBox8.Location = new Point(99, 357);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(195, 149);
             pictureBox8.TabIndex = 18;
@@ -337,7 +337,7 @@
             label11.Cursor = Cursors.Hand;
             label11.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ActiveCaption;
-            label11.Location = new Point(66, 509);
+            label11.Location = new Point(83, 509);
             label11.Name = "label11";
             label11.Size = new Size(184, 50);
             label11.TabIndex = 17;
@@ -350,7 +350,7 @@
             // 
             pictureBox9.Cursor = Cursors.Hand;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(355, 357);
+            pictureBox9.Location = new Point(471, 357);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(195, 149);
             pictureBox9.TabIndex = 20;
@@ -365,7 +365,7 @@
             label12.Cursor = Cursors.Hand;
             label12.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.ActiveCaption;
-            label12.Location = new Point(317, 509);
+            label12.Location = new Point(433, 509);
             label12.Name = "label12";
             label12.Size = new Size(262, 50);
             label12.TabIndex = 19;
@@ -377,7 +377,7 @@
             // 
             pictureBox10.Cursor = Cursors.Hand;
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(648, 357);
+            pictureBox10.Location = new Point(855, 357);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(195, 149);
             pictureBox10.TabIndex = 22;
@@ -392,7 +392,7 @@
             label13.Cursor = Cursors.Hand;
             label13.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = SystemColors.ActiveCaption;
-            label13.Location = new Point(642, 509);
+            label13.Location = new Point(849, 509);
             label13.Name = "label13";
             label13.Size = new Size(201, 50);
             label13.TabIndex = 21;
@@ -404,7 +404,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(914, 604);
+            ClientSize = new Size(1151, 604);
             Controls.Add(pictureBox10);
             Controls.Add(label13);
             Controls.Add(pictureBox9);

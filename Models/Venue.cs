@@ -27,6 +27,13 @@ namespace DBS25P156.Models
             Location = location;
             Capacity = capacity;
         }
-        
+        public Venue(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public Venue() { }
+
     }
 }

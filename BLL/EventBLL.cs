@@ -11,6 +11,7 @@ namespace DBS25P156.BLL
     public class EventBLL
     {
         private EventDAL eventDAL = new EventDAL();
+        private VenueDAL venueDAL = new VenueDAL();
         public bool CreateEvent(string name, string description, DateTime date, string categoryName, string venueName, string committeeName)
         {
             int categoryId = eventDAL.GetCategoryIdByName(categoryName);
@@ -88,7 +89,7 @@ namespace DBS25P156.BLL
 
         public List<string> GetVenueNames()
         {
-            return eventDAL.GetVenueNames();
+            return venueDAL.GetVenueNames();
         }
     }
 }

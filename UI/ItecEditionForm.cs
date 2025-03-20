@@ -104,6 +104,8 @@ namespace DBS25P156.UI
             groupBoxSelect.Visible = true;
             groupBoxSelect.BringToFront();
 
+            comboBox1.SelectedIndex = 0;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -291,6 +293,11 @@ namespace DBS25P156.UI
                 //MessageBox.Show("Please fill all the fields");
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

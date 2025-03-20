@@ -43,9 +43,6 @@
             label7 = new Label();
             label4 = new Label();
             groupBoxADD = new GroupBox();
-            panel2 = new Panel();
-            label15 = new Label();
-            label14 = new Label();
             button4 = new Button();
             textBox2 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
@@ -53,6 +50,9 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
+            panel2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
             groupBoxSelect = new GroupBox();
             comboBox1 = new ComboBox();
             button5 = new Button();
@@ -272,36 +272,6 @@
             groupBoxADD.Visible = false;
             groupBoxADD.Enter += groupBoxADD_Enter;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(label14);
-            panel2.Location = new Point(322, 270);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(487, 155);
-            panel2.TabIndex = 19;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
-            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = SystemColors.ButtonHighlight;
-            label15.Location = new Point(39, 59);
-            label15.Name = "label15";
-            label15.Size = new Size(410, 36);
-            label15.TabIndex = 1;
-            label15.Text = "Select the option from the Left Menu";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(51, 43);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 20);
-            label14.TabIndex = 0;
-            // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(150, 84, 73, 115);
@@ -383,6 +353,36 @@
             label8.Text = "Year";
             label8.Click += label8_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(label14);
+            panel2.Location = new Point(322, 270);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(487, 155);
+            panel2.TabIndex = 19;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(0, 68, 79, 73);
+            label15.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ButtonHighlight;
+            label15.Location = new Point(39, 59);
+            label15.Name = "label15";
+            label15.Size = new Size(410, 36);
+            label15.TabIndex = 1;
+            label15.Text = "Select the option from the Left Menu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(51, 43);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 0;
+            // 
             // groupBoxSelect
             // 
             groupBoxSelect.Controls.Add(comboBox1);
@@ -408,6 +408,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(249, 34);
             comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged_1;
             // 
             // button5
             // 

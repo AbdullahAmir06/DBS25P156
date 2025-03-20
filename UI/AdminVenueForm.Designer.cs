@@ -47,6 +47,14 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            groupBox4 = new GroupBox();
+            comboBox2 = new ComboBox();
+            button5 = new Button();
+            numericUpDown3 = new NumericUpDown();
+            textBox4 = new TextBox();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
             panel2 = new Panel();
             label15 = new Label();
             label14 = new Label();
@@ -72,14 +80,6 @@
             errorProvider4 = new ErrorProvider(components);
             errorProvider5 = new ErrorProvider(components);
             errorProvider6 = new ErrorProvider(components);
-            groupBox4 = new GroupBox();
-            comboBox2 = new ComboBox();
-            button5 = new Button();
-            numericUpDown3 = new NumericUpDown();
-            textBox4 = new TextBox();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
             errorProvider7 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -87,6 +87,8 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox2.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -98,8 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider6).BeginInit();
-            groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider7).BeginInit();
             SuspendLayout();
             // 
@@ -330,6 +330,101 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(comboBox2);
+            groupBox4.Controls.Add(button5);
+            groupBox4.Controls.Add(numericUpDown3);
+            groupBox4.Controls.Add(textBox4);
+            groupBox4.Controls.Add(label17);
+            groupBox4.Controls.Add(label18);
+            groupBox4.Controls.Add(label19);
+            groupBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox4.ForeColor = SystemColors.ButtonHighlight;
+            groupBox4.Location = new Point(376, 252);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(407, 345);
+            groupBox4.TabIndex = 24;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Delete Venue";
+            groupBox4.Visible = false;
+            // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.LightGray;
+            comboBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(12, 61);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(193, 38);
+            comboBox2.TabIndex = 0;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            comboBox2.Enter += comboBox2_Enter;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.LightGray;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = SystemColors.ActiveCaptionText;
+            button5.Location = new Point(88, 260);
+            button5.Name = "button5";
+            button5.Size = new Size(241, 37);
+            button5.TabIndex = 3;
+            button5.Text = "Delete Venue";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.BackColor = Color.LightGray;
+            numericUpDown3.Enabled = false;
+            numericUpDown3.Location = new Point(12, 126);
+            numericUpDown3.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(150, 33);
+            numericUpDown3.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.LightGray;
+            textBox4.Enabled = false;
+            textBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox4.Location = new Point(14, 201);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(307, 33);
+            textBox4.TabIndex = 2;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Location = new Point(18, 172);
+            label17.Name = "label17";
+            label17.Size = new Size(65, 23);
+            label17.TabIndex = 4;
+            label17.Text = "Location";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(14, 100);
+            label18.Name = "label18";
+            label18.Size = new Size(70, 23);
+            label18.TabIndex = 2;
+            label18.Text = "Capacity";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(18, 36);
+            label19.Name = "label19";
+            label19.Size = new Size(49, 23);
+            label19.TabIndex = 0;
+            label19.Text = "Name";
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
@@ -397,6 +492,7 @@
             // 
             numericUpDown1.BackColor = Color.LightGray;
             numericUpDown1.Location = new Point(16, 126);
+            numericUpDown1.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 33);
             numericUpDown1.TabIndex = 2;
@@ -469,7 +565,7 @@
             groupBox3.Controls.Add(label16);
             groupBox3.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox3.ForeColor = SystemColors.ButtonHighlight;
-            groupBox3.Location = new Point(398, 200);
+            groupBox3.Location = new Point(412, 191);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(407, 345);
             groupBox3.TabIndex = 23;
@@ -480,11 +576,11 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(12, 61);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(163, 31);
+            comboBox1.Size = new Size(193, 38);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;
@@ -508,6 +604,7 @@
             // 
             numericUpDown2.BackColor = Color.LightGray;
             numericUpDown2.Location = new Point(12, 126);
+            numericUpDown2.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(150, 33);
             numericUpDown2.TabIndex = 1;
@@ -580,100 +677,6 @@
             // 
             errorProvider6.ContainerControl = this;
             // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(comboBox2);
-            groupBox4.Controls.Add(button5);
-            groupBox4.Controls.Add(numericUpDown3);
-            groupBox4.Controls.Add(textBox4);
-            groupBox4.Controls.Add(label17);
-            groupBox4.Controls.Add(label18);
-            groupBox4.Controls.Add(label19);
-            groupBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox4.ForeColor = SystemColors.ButtonHighlight;
-            groupBox4.Location = new Point(340, 239);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(407, 345);
-            groupBox4.TabIndex = 24;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Delete Venue";
-            groupBox4.Visible = false;
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = Color.LightGray;
-            comboBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 61);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(163, 31);
-            comboBox2.TabIndex = 0;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            comboBox2.Enter += comboBox2_Enter;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.LightGray;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ActiveCaptionText;
-            button5.Location = new Point(88, 260);
-            button5.Name = "button5";
-            button5.Size = new Size(241, 37);
-            button5.TabIndex = 3;
-            button5.Text = "Delete Venue";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.BackColor = Color.LightGray;
-            numericUpDown3.Enabled = false;
-            numericUpDown3.Location = new Point(12, 126);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(150, 33);
-            numericUpDown3.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.LightGray;
-            textBox4.Enabled = false;
-            textBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(14, 201);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(307, 33);
-            textBox4.TabIndex = 2;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.Location = new Point(18, 172);
-            label17.Name = "label17";
-            label17.Size = new Size(65, 23);
-            label17.TabIndex = 4;
-            label17.Text = "Location";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(14, 100);
-            label18.Name = "label18";
-            label18.Size = new Size(70, 23);
-            label18.TabIndex = 2;
-            label18.Text = "Capacity";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label19.Location = new Point(18, 36);
-            label19.Name = "label19";
-            label19.Size = new Size(49, 23);
-            label19.TabIndex = 0;
-            label19.Text = "Name";
-            // 
             // errorProvider7
             // 
             errorProvider7.ContainerControl = this;
@@ -702,6 +705,9 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox2.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -716,9 +722,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider6).EndInit();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider7).EndInit();
             ResumeLayout(false);
             PerformLayout();
