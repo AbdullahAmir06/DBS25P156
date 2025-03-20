@@ -29,6 +29,7 @@ namespace DBS25P156.DAL
 
             return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name }));
         }
+        
 
         public Venue GetVenueById(int id)
         {

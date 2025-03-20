@@ -14,6 +14,7 @@ namespace DBS25P156.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
+        public DateTime Time {  get; set; }
         public int EditionId { get; set; }
         public int CategoryId { get; set; }   
         public int VenueId { get; set; }
@@ -25,6 +26,18 @@ namespace DBS25P156.Models
             Name = name;
             Description = description;
             Date = date;
+            EditionId = editionId;
+            CategoryId = categoId;
+            VenueId = venueId;
+            CommitteeID = committeeID;
+        }
+        public Event(int id, string name, string description, DateTime date,DateTime time, int editionId, int categoId, int venueId, int committeeID) // when access data from db
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Date = date;
+            Time = time;
             EditionId = editionId;
             CategoryId = categoId;
             VenueId = venueId;

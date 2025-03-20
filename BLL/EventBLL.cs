@@ -12,19 +12,28 @@ namespace DBS25P156.BLL
     {
         private EventDAL eventDAL = new EventDAL();
         private VenueDAL venueDAL = new VenueDAL();
-        public bool CreateEvent(string name, string description, DateTime date, string categoryName, string venueName, string committeeName)
+
+
+        public bool CreateEvent(string name, string description, DateTime date,DateTime time, string categoryName, string venueName, string committeeName)
         {
             int categoryId = eventDAL.GetCategoryIdByName(categoryName);
             int venueId = eventDAL.GetVenueIdByName(venueName);
-            int committeeID = eventDAL.GetCommitteeIdByName(committeeName);
             int editionId = UserSession.SelectedEditionID;
+            int committeeID = eventDAL.GetCommitteeIdByName(committeeName, editionId);
 
-            if(!eventDAL.ConflictCheck(venueId, date))
+            string dateOnly = date.ToString("yyyy-MM-dd");
+            //string timeOnly = date.ToString("HH:mm:ss");
+            string timeOnly = time.ToString("HH:mm:ss");
+
+            if (!eventDAL.ConflictCheck(venueId, date,time))
             {
                 Event newEvent = new Event(name, description, date, editionId, categoryId, venueId, committeeID);
                 if (!eventDAL.CheckEventExists(newEvent))
                 {
-                    return eventDAL.AddEvent(newEvent);
+                    eventDAL.AddEvent(newEvent);
+                    int eventId = eventDAL.GetEventId(name);
+
+                    return eventDAL.VenueAllocation(eventId, venueId, dateOnly, timeOnly);
                 }
                 MessageBox.Show("Event already exists with the same name", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -45,7 +54,7 @@ namespace DBS25P156.BLL
             return false;
         }
 
-        public bool UpdateEvent(string name, DateTime date, string venueName)
+        public bool UpdateEvent(string name, DateTime date,DateTime time, string venueName)
         {
             int venueId = eventDAL.GetVenueIdByName(venueName);
             int eventId = eventDAL.GetEventId(name);
@@ -53,10 +62,10 @@ namespace DBS25P156.BLL
             int eventID = eventDAL.GetEventId(name);
             //Event @event = eventDAL.GetEventById(eventID);
 
-            if (!eventDAL.ConflictCheck(venueId, date))
+            if (!eventDAL.ConflictCheck(venueId, date,time))
             {
 
-                Event newEvent = new Event(eventId, name, "", date, 0, 0, venueId, 0);
+                Event newEvent = new Event(eventId, name, "", date,time, 0, 0, venueId, 0);
 
                 if (eventDAL.CheckEventExists(newEvent))
                 {
@@ -82,6 +91,14 @@ namespace DBS25P156.BLL
             return eventDAL.DeleteEvent(newEvent);
         }
 
+        public Event GetSingleEvent(string name)
+        {
+            int eventId = eventDAL.GetEventId(name);
+            return eventDAL.GetEventById(eventId);
+        }
+
+
+
         public List<string> GetEventNames()
         {
             return eventDAL.GetEventNamesByItecEdition(UserSession.SelectedEditionID);
@@ -91,5 +108,23 @@ namespace DBS25P156.BLL
         {
             return venueDAL.GetVenueNames();
         }
+
+        public string GetSingleVenueName(int venueId)
+        {
+            Venue venue = venueDAL.GetVenueById(venueId);
+            return venue != null ? venue.Name : null;
+        }
+
+        public List<string> GetCommitteeNames() // move to committee dal
+        {
+            return eventDAL.GetCommitteeName(UserSession.SelectedEditionID);
+        }
+
+        public List<string> GetEventCategory()
+        {
+            return eventDAL.GetEventCategories();
+        }
+
+
     }
 }

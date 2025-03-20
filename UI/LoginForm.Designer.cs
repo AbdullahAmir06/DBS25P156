@@ -79,7 +79,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Poppins", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(115, 301);
+            label2.Location = new Point(115, 304);
             label2.Name = "label2";
             label2.Size = new Size(207, 26);
             label2.TabIndex = 6;

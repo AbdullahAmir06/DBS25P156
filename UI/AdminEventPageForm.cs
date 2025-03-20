@@ -9,15 +9,63 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DBS25P156.BLL;
+using DBS25P156.Models;
+using DBS25P156.DAL;
 
 namespace DBS25P156.UI
 {
     public partial class AdminEventPageForm : Form
     {
+        Event newEvent = new Event();   //used to fetch data from db
+
         EventBLL eventBLL = new EventBLL();
+        //VenueBLL venueBLL = new VenueBLL();
         public AdminEventPageForm()
         {
             InitializeComponent();
+        }
+
+        public void LoadDataIntoComboBoxes()
+        {
+
+            //List<string> Venue = venueBLL.GetVenueNames();
+            //comboBox1.Items.Clear();
+            //comboBox2.Items.Clear();
+            //foreach (string venue in Venue)
+            //{
+            //    comboBox1.Items.Add(venue);
+            //    comboBox2.Items.Add(venue);
+            //}
+
+            //comboBox1.Items.Clear();
+            //comboBox2.Items.Clear();
+            //comboBox3.Items.Clear();
+            //comboBox5.Items.Clear();
+            //comboBox4.Items.Clear();
+            //comboBox6.Items.Clear();
+            //comboBox7.Items.Clear();
+            comboBox1.DataSource = eventBLL.GetEventCategory();
+            comboBox2.DataSource = eventBLL.GetVenueNames();
+            comboBox3.DataSource = eventBLL.GetEventNames();
+            comboBox4.DataSource = eventBLL.GetVenueNames();
+            comboBox5.DataSource = eventBLL.GetVenueNames();
+            comboBox6.DataSource = eventBLL.GetEventNames();
+            comboBox7.DataSource = eventBLL.GetCommitteeNames();
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            comboBox4.SelectedIndex = -1;
+            comboBox6.SelectedIndex = -1;
+            comboBox7.SelectedIndex = -1;
+        }
+
+
+
+        private void AdminEventPageForm_Load(object sender, EventArgs e)
+        {
+            panel2.Location = new Point(340, 323);
+            LoadDataIntoComboBoxes();
+
         }
 
         private void label7_MouseHover(object sender, EventArgs e)
@@ -69,16 +117,18 @@ namespace DBS25P156.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LoadDataIntoComboBoxes();
             panel2.Visible = false;
             groupBoxDelete.Visible = false;
             groupBoxUpdate.Visible = false;
 
             groupBoxAdd.Visible = true;
-            groupBoxAdd.Location = new Point(362, 174);
+            groupBoxAdd.Location = new Point(362, 170);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LoadDataIntoComboBoxes();
             panel2.Visible = false;
             groupBoxAdd.Visible = false;
             groupBoxDelete.Visible = false;
@@ -89,6 +139,7 @@ namespace DBS25P156.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            LoadDataIntoComboBoxes();
             panel2.Visible = false;
             groupBoxUpdate.Visible = false;
             groupBoxAdd.Visible = false;
@@ -209,10 +260,6 @@ namespace DBS25P156.UI
             }
         }
 
-        private void AdminEventPageForm_Load(object sender, EventArgs e)
-        {
-            panel2.Location = new Point(340, 323);
-        }
 
         private async void button4_Click(object sender, EventArgs e)
         {
@@ -222,13 +269,20 @@ namespace DBS25P156.UI
             }
             else
             {
-                button2.Enabled = false;
+                //button4.Enabled = false;
                 //public bool CreateEvent(string name, string description, DateTime date, string categoryName, string venueName, string committeeName)
 
-                eventBLL.CreateEvent(textBox1.Text, textBox2.Text, dateTimePicker1.Value, comboBox1.Text, comboBox2.Text, comboBox7.Text);
+                eventBLL.CreateEvent(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker4.Value, comboBox1.Text, comboBox2.Text, comboBox7.Text);
                 MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                LoadDataIntoComboBoxes();
+                textBox1.Clear();
+                textBox2.Clear();
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                comboBox7.SelectedIndex = -1;
+                dateTimePicker1.Value = DateTime.Now;
+                //await Task.Delay(500);
+                //this.Close();
 
             }
         }
@@ -255,7 +309,9 @@ namespace DBS25P156.UI
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //newEvent = eventBLL.GetSingleEvent(comboBox6.Text);
+            //comboBox5.Text = eventBLL.GetSingleVenueName(newEvent.VenueId);
+            //dateTimePicker3.Value = newEvent.Date;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -266,9 +322,12 @@ namespace DBS25P156.UI
             }
             else
             {
-                button6.Enabled = false;
+                //button6.Enabled = false;
+                eventBLL.DeleteEvent(comboBox6.Text);
                 MessageBox.Show("Event Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                LoadDataIntoComboBoxes();
+                comboBox6.SelectedIndex = -1;
+                //this.Close();
             }
         }
 
@@ -338,10 +397,16 @@ namespace DBS25P156.UI
                 string name = comboBox3.Text;
                 string venue = comboBox4.Text;
                 DateTime date = dateTimePicker2.Value;
-                eventBLL.UpdateEvent(name, date, venue);
-                button5.Enabled = false;
+                DateTime time = dateTimePicker5.Value;
+                eventBLL.UpdateEvent(name, date, time, venue);
+                //button5.Enabled = false;
                 MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                LoadDataIntoComboBoxes();
+                comboBox3.SelectedIndex = -1;
+                comboBox4.SelectedIndex = -1;
+                dateTimePicker2.Value = DateTime.Now;
+
+                //this.Close();
             }
         }
 
@@ -402,6 +467,70 @@ namespace DBS25P156.UI
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        //private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    newEvent = eventBLL.GetSingleEvent(comboBox3.Text);
+        //    comboBox4.Text = eventBLL.GetSingleVenueName(newEvent.VenueId);
+        //    dateTimePicker2.Value = newEvent.Date;
+        //}
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Fetch event details
+            //newEvent = eventBLL.GetSingleEvent(comboBox3.Text);
+
+            //if (newEvent != null)  // Check if newEvent is null
+            //{
+            //    // Assign Venue Name safely
+            //    if (newEvent.VenueId != null)
+            //    {
+            //        comboBox4.Text = eventBLL.GetSingleVenueName(newEvent.VenueId);
+            //    }
+            //    else
+            //    {
+            //        comboBox4.Text = "Venue Not Found";
+            //    }
+
+            //    // Assign Date to DateTimePicker safely
+            //    if (newEvent.Date != DateTime.MinValue) // Ensure the date is valid
+            //    {
+            //        dateTimePicker2.Value = newEvent.Date;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid Date! Please check the event details.");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Event not found! Please check the selected item.");
+            //}
+        }
+
+        private void dateTimePicker4_Enter(object sender, EventArgs e)
+        {
+            label23.Font = new Font(label23.Font.FontFamily, 9);
+        }
+
+        private void dateTimePicker4_Leave(object sender, EventArgs e)
+        {
+            label23.Font = new Font(label23.Font.FontFamily, 8);
+        }
+
+        private void dateTimePicker5_Enter(object sender, EventArgs e)
+        {
+            label24.Font = new Font(label24.Font.FontFamily, 9);
+        }
+
+        private void dateTimePicker5_Leave(object sender, EventArgs e)
+        {
+            label24.Font = new Font(label24.Font.FontFamily, 8);
         }
     }
 }
