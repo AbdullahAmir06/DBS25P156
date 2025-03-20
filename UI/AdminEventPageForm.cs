@@ -338,7 +338,7 @@ namespace DBS25P156.UI
                 string name = comboBox3.Text;
                 string venue = comboBox4.Text;
                 DateTime date = dateTimePicker2.Value;
-                eventBLL.UpdateEvent(name,date,venue);
+                eventBLL.UpdateEvent(name, date, venue);
                 button5.Enabled = false;
                 MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -397,6 +397,11 @@ namespace DBS25P156.UI
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -250,5 +250,31 @@ namespace DBS25P156.UI
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            AdminEventPageForm adminEventPageForm = new AdminEventPageForm();
+            this.Hide();
+            adminEventPageForm.ShowDialog();
+            this.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AdminCommitteeForm adminCommitteeForm = new AdminCommitteeForm();
+            this.Hide();
+            adminCommitteeForm.ShowDialog();
+            this.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -145,6 +145,7 @@
             label7.Size = new Size(97, 36);
             label7.TabIndex = 6;
             label7.Text = "LOGOUT";
+            label7.Click += label7_Click;
             // 
             // label6
             // 
@@ -159,6 +160,7 @@
             label6.Size = new Size(78, 36);
             label6.TabIndex = 5;
             label6.Text = "Events";
+            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -187,6 +189,7 @@
             label3.Size = new Size(72, 36);
             label3.TabIndex = 2;
             label3.Text = "HOME";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -201,6 +204,7 @@
             label2.Size = new Size(138, 36);
             label2.TabIndex = 1;
             label2.Text = "Committees";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -688,6 +692,7 @@
             Controls.Add(groupBox2);
             Controls.Add(panel1);
             Name = "AdminVenueForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminVenueForm";
             Load += AdminVenueForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

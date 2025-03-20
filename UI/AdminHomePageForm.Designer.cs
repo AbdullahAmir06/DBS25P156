@@ -47,6 +47,12 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
+            pictureBox8 = new PictureBox();
+            label11 = new Label();
+            pictureBox9 = new PictureBox();
+            label12 = new Label();
+            pictureBox10 = new PictureBox();
+            label13 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -55,6 +61,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -64,7 +73,7 @@
             label7.FlatStyle = FlatStyle.Flat;
             label7.Font = new Font("Poppins", 12F);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(793, 7);
+            label7.Location = new Point(820, 9);
             label7.Name = "label7";
             label7.Size = new Size(97, 36);
             label7.TabIndex = 6;
@@ -91,7 +100,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(893, 50);
+            panel1.Size = new Size(914, 50);
             panel1.TabIndex = 6;
             // 
             // pictureBox4
@@ -238,7 +247,7 @@
             // 
             pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(344, 122);
+            pictureBox5.Location = new Point(355, 122);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(195, 149);
             pictureBox5.TabIndex = 15;
@@ -251,7 +260,7 @@
             // 
             pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(628, 122);
+            pictureBox6.Location = new Point(650, 122);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(195, 149);
             pictureBox6.TabIndex = 14;
@@ -267,7 +276,7 @@
             label10.Cursor = Cursors.Hand;
             label10.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ActiveCaption;
-            label10.Location = new Point(627, 279);
+            label10.Location = new Point(649, 279);
             label10.Name = "label10";
             label10.Size = new Size(194, 50);
             label10.TabIndex = 13;
@@ -283,7 +292,7 @@
             label9.Cursor = Cursors.Hand;
             label9.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ActiveCaption;
-            label9.Location = new Point(306, 279);
+            label9.Location = new Point(317, 279);
             label9.Name = "label9";
             label9.Size = new Size(269, 50);
             label9.TabIndex = 12;
@@ -308,12 +317,100 @@
             label8.MouseLeave += label8_MouseLeave;
             label8.MouseHover += label8_MouseHover;
             // 
+            // pictureBox8
+            // 
+            pictureBox8.Cursor = Cursors.Hand;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(82, 357);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(195, 149);
+            pictureBox8.TabIndex = 18;
+            pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
+            pictureBox8.MouseLeave += pictureBox8_MouseLeave;
+            pictureBox8.MouseHover += pictureBox8_MouseHover;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Cursor = Cursors.Hand;
+            label11.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = SystemColors.ActiveCaption;
+            label11.Location = new Point(66, 509);
+            label11.Name = "label11";
+            label11.Size = new Size(184, 50);
+            label11.TabIndex = 17;
+            label11.Text = "View Venue";
+            label11.Click += label11_Click;
+            label11.MouseLeave += label11_MouseLeave;
+            label11.MouseHover += label11_MouseHover;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Cursor = Cursors.Hand;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(355, 357);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(195, 149);
+            pictureBox9.TabIndex = 20;
+            pictureBox9.TabStop = false;
+            pictureBox9.MouseLeave += pictureBox9_MouseLeave;
+            pictureBox9.MouseHover += pictureBox9_MouseHover;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Cursor = Cursors.Hand;
+            label12.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = SystemColors.ActiveCaption;
+            label12.Location = new Point(317, 509);
+            label12.Name = "label12";
+            label12.Size = new Size(262, 50);
+            label12.TabIndex = 19;
+            label12.Text = "View Participants";
+            label12.MouseLeave += label12_MouseLeave;
+            label12.MouseHover += label12_MouseHover;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Cursor = Cursors.Hand;
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(648, 357);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(195, 149);
+            pictureBox10.TabIndex = 22;
+            pictureBox10.TabStop = false;
+            pictureBox10.MouseLeave += pictureBox10_MouseLeave;
+            pictureBox10.MouseHover += pictureBox10_MouseHover;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Cursor = Cursors.Hand;
+            label13.Font = new Font("Poppins", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = SystemColors.ActiveCaption;
+            label13.Location = new Point(642, 509);
+            label13.Name = "label13";
+            label13.Size = new Size(201, 50);
+            label13.TabIndex = 21;
+            label13.Text = "View Reports";
+            label13.Click += label13_Click;
+            // 
             // AdminHomePageForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(893, 431);
+            ClientSize = new Size(914, 604);
+            Controls.Add(pictureBox10);
+            Controls.Add(label13);
+            Controls.Add(pictureBox9);
+            Controls.Add(label12);
+            Controls.Add(pictureBox8);
+            Controls.Add(label11);
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox6);
@@ -334,6 +431,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -358,5 +458,11 @@
         private Label label10;
         private Label label9;
         private Label label8;
+        private PictureBox pictureBox8;
+        private Label label11;
+        private PictureBox pictureBox9;
+        private Label label12;
+        private PictureBox pictureBox10;
+        private Label label13;
     }
 }

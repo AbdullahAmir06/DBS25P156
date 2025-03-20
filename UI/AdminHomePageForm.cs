@@ -225,7 +225,7 @@ namespace DBS25P156.UI
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-            AdminCommitteeForm adminCommitteeForm = new AdminCommitteeForm();   
+            AdminCommitteeForm adminCommitteeForm = new AdminCommitteeForm();
             this.Hide();
             adminCommitteeForm.ShowDialog();
             this.Show();
@@ -240,6 +240,79 @@ namespace DBS25P156.UI
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox8.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\location-pin-ezgif.com-resize.gif");
+            label11.Font = new Font(label8.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+        private void pictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox8.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\location.png");
+            label11.Font = new Font(label11.Font, FontStyle.Regular);
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            label11_Click(sender, e);
+        }
+
+        private void pictureBox9_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox9.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\process-ezgif.com-gif-maker.gif");
+            label12.Font = new Font(label12.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void pictureBox9_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox9.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\process.png");
+            label12.Font = new Font(label12.Font, FontStyle.Regular);
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            AdminVenueForm adminVenueForm = new AdminVenueForm();
+            this.Hide();
+            adminVenueForm.ShowDialog();
+            this.Show();
+        }
+
+        private void label11_MouseHover(object sender, EventArgs e)
+        {
+            label11.Font = new Font(label11.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void label11_MouseLeave(object sender, EventArgs e)
+        {
+            label11.Font = new Font(label11.Font, FontStyle.Regular);
+        }
+
+        private void label12_MouseHover(object sender, EventArgs e)
+        {
+            label12.Font = new Font(label12.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void label12_MouseLeave(object sender, EventArgs e)
+        {
+            label12.Font = new Font(label12.Font, FontStyle.Regular);
+        }
+
+        private void pictureBox10_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox10.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\report-ezgif.com-resize.gif");
+            label13.Font = new Font(label13.Font, FontStyle.Bold | FontStyle.Underline);
+        }
+
+        private void pictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox10.Image = Image.FromFile(@"D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\profs\report.png");
+            label13.Font = new Font(label13.Font, FontStyle.Regular);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }
