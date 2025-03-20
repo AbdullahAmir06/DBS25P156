@@ -400,7 +400,7 @@ namespace DBS25P156.UI
                 DateTime time = dateTimePicker5.Value;
                 eventBLL.UpdateEvent(name, date, time, venue);
                 //button5.Enabled = false;
-                MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataIntoComboBoxes();
                 comboBox3.SelectedIndex = -1;
                 comboBox4.SelectedIndex = -1;

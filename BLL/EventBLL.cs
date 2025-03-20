@@ -69,6 +69,7 @@ namespace DBS25P156.BLL
 
                 if (eventDAL.CheckEventExists(newEvent))
                 {
+                    MessageBox.Show("Event Updated Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return eventDAL.UpdateEvent(newEvent);
                 }
                 else
