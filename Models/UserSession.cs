@@ -13,7 +13,7 @@ namespace DBS25P156.Models
 
         public static string UserLoginEmail { get; set; }
 
-        public static int SelectedEditionID { get; set; } 
+        public static int SelectedEditionID { get; private set; } = -1;
 
         public static void SelectedEdition(int editionID)
         {
