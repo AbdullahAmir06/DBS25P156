@@ -62,6 +62,7 @@ namespace DBS25P156.UI
                 DataTable dt = committeeDAL.GetCommitteeData(committeeId);
 
 
+
                 if (dt == null)
                 {
                     MessageBox.Show("Failed to fetch data. Please check your database connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,7 +72,15 @@ namespace DBS25P156.UI
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
+                    dataGridView1.Columns["Deadline"].DefaultCellStyle.Format = "yyyy-MM-dd";
+
                 }
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["Select"].Value = true; // or false to uncheck
+                }
+
 
                 dataGridView1.Refresh();
 
@@ -148,29 +157,29 @@ namespace DBS25P156.UI
         private void button1_Click(object sender, EventArgs e)
         {
             bool valid = true;
-            int counter = 0;
+            //int counter = 0;
 
             // Loop through each row in the DataGridView
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Check if the checkbox in the first column is checked
-                if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value == true)
-                {
-                    counter++;
-                }
-            }
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    // Check if the checkbox in the first column is checked
+            //    if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value == true)
+            //    {
+            //        counter++;
+            //    }
+            //}
 
-            // If no row is selected, show an error
-            if (counter < 5)
-            {
-                errorProvider2.SetError(dataGridView1, "Please select at least 5 persons.");
-                valid = false;
-                dataGridView1.Focus(); // Set focus on DataGridView
-            }
-            else
-            {
-                errorProvider2.Clear(); // Clear the error if selection is 
-            }
+            //// If no row is selected, show an error
+            //if (counter < 5)
+            //{
+            //    errorProvider2.SetError(dataGridView1, "Please select at least 5 persons.");
+            //    valid = false;
+            //    dataGridView1.Focus(); // Set focus on DataGridView
+            //}
+            //else
+            //{
+            //    errorProvider2.Clear(); // Clear the error if selection is 
+            //}
 
             if (comboBox1.SelectedIndex == -1)
             {
@@ -185,14 +194,14 @@ namespace DBS25P156.UI
 
             if (valid)
             {
-                MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Update Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 int committeeId = committeeDAL.GetCommitteeId(comboBox1.Text);
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     //a(int committeeId, string name, string taskDescription, DateTime date)
-                    string assignedTo = row.Cells["Name"].Value.ToString();
+                    string assignedTo = row.Cells["Names"].Value.ToString();
                     string taskDescription = row.Cells["Duty"].Value.ToString();
                     DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
 
@@ -200,7 +209,7 @@ namespace DBS25P156.UI
                 }
 
                 //await Task.Delay(500);
-                //this.Close();
+                this.Close();
             }
             else
             {
@@ -243,7 +252,80 @@ namespace DBS25P156.UI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
 
+            int committeeId = committeeDAL.GetCommitteeId(comboBox1.Text);
+            //MessageBox.Show("value: "+committeeId);
+            DataTable dt = committeeDAL.GetCommitteeData(committeeId);
+
+
+            if (dt == null)
+            {
+                MessageBox.Show("Failed to fetch data. Please check your database connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns["Deadline"].DefaultCellStyle.Format = "yyyy-MM-dd";
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells["Select"].Value = true; // or false to uncheck
+            }
+
+
+            dataGridView1.Refresh();
         }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Deadline")
+            {
+                string newDate = e.FormattedValue.ToString();
+
+                // Allow empty values (user is still typing)
+                if (string.IsNullOrWhiteSpace(newDate))
+                {
+                    return;
+                }
+
+                // Ensure the input is exactly 10 characters (YYYY-MM-DD)
+                if (newDate.Length < 10)
+                {
+                    return; // Don't validate until the user finishes typing
+                }
+
+                // Validate the date format properly
+                if (!DateTime.TryParseExact(newDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out _))
+                {
+                    e.Cancel = true; // Prevents invalid entry
+                    MessageBox.Show("Invalid date format. Use YYYY-MM-DD.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false; // Prevents the default error popup
+        }
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Deadline")
+            {
+                string newDate = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+
+                if (!string.IsNullOrWhiteSpace(newDate) && newDate.Length == 10)
+                {
+                    if (!DateTime.TryParseExact(newDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out _))
+                    {
+                        MessageBox.Show("Invalid date format. Use YYYY-MM-DD.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
+
     }
 }

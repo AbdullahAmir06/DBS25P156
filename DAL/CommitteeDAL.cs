@@ -46,6 +46,7 @@ namespace DBS25P156.DAL
             string query = "select distinct cm.name as Name,r.role_name as Category,r2.role_name as Role,d.task_description as Duty,d.deadline as Deadline from committee_members cm join duties d on cm.committee_id = d.committee_id and cm.name = d.assigned_to join users u on u.username=cm.name join roles r on r.role_id=u.role_id join roles r2 on cm.role_id = r2.role_id where cm.committee_id =@committeeId";
 
             return DatabaseHelper.Instance.GetData(query,new object[] {commmitteeId});
+
         }
 
         public bool UpdateCommmitteeData(int committeeId,string name,string taskDescription,DateTime date)
@@ -54,6 +55,13 @@ namespace DBS25P156.DAL
             string query = "UPDATE duties SET task_description=@taskDescription, deadline =@date WHERE committee_id =@committeeId and assigned_to = @name";
 
             return DatabaseHelper.Instance.ExecuteQuery(query,new object[] {taskDescription,date,committeeId,name})>0;
+        }
+
+        public bool DeleteCommittee(int committeeId)
+        {
+            string query = "DELETE FROM committees WHERE committee_id = @committeeId";
+
+            return DatabaseHelper.Instance.ExecuteQuery(query,new object[] {committeeId})>0;   
         }
 
         public bool CreateCommittee(string name)

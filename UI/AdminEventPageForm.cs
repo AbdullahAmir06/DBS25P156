@@ -273,7 +273,7 @@ namespace DBS25P156.UI
                 //public bool CreateEvent(string name, string description, DateTime date, string categoryName, string venueName, string committeeName)
 
                 eventBLL.CreateEvent(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker4.Value, comboBox1.Text, comboBox2.Text, comboBox7.Text);
-                MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataIntoComboBoxes();
                 textBox1.Clear();
                 textBox2.Clear();

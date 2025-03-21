@@ -32,7 +32,7 @@ namespace DBS25P156.UI
         private void AdminCommitteeRegistrationForm_Load(object sender, EventArgs e)
         {
             checkBoxNotClicked();
-            
+
             dataGridView1.AutoGenerateColumns = false;
             DataTable dt = CommitteeDAL.GetPeople();
 
@@ -196,7 +196,7 @@ namespace DBS25P156.UI
                 errorProvider2.Clear(); // Clear the error if selection is 
             }
 
-            if(string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
                 errorProvider1.SetError(textBox1, "Please Enter Name");
                 valid = false;
@@ -232,7 +232,7 @@ namespace DBS25P156.UI
                 }
                 MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //await Task.Delay(500);
-                //this.Close();
+                this.Close();
             }
             else
             {
@@ -265,7 +265,12 @@ namespace DBS25P156.UI
 
         private void dataGridView1_Leave(object sender, EventArgs e)
         {
-        
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

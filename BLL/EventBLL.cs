@@ -32,6 +32,7 @@ namespace DBS25P156.BLL
                 {
                     eventDAL.AddEvent(newEvent);
                     int eventId = eventDAL.GetEventId(name);
+                    MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return eventDAL.VenueAllocation(eventId, venueId, dateOnly, timeOnly);
                 }

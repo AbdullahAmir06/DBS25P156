@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
+using DBS25P156.DAL;
+using DBS25P156.BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace DBS25P156.UI
 {
     public partial class AdminCommitteeForm : Form
     {
+        public CommitteeDAL committeeDAL = new CommitteeDAL();
         public AdminCommitteeForm()
         {
             InitializeComponent();
@@ -57,6 +60,19 @@ namespace DBS25P156.UI
             panel2.Visible = false;
             groupBoxDelete.Visible = true;
             groupBoxDelete.Location = new Point(336, 213);
+
+            loadData();
+
+        }
+
+        public void loadData()
+        {
+            List<string> Committees = committeeDAL.GetCommitteeNames();
+            comboBox1.Items.Clear();
+            foreach (string committees in Committees)
+            {
+                comboBox1.Items.Add(committees);
+            }
         }
 
         private void comboBox1_Enter(object sender, EventArgs e)
@@ -78,14 +94,17 @@ namespace DBS25P156.UI
             }
         }
 
-        private async void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
 
-            if (errorProvider1 == null)
+            if (comboBox1.SelectedIndex != -1)
             {
-                MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                int committeeId = committeeDAL.GetCommitteeId(comboBox1.Text);
+                committeeDAL.DeleteCommittee(committeeId); 
+                MessageBox.Show("Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+                //await Task.Delay(500);
+                //this.Close();
             }
             else
             {
