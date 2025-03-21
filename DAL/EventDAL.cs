@@ -23,7 +23,7 @@ namespace DBS25P156.DAL
         {
             string query = "INSERT INTO itec_events (event_name, description, event_date, itec_id, event_category_id, venue_id, committee_id) VALUES (@Name, @Description, @dateOnly, @EditionId, @CategoryId, @VenueId, @CommitteeID)";
 
-            string dateOnly= newEvent.Date.ToString("yyyy-MM-dd");
+            string dateOnly = newEvent.Date.ToString("yyyy-MM-dd");
             //string timeOnly = date.ToString("HH:mm:ss");
 
             return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Name, newEvent.Description, dateOnly, newEvent.EditionId, newEvent.CategoryId, newEvent.VenueId, newEvent.CommitteeID }) > 0;
@@ -76,14 +76,14 @@ namespace DBS25P156.DAL
         //}
 
 
-        public bool ConflictCheck(int venueId, DateTime date,DateTime time)
+        public bool ConflictCheck(int venueId, DateTime date, DateTime time)
         {
             //string query = "SELECT COUNT(*) FROM itec_events WHERE event_date = @dateonly AND venue_id = @venueId";
             string query = "SELECT COUNT(*) FROM itec_events i JOIN venue_allocations v ON i.venue_id = v.venue_id AND i.event_date = v.assigned_date WHERE i.event_date = @dateOnly AND i.venue_id = @venueId AND v.assigned_time = @timeOnly";
             string dateOnly = date.ToString("yyyy-MM-dd");
             //string timeOnly = time.ToString("HH:mm:ss");
             string timeOnly = time.ToString("HH:mm:ss");
-            int count = Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { dateOnly, venueId,timeOnly }));
+            int count = Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { dateOnly, venueId, timeOnly }));
             return count > 0;
         }
 
@@ -175,6 +175,19 @@ namespace DBS25P156.DAL
             string query = "SELECT category_name FROM event_categories ";
             return DatabaseHelper.Instance.GetColumn(query, new object[] { }).Select(e => e?.ToString() ?? "").ToList();
         }
+
+        public List<string> GetEventNameOfSpecificCommitteeId(int committeeId)
+        {
+            string query = "select event_name from itec_events where committee_id =@committeeId";
+            return DatabaseHelper.Instance.GetColumn(query, new object[] {committeeId }).Select(e => e?.ToString() ?? "").ToList();
+
+        }
+
+        //public int GetEventId(string name)
+        //{
+        //    string query = "select event_id from itec_events where event_name =@name";
+        //    return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query,new object[] {name}));
+        //}
 
 
 

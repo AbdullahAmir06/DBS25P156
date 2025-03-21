@@ -19,7 +19,7 @@ namespace DBS25P156.Models
         public int fromEntityId { get; set; }
         public int typeId { get; set; }
         public int amount { get; set; }
-
+        public int eventId { get; set; }    
 
 
         public Sponsor_Vendor(string name, string contact, string servicetype)
@@ -29,7 +29,7 @@ namespace DBS25P156.Models
             this.servicetype = servicetype;
         }
 
-        public Sponsor_Vendor(string name, string contact, int typeID, int amount, int fromEntityId, int toEntityId, string fromEntityType, string toEntityType)
+        public Sponsor_Vendor(string name, string contact, int typeID, int amount, int fromEntityId, int toEntityId, string fromEntityType, string toEntityType, int eventId)
         {
             Name = name;
             this.contact = contact;
@@ -39,7 +39,7 @@ namespace DBS25P156.Models
             this.toEntityId = toEntityId;
             this.fromEntityType = fromEntityType;
             this.toEntityType = toEntityType;
-
+            this.eventId = eventId;
         }
         public Sponsor_Vendor(string name, string contact)
         {

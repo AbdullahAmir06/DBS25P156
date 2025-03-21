@@ -39,6 +39,8 @@
             ServiceTypeTextBox = new TextBox();
             ServiceType = new Label();
             groupBox2 = new GroupBox();
+            comboBox3 = new ComboBox();
+            label7 = new Label();
             comboBox2 = new ComboBox();
             label6 = new Label();
             comboBox1 = new ComboBox();
@@ -56,6 +58,9 @@
             errorProvider3 = new ErrorProvider(components);
             errorProvider4 = new ErrorProvider(components);
             errorProvider5 = new ErrorProvider(components);
+            errorProvider6 = new ErrorProvider(components);
+            errorProvider7 = new ErrorProvider(components);
+            errorProvider8 = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -64,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider8).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -187,6 +195,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(comboBox3);
+            groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(comboBox2);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(comboBox1);
@@ -203,29 +213,54 @@
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
             groupBox2.Location = new Point(12, 26);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(422, 518);
+            groupBox2.Size = new Size(422, 583);
             groupBox2.TabIndex = 35;
             groupBox2.TabStop = false;
             groupBox2.Text = "Sponsor Registration";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // comboBox3
+            // 
+            comboBox3.BackColor = Color.LightGray;
+            comboBox3.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(17, 349);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(151, 31);
+            comboBox3.TabIndex = 40;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            comboBox3.Click += comboBox3_Click;
+            comboBox3.Enter += comboBox3_Enter;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Poppins", 10.2F);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(17, 316);
+            label7.Name = "label7";
+            label7.Size = new Size(151, 30);
+            label7.TabIndex = 41;
+            label7.Text = "To Event Name";
             // 
             // comboBox2
             // 
             comboBox2.BackColor = Color.LightGray;
             comboBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(17, 280);
+            comboBox2.Location = new Point(17, 282);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 31);
             comboBox2.TabIndex = 4;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            comboBox2.Leave += comboBox2_Leave;
             // 
             // label6
             // 
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Poppins", 10.2F);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(17, 247);
+            label6.Location = new Point(17, 249);
             label6.Name = "label6";
             label6.Size = new Size(151, 30);
             label6.TabIndex = 39;
@@ -242,6 +277,7 @@
             comboBox1.Size = new Size(151, 31);
             comboBox1.TabIndex = 3;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Leave += comboBox1_Leave;
             // 
             // label5
             // 
@@ -258,7 +294,7 @@
             // 
             numericUpDown1.BackColor = Color.LightGray;
             numericUpDown1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown1.Location = new Point(17, 350);
+            numericUpDown1.Location = new Point(21, 416);
             numericUpDown1.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 30);
@@ -269,7 +305,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Poppins", 10.2F);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(17, 317);
+            label4.Location = new Point(21, 383);
             label4.Name = "label4";
             label4.Size = new Size(114, 30);
             label4.TabIndex = 35;
@@ -283,7 +319,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(177, 481);
+            label1.Location = new Point(181, 547);
             label1.Name = "label1";
             label1.Size = new Size(70, 30);
             label1.TabIndex = 0;
@@ -296,7 +332,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(90, 435);
+            button2.Location = new Point(94, 501);
             button2.Name = "button2";
             button2.Size = new Size(241, 37);
             button2.TabIndex = 6;
@@ -372,12 +408,24 @@
             // 
             errorProvider5.ContainerControl = this;
             // 
+            // errorProvider6
+            // 
+            errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            errorProvider8.ContainerControl = this;
+            // 
             // Vendor_SponserHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(800, 556);
+            ClientSize = new Size(800, 641);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Vendor_SponserHomePage";
@@ -394,6 +442,9 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider8).EndInit();
             ResumeLayout(false);
         }
 
@@ -426,5 +477,10 @@
         private Label label5;
         private ComboBox comboBox2;
         private Label label6;
+        private ComboBox comboBox3;
+        private Label label7;
+        private ErrorProvider errorProvider6;
+        private ErrorProvider errorProvider7;
+        private ErrorProvider errorProvider8;
     }
 }

@@ -88,6 +88,7 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
@@ -148,6 +149,7 @@
             // 
             // Names
             // 
+            Names.DataPropertyName = "Name";
             Names.HeaderText = "Name";
             Names.MinimumWidth = 6;
             Names.Name = "Names";
@@ -156,6 +158,7 @@
             // 
             // Category
             // 
+            Category.DataPropertyName = "Category";
             Category.HeaderText = "Category";
             Category.MinimumWidth = 6;
             Category.Name = "Category";
@@ -164,12 +167,13 @@
             // 
             // Role
             // 
+            Role.DataPropertyName = "Role";
             Role.HeaderText = "Role";
             Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
             Role.MinimumWidth = 6;
             Role.Name = "Role";
             Role.ReadOnly = true;
-            Role.Width = 125;
+            Role.Width = 150;
             // 
             // Duty
             // 
@@ -213,7 +217,7 @@
             button1.Name = "button1";
             button1.Size = new Size(237, 38);
             button1.TabIndex = 3;
-            button1.Text = "Register";
+            button1.Text = "Create Committee";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -277,13 +281,13 @@
         private Button button1;
         private CheckBox checkBox1;
         private DataGridView dataGridView1;
+        private TextBox textBox1;
+        private Label label1;
         private DataGridViewCheckBoxColumn Select;
         private DataGridViewTextBoxColumn Names;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewComboBoxColumn Role;
         private DataGridViewTextBoxColumn Duty;
         private DataGridViewTextBoxColumn Deadline;
-        private TextBox textBox1;
-        private Label label1;
     }
 }

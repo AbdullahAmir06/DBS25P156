@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.DAL;
 
 namespace DBS25P156.UI
 {
     public partial class AdminCommitteeRegistrationForm : Form
     {
+        public CommitteeDAL CommitteeDAL = new CommitteeDAL();
         public AdminCommitteeRegistrationForm()
         {
             InitializeComponent();
@@ -30,17 +32,67 @@ namespace DBS25P156.UI
         private void AdminCommitteeRegistrationForm_Load(object sender, EventArgs e)
         {
             checkBoxNotClicked();
+            
+            dataGridView1.AutoGenerateColumns = false;
+            DataTable dt = CommitteeDAL.GetPeople();
 
-            dataGridView1.Rows.Add(false, "Anas", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "ABC", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "A", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "C", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "Ali", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "Abdullah", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "Laiba", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "AN", "Student", "Volunteer", "Editing", "2025-03-19");
+
+            if (dt == null)
+            {
+                MessageBox.Show("Failed to fetch data. Please check your database connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt;
+            }
+
+            dataGridView1.CellEnter += dataGridView1_CellEnter;
+
+            dataGridView1.Refresh();
+            dataGridView1.DataError += dataGridView1_DataError;
 
         }
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show($"Invalid value in column {dataGridView1.Columns[e.ColumnIndex].Name}");
+            e.ThrowException = false;  // Prevents default error message
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Role"].Index && e.RowIndex >= 0)
+            {
+                var comboBoxCell = (DataGridViewComboBoxCell)dataGridView1.Rows[e.RowIndex].Cells["Role"];
+                string category = dataGridView1.Rows[e.RowIndex].Cells["Category"].Value?.ToString();
+                string roleFromDB = dataGridView1.Rows[e.RowIndex].Cells["Role"].Value?.ToString();
+
+                comboBoxCell.Items.Clear(); // Remove previous values
+
+                if (category == "Student")
+                {
+                    comboBoxCell.Items.Add("Volunteer");
+                    comboBoxCell.Items.Add("Student Lead");
+                }
+                else if (category == "Faculty")
+                {
+                    comboBoxCell.Items.Add("Faculty Advisor");
+                }
+
+                // Set the correct value
+                if (!string.IsNullOrEmpty(roleFromDB) && comboBoxCell.Items.Contains(roleFromDB))
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells["Role"].Value = roleFromDB;
+                }
+                else if (comboBoxCell.Items.Count > 0)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells["Role"].Value = comboBoxCell.Items[0]; // Default value
+                }
+            }
+        }
+
+
 
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -117,7 +169,7 @@ namespace DBS25P156.UI
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             bool valid = true;
             int counter = 0;
@@ -157,9 +209,30 @@ namespace DBS25P156.UI
 
             if (valid)
             {
+                CommitteeDAL.CreateCommittee(textBox1.Text);
+                int committeeId = CommitteeDAL.GetCommitteeId(textBox1.Text);
+
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["Select"].Value) == true)
+                    {
+                        string name = row.Cells["Names"].Value.ToString();
+                        string role = row.Cells["Role"].Value.ToString();
+                        int roleId = CommitteeDAL.GetRoleId(role);
+
+                        CommitteeDAL.AddCommitteeMembers(committeeId, name, roleId);
+
+                        string taskDescription = row.Cells["Duty"].Value.ToString();
+                        DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
+
+                        CommitteeDAL.AssignDuty(committeeId, name, taskDescription, deadline, 19);
+
+                    }
+                }
                 MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                //await Task.Delay(500);
+                //this.Close();
             }
             else
             {

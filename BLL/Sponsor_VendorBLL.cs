@@ -12,7 +12,7 @@ namespace DBS25P156.BLL
     {
         Sponsor_VendorDAL Sponsor_VendorDAL = new Sponsor_VendorDAL();
                 //string fromEntityType        // sponsor fix          // id fix by sponsorid1 , string fromEntityUserName
-        public bool AddSponsor(string name, string contact, int amount, string toEntityUserName, string toEntityType)
+        public bool AddSponsor(string name, string contact, int amount, string toEntityUserName, string toEntityType,int eventId)
         {
             Sponsor_Vendor sponsor_Vendor = new Sponsor_Vendor(name,contact);
             Sponsor_VendorDAL.AddSponsor(sponsor_Vendor);
@@ -21,7 +21,7 @@ namespace DBS25P156.BLL
             int fromEntityId = Sponsor_VendorDAL.GetSponsorId(name,contact);
             int toEntityId  = Sponsor_VendorDAL.GetEntityID(toEntityType,toEntityUserName);
 
-            Sponsor_Vendor Sponsor_Vendor = new Sponsor_Vendor(name, contact, typeID, amount, fromEntityId, toEntityId, "Sponsor", toEntityType);
+            Sponsor_Vendor Sponsor_Vendor = new Sponsor_Vendor(name, contact, typeID, amount, fromEntityId, toEntityId, "Sponsor", toEntityType,eventId);
             //Sponsor_Vendor.fromEntityType = "Sponsor";
 
             return Sponsor_VendorDAL.UpdateToFinances(Sponsor_Vendor);

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.DAL;
 
 namespace DBS25P156.UI
 {
     public partial class AdminEditCommitteeForm : Form
     {
+        CommitteeDAL committeeDAL = new CommitteeDAL();
         public AdminEditCommitteeForm()
         {
             InitializeComponent();
@@ -31,14 +33,14 @@ namespace DBS25P156.UI
         {
             checkBoxNotClicked();
 
-            dataGridView1.Rows.Add(false, "Anas", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "ABC", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "A", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "C", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "Ali", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "Abdullah", "Student", "Volunteer", "Photography", "2025-03-20");
-            dataGridView1.Rows.Add(false, "Laiba", "Student", "Volunteer", "Editing", "2025-03-19");
-            dataGridView1.Rows.Add(false, "AN", "Student", "Volunteer", "Editing", "2025-03-19");
+            //dataGridView1.Rows.Add(false, "Anas", "Student", "Volunteer", "Photography", "2025-03-20");
+            //dataGridView1.Rows.Add(false, "ABC", "Student", "Volunteer", "Editing", "2025-03-19");
+            //dataGridView1.Rows.Add(false, "A", "Student", "Volunteer", "Photography", "2025-03-20");
+            //dataGridView1.Rows.Add(false, "C", "Student", "Volunteer", "Photography", "2025-03-20");
+            //dataGridView1.Rows.Add(false, "Ali", "Student", "Volunteer", "Editing", "2025-03-19");
+            //dataGridView1.Rows.Add(false, "Abdullah", "Student", "Volunteer", "Photography", "2025-03-20");
+            //dataGridView1.Rows.Add(false, "Laiba", "Student", "Volunteer", "Editing", "2025-03-19");
+            //dataGridView1.Rows.Add(false, "AN", "Student", "Volunteer", "Editing", "2025-03-19");
 
         }
 

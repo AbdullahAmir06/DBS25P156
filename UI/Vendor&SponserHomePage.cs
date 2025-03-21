@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using DBS25P156.BLL;
+using DBS25P156.DAL;
 using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -17,6 +18,8 @@ namespace DBS25P156.UI
     public partial class Vendor_SponserHomePage : Form
     {
         public Sponsor_VendorBLL Sponsor_VendorBLL = new Sponsor_VendorBLL();
+        public Sponsor_VendorDAL Sponsor_VendorDAL = new Sponsor_VendorDAL();
+        public EventDAL EventDAL = new EventDAL();
         public UserBLL UserBLL = new UserBLL();
         public Vendor_SponserHomePage()
         {
@@ -38,6 +41,13 @@ namespace DBS25P156.UI
                 groupBox2.Visible = true;
                 this.Size = new Size(818, 603);
                 groupBox2.Location = new Point(189, 12);
+
+                label4.Location = new Point(17, 317);
+                numericUpDown1.Location = new Point(17, 350);
+                button2.Location = new Point(90, 435);
+                label1.Location = new Point(177, 481);
+                groupBox2.Size = new Size(422, 518);
+                //this.Size = new Size(818, 603);
 
             }
         }
@@ -158,7 +168,7 @@ namespace DBS25P156.UI
 
         }
 
-        private  void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(ServiceTypeTextBox.Text))
             {
@@ -166,7 +176,7 @@ namespace DBS25P156.UI
             }
             else
             {
-                Sponsor_VendorBLL.AddVendor(textBox3.Text,ContactTextBox.Text,ServiceTypeTextBox.Text);
+                Sponsor_VendorBLL.AddVendor(textBox3.Text, ContactTextBox.Text, ServiceTypeTextBox.Text);
                 MessageBox.Show("Vendor Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox3.Clear();
                 ServiceTypeTextBox.Clear();
@@ -245,7 +255,8 @@ namespace DBS25P156.UI
             else
             {
                 //r(string name, string contact, int amount, string toEntityUserName, string toEntityType)
-                Sponsor_VendorBLL.AddSponsor(textBox1.Text,textBox2.Text,Convert.ToInt32(numericUpDown1.Value),comboBox2.Text,comboBox1.Text);
+                int eventID = EventDAL.GetEventId(comboBox3.Text);
+                Sponsor_VendorBLL.AddSponsor(textBox1.Text, textBox2.Text, Convert.ToInt32(numericUpDown1.Value), comboBox2.Text, comboBox1.Text, eventID);
                 MessageBox.Show("Sponser Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Clear();
                 textBox2.Clear();
@@ -265,11 +276,97 @@ namespace DBS25P156.UI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDataIntoComboBox();
+            comboBox2.SelectedIndex = -1;
+            if (comboBox1.SelectedIndex == 1)
+            {
+                comboBox3.Visible = true;
+                comboBox3.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                label7.Visible = true;
+                label4.Location = new Point(21, 383);
+                numericUpDown1.Location = new Point(21, 416);
+                button2.Location = new Point(94, 501);
+                label1.Location = new Point(181, 547);
+                groupBox2.Size = new Size(422, 583);
+                this.Size = new Size(818, 688);
+
+            }
+            else
+            {
+                comboBox3.Visible = false;
+                label7.Visible = false;
+                comboBox2.SelectedIndex = -1;
+                label4.Location = new Point(17, 317);
+                numericUpDown1.Location = new Point(17, 350);
+                button2.Location = new Point(90, 435);
+                label1.Location = new Point(177, 481);
+                groupBox2.Size = new Size(422, 518);
+                this.Size = new Size(818, 603);
+
+            }
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                comboBox1.Focus();
+                errorProvider6.SetError(comboBox1, "Please Select the Entity Type");
+            }
+
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                comboBox2.Focus();
+                errorProvider7.SetError(comboBox2, "Please Select the Entity Name ");
+            }
+            else
+            {
+                errorProvider7.Clear();
+            }
+        }
+
+        private void comboBox3_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            int committeeId = Sponsor_VendorDAL.GetCommiteeId(comboBox2.Text);
+            List<string> eventList = EventDAL.GetEventNameOfSpecificCommitteeId(committeeId);
+            comboBox3.Items.Clear();
+
+            foreach (string eventName in eventList)
+            {
+                comboBox3.Items.Add(eventName); // Populate comboBox3 
+            }
+
+
+        }
+        private void comboBox3_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                comboBox2.Focus();
+                errorProvider6.SetError(comboBox2, "Please select the committee name first");
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
