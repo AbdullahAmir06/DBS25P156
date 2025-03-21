@@ -39,6 +39,10 @@
             ServiceTypeTextBox = new TextBox();
             ServiceType = new Label();
             groupBox2 = new GroupBox();
+            comboBox2 = new ComboBox();
+            label6 = new Label();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
             numericUpDown1 = new NumericUpDown();
             label4 = new Label();
             label1 = new Label();
@@ -52,10 +56,6 @@
             errorProvider3 = new ErrorProvider(components);
             errorProvider4 = new ErrorProvider(components);
             errorProvider5 = new ErrorProvider(components);
-            label5 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            label6 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -209,6 +209,49 @@
             groupBox2.Text = "Sponsor Registration";
             groupBox2.Enter += groupBox2_Enter;
             // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.LightGray;
+            comboBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(17, 280);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(151, 31);
+            comboBox2.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Poppins", 10.2F);
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Location = new Point(17, 247);
+            label6.Name = "label6";
+            label6.Size = new Size(151, 30);
+            label6.TabIndex = 39;
+            label6.Text = "To Entity Name";
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "User", "Committee", "Vendor" });
+            comboBox1.Location = new Point(17, 213);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 31);
+            comboBox1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Poppins", 10.2F);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(17, 180);
+            label5.Name = "label5";
+            label5.Size = new Size(133, 30);
+            label5.TabIndex = 37;
+            label5.Text = "To Entity Type";
+            // 
             // numericUpDown1
             // 
             numericUpDown1.BackColor = Color.LightGray;
@@ -325,49 +368,6 @@
             // errorProvider5
             // 
             errorProvider5.ContainerControl = this;
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Poppins", 10.2F);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(17, 180);
-            label5.Name = "label5";
-            label5.Size = new Size(133, 30);
-            label5.TabIndex = 37;
-            label5.Text = "To Entity Type";
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "User", "Sponsor", "Committee", "Vendor" });
-            comboBox1.Location = new Point(17, 213);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 31);
-            comboBox1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = Color.LightGray;
-            comboBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(17, 280);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 31);
-            comboBox2.TabIndex = 4;
-            // 
-            // label6
-            // 
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Poppins", 10.2F);
-            label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(17, 247);
-            label6.Name = "label6";
-            label6.Size = new Size(151, 30);
-            label6.TabIndex = 39;
-            label6.Text = "To Entity Name";
             // 
             // Vendor_SponserHomePage
             // 

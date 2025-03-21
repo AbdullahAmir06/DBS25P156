@@ -291,7 +291,7 @@
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
-            groupBox2.Location = new Point(48, 209);
+            groupBox2.Location = new Point(48, 232);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(229, 345);
             groupBox2.TabIndex = 11;

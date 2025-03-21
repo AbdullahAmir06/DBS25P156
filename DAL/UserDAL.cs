@@ -62,5 +62,17 @@ namespace DBS25P156.DAL
             string query = "UPDATE users SET password_hash = @password WHERE username = @identifier OR email = @identifier";
             return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newPassword, identifier }) > 0;
         }
+
+        public List<string> GetUsers()
+        {
+            string query = "SELECT username from users";
+            return DatabaseHelper.Instance.GetColumn(query).Select(e => e?.ToString() ?? "").ToList();
+        }
+
+        public int GetUserId(string identifier)
+        {
+            string query = "SELECT user_id from users where username =@identifier";
+            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { identifier }));
+        }
     }
 }
