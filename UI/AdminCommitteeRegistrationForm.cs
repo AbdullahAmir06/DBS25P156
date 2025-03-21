@@ -217,13 +217,14 @@ namespace DBS25P156.UI
                 {
                     if (Convert.ToBoolean(row.Cells["Select"].Value) == true)
                     {
-                        string name = row.Cells["Names"].Value.ToString();
-                        string role = row.Cells["Role"].Value.ToString();
+                        string name = row.Cells["Names"].Value?.ToString() ?? string.Empty;
+                        string role = row.Cells["Role"].Value?.ToString() ?? string.Empty;
                         int roleId = CommitteeDAL.GetRoleId(role);
 
                         CommitteeDAL.AddCommitteeMembers(committeeId, name, roleId);
+                        
+                        string taskDescription = row.Cells["Duty"].Value?.ToString() ?? string.Empty;
 
-                        string taskDescription = row.Cells["Duty"].Value.ToString();
                         DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
 
                         CommitteeDAL.AssignDuty(committeeId, name, taskDescription, deadline, 19);

@@ -201,8 +201,8 @@ namespace DBS25P156.UI
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     //a(int committeeId, string name, string taskDescription, DateTime date)
-                    string assignedTo = row.Cells["Names"].Value.ToString();
-                    string taskDescription = row.Cells["Duty"].Value.ToString();
+                    string assignedTo = row.Cells["Names"].Value?.ToString() ?? string.Empty;
+                    string taskDescription = row.Cells["Duty"].Value?.ToString() ?? string.Empty;
                     DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
 
                     committeeDAL.UpdateCommmitteeData(committeeId, assignedTo, taskDescription, deadline);
@@ -284,7 +284,7 @@ namespace DBS25P156.UI
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Deadline")
             {
-                string newDate = e.FormattedValue.ToString();
+                string newDate = e.FormattedValue?.ToString() ?? string.Empty;
 
                 // Allow empty values (user is still typing)
                 if (string.IsNullOrWhiteSpace(newDate))

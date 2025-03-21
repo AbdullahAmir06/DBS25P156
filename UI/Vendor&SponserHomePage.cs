@@ -58,33 +58,29 @@ namespace DBS25P156.UI
             List<string> Committee = Sponsor_VendorBLL.GetCommitteeNames();
             List<string> Vendor = Sponsor_VendorBLL.GetVendorName();
 
-            string selectedEntity = comboBox1.SelectedItem?.ToString(); // Use SelectedItem instead of Text
+            string? selectedEntity = comboBox1.SelectedItem?.ToString(); // Use nullable string
 
             if (string.IsNullOrEmpty(selectedEntity))
             {
                 return; // Prevent errors if no selection is made
             }
 
-            //comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            if (comboBox1.Text == "User")
+            if (selectedEntity == "User")
             {
                 foreach (string user in User)
                 {
-                    //comboBox1.Items.Add(venue);
                     comboBox2.Items.Add(user);
                 }
-
             }
-            else if (comboBox1.Text == "Committee")
+            else if (selectedEntity == "Committee")
             {
                 foreach (string committee in Committee)
                 {
-                    //comboBox1.Items.Add(venue);
                     comboBox2.Items.Add(committee);
                 }
             }
-            else if (comboBox1.Text == "Vendor")
+            else if (selectedEntity == "Vendor")
             {
                 foreach (string vendor in Vendor)
                 {
