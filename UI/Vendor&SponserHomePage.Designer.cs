@@ -201,7 +201,7 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
-            groupBox2.Location = new Point(189, 12);
+            groupBox2.Location = new Point(12, 26);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(422, 518);
             groupBox2.TabIndex = 35;
@@ -218,6 +218,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 31);
             comboBox2.TabIndex = 4;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -240,6 +241,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 31);
             comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -257,6 +259,7 @@
             numericUpDown1.BackColor = Color.LightGray;
             numericUpDown1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numericUpDown1.Location = new Point(17, 350);
+            numericUpDown1.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 30);
             numericUpDown1.TabIndex = 5;

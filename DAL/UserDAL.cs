@@ -65,8 +65,8 @@ namespace DBS25P156.DAL
 
         public List<string> GetUsers()
         {
-            string query = "SELECT username from users";
-            return DatabaseHelper.Instance.GetColumn(query).Select(e => e?.ToString() ?? "").ToList();
+            string query = "SELECT username from users where username != @Username";
+            return DatabaseHelper.Instance.GetColumn(query,new object[] {UserSession.UserLoginUserName}).Select(e => e?.ToString() ?? "").ToList();
         }
 
         public int GetUserId(string identifier)

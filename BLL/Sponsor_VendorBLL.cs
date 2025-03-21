@@ -11,17 +11,27 @@ namespace DBS25P156.BLL
     public class Sponsor_VendorBLL
     {
         Sponsor_VendorDAL Sponsor_VendorDAL = new Sponsor_VendorDAL();
-
-        public bool AddSponsor(string name, string contact, int amount, string fromEntityType, string toEntityUserName, string toEntityType, string fromEntityUserName)
+                //string fromEntityType        // sponsor fix          // id fix by sponsorid1 , string fromEntityUserName
+        public bool AddSponsor(string name, string contact, int amount, string toEntityUserName, string toEntityType)
         {
+            Sponsor_Vendor sponsor_Vendor = new Sponsor_Vendor(name,contact);
+            Sponsor_VendorDAL.AddSponsor(sponsor_Vendor);
 
             int typeID = Sponsor_VendorDAL.GetTypeId("Sponsorship");
-            int fromEntityId = Sponsor_VendorDAL.GetEntityID(fromEntityUserName,fromEntityType);
-            int toEntityId  = Sponsor_VendorDAL.GetEntityID(toEntityType,fromEntityUserName);
+            int fromEntityId = Sponsor_VendorDAL.GetSponsorId(name,contact);
+            int toEntityId  = Sponsor_VendorDAL.GetEntityID(toEntityType,toEntityUserName);
 
-            Sponsor_Vendor Sponsor_Vendor = new Sponsor_Vendor(name, contact, typeID, amount, fromEntityId, toEntityId, fromEntityType, toEntityType);
-            return Sponsor_VendorDAL.AddSponsor(Sponsor_Vendor);
+            Sponsor_Vendor Sponsor_Vendor = new Sponsor_Vendor(name, contact, typeID, amount, fromEntityId, toEntityId, "Sponsor", toEntityType);
+            //Sponsor_Vendor.fromEntityType = "Sponsor";
 
+            return Sponsor_VendorDAL.UpdateToFinances(Sponsor_Vendor);
+
+        }
+
+        public bool AddVendor(string name, string contact, string service)
+        {
+            Sponsor_Vendor sponsor_Vendor = new Sponsor_Vendor(name, contact, service);
+            return Sponsor_VendorDAL.AddVendor(sponsor_Vendor);
         }
 
         public List<string> GetCommitteeNames()

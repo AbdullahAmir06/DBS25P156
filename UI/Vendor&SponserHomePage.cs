@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using DBS25P156.BLL;
 using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -14,9 +16,71 @@ namespace DBS25P156.UI
 {
     public partial class Vendor_SponserHomePage : Form
     {
+        public Sponsor_VendorBLL Sponsor_VendorBLL = new Sponsor_VendorBLL();
+        public UserBLL UserBLL = new UserBLL();
         public Vendor_SponserHomePage()
         {
             InitializeComponent();
+        }
+        private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
+        {
+            if (UserSession.UserLoginRoleID == 4)
+            {
+                groupBox2.Visible = false;
+                groupBox1.Visible = true;
+                this.Size = new Size(818, 497);
+                groupBox1.Location = new Point(203, 34);
+            }
+            else if (UserSession.UserLoginRoleID == 3)
+            {
+                LoadDataIntoComboBox();
+                groupBox1.Visible = false;
+                groupBox2.Visible = true;
+                this.Size = new Size(818, 603);
+                groupBox2.Location = new Point(189, 12);
+
+            }
+        }
+
+        private void LoadDataIntoComboBox()
+        {
+            List<string> User = UserBLL.GetUsers();
+            List<string> Committee = Sponsor_VendorBLL.GetCommitteeNames();
+            List<string> Vendor = Sponsor_VendorBLL.GetVendorName();
+
+            string selectedEntity = comboBox1.SelectedItem?.ToString(); // Use SelectedItem instead of Text
+
+            if (string.IsNullOrEmpty(selectedEntity))
+            {
+                return; // Prevent errors if no selection is made
+            }
+
+            //comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            if (comboBox1.Text == "User")
+            {
+                foreach (string user in User)
+                {
+                    //comboBox1.Items.Add(venue);
+                    comboBox2.Items.Add(user);
+                }
+
+            }
+            else if (comboBox1.Text == "Committee")
+            {
+                foreach (string committee in Committee)
+                {
+                    //comboBox1.Items.Add(venue);
+                    comboBox2.Items.Add(committee);
+                }
+            }
+            else if (comboBox1.Text == "Vendor")
+            {
+                foreach (string vendor in Vendor)
+                {
+                    comboBox2.Items.Add(vendor);
+                }
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -94,7 +158,7 @@ namespace DBS25P156.UI
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private  void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(ServiceTypeTextBox.Text))
             {
@@ -102,30 +166,16 @@ namespace DBS25P156.UI
             }
             else
             {
+                Sponsor_VendorBLL.AddVendor(textBox3.Text,ContactTextBox.Text,ServiceTypeTextBox.Text);
                 MessageBox.Show("Vendor Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                textBox3.Clear();
+                ServiceTypeTextBox.Clear();
+                ContactTextBox.Clear();
+                //await Task.Delay(500);
+                //this.Close();
             }
         }
 
-        private void Vendor_SponserHomePage_Load(object sender, EventArgs e)
-        {
-            if (UserSession.UserLoginRoleID == 4)
-            {
-                groupBox2.Visible = false;
-                groupBox1.Visible = true;
-                this.Size = new Size(818, 497);
-                groupBox1.Location = new Point(203, 34);
-            }
-            else if (UserSession.UserLoginRoleID == 3)
-            {
-                groupBox1.Visible = false;
-                groupBox2.Visible = true;
-                this.Size = new Size(818, 603);
-                groupBox2.Location = new Point(189, 12);
-
-            }
-        }
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
@@ -186,7 +236,7 @@ namespace DBS25P156.UI
             this.Close();
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
@@ -194,15 +244,32 @@ namespace DBS25P156.UI
             }
             else
             {
+                //r(string name, string contact, int amount, string toEntityUserName, string toEntityType)
+                Sponsor_VendorBLL.AddSponsor(textBox1.Text,textBox2.Text,Convert.ToInt32(numericUpDown1.Value),comboBox2.Text,comboBox1.Text);
                 MessageBox.Show("Sponser Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+                textBox1.Clear();
+                textBox2.Clear();
+                numericUpDown1.Value = 0;
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                //await Task.Delay(500);
+                //this.Close();
             }
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataIntoComboBox();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

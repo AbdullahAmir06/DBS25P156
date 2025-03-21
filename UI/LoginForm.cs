@@ -148,6 +148,7 @@ namespace DBS25P156.UI
                 UserSession.UserLoginUserName = user.Username;
                 UserSession.UserLoginEmail = user.Email;
                 UserSession.UserLoginRoleID = user.RoleId;
+                UserSession.SelectedEditionID = 1;
                 textBox2.Clear();
                 textBox3.Clear();
 

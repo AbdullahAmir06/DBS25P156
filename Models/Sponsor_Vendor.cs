@@ -41,6 +41,11 @@ namespace DBS25P156.Models
             this.toEntityType = toEntityType;
 
         }
+        public Sponsor_Vendor(string name, string contact)
+        {
+            Name = name;
+            this.contact = contact;
+        }
 
         public Sponsor_Vendor() { }
     }

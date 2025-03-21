@@ -38,5 +38,10 @@ namespace DBS25P156.BLL
             }
             return userDAL.UpdatePassword(newPassword, identifier);
         }
+
+        public List<string> GetUsers()
+        {
+            return userDAL.GetUsers();  
+        }
     }
 }
