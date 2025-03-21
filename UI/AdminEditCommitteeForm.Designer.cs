@@ -39,17 +39,17 @@
             errorProvider2 = new ErrorProvider(components);
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            GoBack = new Label();
-            groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
             Select = new DataGridViewCheckBoxColumn();
             Names = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Role = new DataGridViewComboBoxColumn();
             Duty = new DataGridViewTextBoxColumn();
             Deadline = new DataGridViewTextBoxColumn();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            GoBack = new Label();
+            groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -129,15 +129,70 @@
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             dataGridView1.Leave += dataGridView1_Leave;
             // 
+            // Select
+            // 
+            Select.HeaderText = "Select";
+            Select.MinimumWidth = 6;
+            Select.Name = "Select";
+            Select.ReadOnly = true;
+            Select.Width = 125;
+            // 
+            // Names
+            // 
+            Names.DataPropertyName = "Name";
+            Names.HeaderText = "Name";
+            Names.MinimumWidth = 6;
+            Names.Name = "Names";
+            Names.ReadOnly = true;
+            Names.Width = 125;
+            // 
+            // Category
+            // 
+            Category.DataPropertyName = "Category";
+            Category.HeaderText = "Category";
+            Category.MinimumWidth = 6;
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            Category.Width = 125;
+            // 
+            // Role
+            // 
+            Role.DataPropertyName = "Role";
+            Role.HeaderText = "Role";
+            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
+            Role.MinimumWidth = 6;
+            Role.Name = "Role";
+            Role.ReadOnly = true;
+            Role.Width = 150;
+            // 
+            // Duty
+            // 
+            Duty.DataPropertyName = "Duty";
+            Duty.HeaderText = "Duty";
+            Duty.MinimumWidth = 6;
+            Duty.Name = "Duty";
+            Duty.Width = 125;
+            // 
+            // Deadline
+            // 
+            Deadline.DataPropertyName = "Deadline";
+            dataGridViewCellStyle3.Format = "f";
+            dataGridViewCellStyle3.NullValue = null;
+            Deadline.DefaultCellStyle = dataGridViewCellStyle3;
+            Deadline.HeaderText = "Deadline";
+            Deadline.MinimumWidth = 6;
+            Deadline.Name = "Deadline";
+            Deadline.Width = 150;
+            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox1.Location = new Point(26, 118);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(210, 40);
+            checkBox1.Size = new Size(276, 40);
             checkBox1.TabIndex = 2;
-            checkBox1.Text = "Update Members";
+            checkBox1.Text = "Update Members Duties";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
@@ -198,59 +253,9 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(260, 31);
             comboBox1.TabIndex = 4;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
-            // 
-            // Select
-            // 
-            Select.HeaderText = "Select";
-            Select.MinimumWidth = 6;
-            Select.Name = "Select";
-            Select.Width = 125;
-            // 
-            // Names
-            // 
-            Names.HeaderText = "Name";
-            Names.MinimumWidth = 6;
-            Names.Name = "Names";
-            Names.ReadOnly = true;
-            Names.Width = 125;
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.MinimumWidth = 6;
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            Category.Width = 125;
-            // 
-            // Role
-            // 
-            Role.HeaderText = "Role";
-            Role.Items.AddRange(new object[] { "Faculty Advisor", "Student Lead", "Volunteer" });
-            Role.MinimumWidth = 6;
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            Role.Width = 150;
-            // 
-            // Duty
-            // 
-            Duty.HeaderText = "Duty";
-            Duty.MinimumWidth = 6;
-            Duty.Name = "Duty";
-            Duty.ReadOnly = true;
-            Duty.Width = 125;
-            // 
-            // Deadline
-            // 
-            dataGridViewCellStyle3.Format = "f";
-            dataGridViewCellStyle3.NullValue = null;
-            Deadline.DefaultCellStyle = dataGridViewCellStyle3;
-            Deadline.HeaderText = "Deadline";
-            Deadline.MinimumWidth = 6;
-            Deadline.Name = "Deadline";
-            Deadline.ReadOnly = true;
-            Deadline.Width = 150;
             // 
             // AdminEditCommitteeForm
             // 

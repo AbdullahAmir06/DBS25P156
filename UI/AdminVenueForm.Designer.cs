@@ -341,7 +341,7 @@
             groupBox4.Controls.Add(label19);
             groupBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox4.ForeColor = SystemColors.ButtonHighlight;
-            groupBox4.Location = new Point(376, 252);
+            groupBox4.Location = new Point(334, 304);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(407, 345);
             groupBox4.TabIndex = 24;

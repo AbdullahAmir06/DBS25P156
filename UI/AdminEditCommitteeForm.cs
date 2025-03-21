@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using DBS25P156.BLL;
 using DBS25P156.DAL;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBS25P156.UI
 {
@@ -32,16 +36,16 @@ namespace DBS25P156.UI
         private void AdminEditCommitteeForm_Load(object sender, EventArgs e)
         {
             checkBoxNotClicked();
+            dataGridView1.AutoGenerateColumns = false;
 
-            //dataGridView1.Rows.Add(false, "Anas", "Student", "Volunteer", "Photography", "2025-03-20");
-            //dataGridView1.Rows.Add(false, "ABC", "Student", "Volunteer", "Editing", "2025-03-19");
-            //dataGridView1.Rows.Add(false, "A", "Student", "Volunteer", "Photography", "2025-03-20");
-            //dataGridView1.Rows.Add(false, "C", "Student", "Volunteer", "Photography", "2025-03-20");
-            //dataGridView1.Rows.Add(false, "Ali", "Student", "Volunteer", "Editing", "2025-03-19");
-            //dataGridView1.Rows.Add(false, "Abdullah", "Student", "Volunteer", "Photography", "2025-03-20");
-            //dataGridView1.Rows.Add(false, "Laiba", "Student", "Volunteer", "Editing", "2025-03-19");
-            //dataGridView1.Rows.Add(false, "AN", "Student", "Volunteer", "Editing", "2025-03-19");
 
+            List<string> Committees = committeeDAL.GetCommitteeNames();
+            comboBox1.Items.Clear();
+            //comboBox2.Items.Clear();
+            foreach (string committees in Committees)
+            {
+                comboBox1.Items.Add(committees);
+            }
         }
 
 
@@ -51,7 +55,29 @@ namespace DBS25P156.UI
             {
                 checkBoxCLicked();
 
+                dataGridView1.AutoGenerateColumns = false;
+
+                int committeeId = committeeDAL.GetCommitteeId(comboBox1.Text);
+                //MessageBox.Show("value: "+committeeId);
+                DataTable dt = committeeDAL.GetCommitteeData(committeeId);
+
+
+                if (dt == null)
+                {
+                    MessageBox.Show("Failed to fetch data. Please check your database connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                }
+
+                dataGridView1.Refresh();
+
+
             }
+
             else
             {
                 checkBoxNotClicked();
@@ -119,7 +145,7 @@ namespace DBS25P156.UI
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             bool valid = true;
             int counter = 0;
@@ -160,8 +186,21 @@ namespace DBS25P156.UI
             if (valid)
             {
                 MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
-                this.Close();
+
+                int committeeId = committeeDAL.GetCommitteeId(comboBox1.Text);
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    //a(int committeeId, string name, string taskDescription, DateTime date)
+                    string assignedTo = row.Cells["Name"].Value.ToString();
+                    string taskDescription = row.Cells["Duty"].Value.ToString();
+                    DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
+
+                    committeeDAL.UpdateCommmitteeData(committeeId, assignedTo, taskDescription, deadline);
+                }
+
+                //await Task.Delay(500);
+                //this.Close();
             }
             else
             {
@@ -202,7 +241,9 @@ namespace DBS25P156.UI
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
