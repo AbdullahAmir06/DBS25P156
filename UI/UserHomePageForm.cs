@@ -134,11 +134,15 @@ namespace DBS25P156.UI
 
         private void label8_Click(object sender, EventArgs e)
         {
-
-            UserEventForm userEventForm = new UserEventForm();
+            UserEventRegistrationForm userEventRegistrationForm = new UserEventRegistrationForm();
             this.Hide();
-            userEventForm.ShowDialog();
+            userEventRegistrationForm.ShowDialog();
             this.Show();
+
+            //UserEventForm userEventForm = new UserEventForm();
+            //this.Hide();
+            //userEventForm.ShowDialog();
+            //this.Show();
         }
         private void panel2_MouseEnter(object sender, EventArgs e)
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBS25P156.Models;
 
 namespace DBS25P156.DAL
 {
@@ -49,6 +50,8 @@ namespace DBS25P156.DAL
 
             return result != null ? Convert.ToInt32(result) : -1; // Return -1 if not found
         }
+
+
 
 
     }

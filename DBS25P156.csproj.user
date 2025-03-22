@@ -43,6 +43,9 @@
     <Compile Update="UI\UserEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\UserEventRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\UserHomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>

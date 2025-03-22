@@ -222,7 +222,7 @@ namespace DBS25P156.UI
                         int roleId = CommitteeDAL.GetRoleId(role);
 
                         CommitteeDAL.AddCommitteeMembers(committeeId, name, roleId);
-                        
+
                         string taskDescription = row.Cells["Duty"].Value?.ToString() ?? string.Empty;
 
                         DateTime deadline = Convert.ToDateTime(row.Cells["Deadline"].Value);
@@ -270,6 +270,11 @@ namespace DBS25P156.UI
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -224,9 +224,9 @@
             comboBox3.BackColor = Color.LightGray;
             comboBox3.Font = new Font("Poppins", 10.2F);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(17, 349);
+            comboBox3.Location = new Point(17, 357);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(151, 38);
+            comboBox3.Size = new Size(234, 38);
             comboBox3.TabIndex = 40;
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             comboBox3.Click += comboBox3_Click;
@@ -237,7 +237,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Poppins", 10.2F);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(17, 316);
+            label7.Location = new Point(17, 324);
             label7.Name = "label7";
             label7.Size = new Size(151, 30);
             label7.TabIndex = 41;
@@ -248,9 +248,9 @@
             comboBox2.BackColor = Color.LightGray;
             comboBox2.Font = new Font("Poppins", 10.2F);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(17, 282);
+            comboBox2.Location = new Point(17, 285);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 38);
+            comboBox2.Size = new Size(234, 38);
             comboBox2.TabIndex = 4;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             comboBox2.Leave += comboBox2_Leave;
@@ -260,7 +260,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Poppins", 10.2F);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(17, 249);
+            label6.Location = new Point(17, 252);
             label6.Name = "label6";
             label6.Size = new Size(151, 30);
             label6.TabIndex = 39;
@@ -274,7 +274,7 @@
             comboBox1.Items.AddRange(new object[] { "User", "Committee", "Vendor" });
             comboBox1.Location = new Point(17, 213);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 38);
+            comboBox1.Size = new Size(234, 38);
             comboBox1.TabIndex = 3;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Leave += comboBox1_Leave;
@@ -294,7 +294,7 @@
             // 
             numericUpDown1.BackColor = Color.LightGray;
             numericUpDown1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown1.Location = new Point(21, 416);
+            numericUpDown1.Location = new Point(21, 429);
             numericUpDown1.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 30);
@@ -305,7 +305,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Poppins", 10.2F);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(21, 383);
+            label4.Location = new Point(21, 396);
             label4.Name = "label4";
             label4.Size = new Size(114, 30);
             label4.TabIndex = 35;

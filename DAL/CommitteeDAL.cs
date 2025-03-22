@@ -118,6 +118,13 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.GetColumn(query,new object[] { username }).Select(e => e?.ToString() ?? "").ToList();
         }
 
+        public int GetCommitteeIdOfSpecificEvent(int eventId)
+        {
+            string query = "SELECT committee_id from itec_events where event_id =@eventId";
+
+            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query,new object[] { eventId }));
+        }
+
     }
 
 

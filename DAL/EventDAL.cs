@@ -87,10 +87,10 @@ namespace DBS25P156.DAL
             return count > 0;
         }
 
-        public int GetEventId(string name)
+        public int GetEventId(string name)  //changed the  query //
         {
-            string query = "SELECT event_id FROM itec_events WHERE event_name = @Name";
-            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name }));
+            string query = "SELECT event_id FROM itec_events WHERE event_name = @Name and itec_id =@SelectedEditionID";
+            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name,UserSession.SelectedEditionID }));
         }
         public bool CheckEventExists(Event newEvent)
         {
@@ -190,6 +190,12 @@ namespace DBS25P156.DAL
         //}
 
 
+        public List<string> GetEventCompetitionNames()
+        {
+            string query = "select e.event_name from itec_events e join event_categories ec on ec.event_category_id=e.event_category_id where ec.category_name='Competition' and e.itec_id =@SelectedEditionID";
+
+            return DatabaseHelper.Instance.GetColumn(query, new object[] { UserSession.SelectedEditionID }).Select(e => e?.ToString() ?? "").ToList();
+        }
 
 
 

@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("DBS25P156")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ITEC Event Management System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1503fb59533d5e0e073538fdb9904fbae27ae41")]
-[assembly: System.Reflection.AssemblyProductAttribute("DBS25P156")]
-[assembly: System.Reflection.AssemblyTitleAttribute("DBS25P156")]
+[assembly: System.Reflection.AssemblyProductAttribute("ITEC Event Management System")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ITEC Event Management System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
