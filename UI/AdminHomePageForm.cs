@@ -316,5 +316,13 @@ namespace DBS25P156.UI
         {
 
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            AdminParticipationForm adminParticipationForm = new AdminParticipationForm();
+            this.Hide();
+            adminParticipationForm.ShowDialog();
+            this.Show();
+        }
     }
 }

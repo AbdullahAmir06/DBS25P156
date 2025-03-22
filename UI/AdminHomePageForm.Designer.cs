@@ -355,6 +355,7 @@
             pictureBox9.Size = new Size(195, 149);
             pictureBox9.TabIndex = 20;
             pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
             pictureBox9.MouseLeave += pictureBox9_MouseLeave;
             pictureBox9.MouseHover += pictureBox9_MouseHover;
             // 

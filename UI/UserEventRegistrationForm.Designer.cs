@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             panel1 = new Panel();
+            comboBox3 = new ComboBox();
             comboBox1 = new ComboBox();
             textBox9 = new TextBox();
             label10 = new Label();
@@ -61,7 +62,6 @@
             Event = new Label();
             label1 = new Label();
             errorProvider1 = new ErrorProvider(components);
-            comboBox3 = new ComboBox();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -117,6 +117,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(457, 485);
             panel1.TabIndex = 0;
+            // 
+            // comboBox3
+            // 
+            comboBox3.BackColor = Color.LightGray;
+            comboBox3.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.ForeColor = SystemColors.WindowText;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Pending", "Paid" });
+            comboBox3.Location = new Point(5, 841);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(207, 34);
+            comboBox3.TabIndex = 32;
             // 
             // comboBox1
             // 
@@ -187,6 +199,7 @@
             BackToLogin.Size = new Size(119, 30);
             BackToLogin.TabIndex = 15;
             BackToLogin.Text = "Go To Home";
+            BackToLogin.Click += BackToLogin_Click;
             // 
             // label5
             // 
@@ -420,18 +433,6 @@
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
-            // 
-            // comboBox3
-            // 
-            comboBox3.BackColor = Color.LightGray;
-            comboBox3.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox3.ForeColor = SystemColors.WindowText;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Pending", "Paid" });
-            comboBox3.Location = new Point(5, 841);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(207, 34);
-            comboBox3.TabIndex = 32;
             // 
             // UserEventRegistrationForm
             // 

@@ -148,7 +148,7 @@ namespace DBS25P156.UI
         {
             if (numericUpDown1.Value == 1)
             {
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex ==-1)
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex == -1)
                 {
                     groupBox1.Focus();
                     errorProvider1.SetError(groupBox1, "Please fill all the fields");
@@ -162,12 +162,13 @@ namespace DBS25P156.UI
 
                     RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, payment);
                     MessageBox.Show("Registration Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
 
                 }
             }
             else if (numericUpDown1.Value == 2)
             {
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex ==-1 || string.IsNullOrEmpty(textBox8.Text) || string.IsNullOrEmpty(textBox7.Text) || string.IsNullOrEmpty(textBox6.Text) || string.IsNullOrEmpty(textBox5.Text) || comboBox3.SelectedIndex ==-1)
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex == -1 || string.IsNullOrEmpty(textBox8.Text) || string.IsNullOrEmpty(textBox7.Text) || string.IsNullOrEmpty(textBox6.Text) || string.IsNullOrEmpty(textBox5.Text) || comboBox3.SelectedIndex == -1)
                 {
                     groupBox1.Focus();
                     errorProvider1.SetError(groupBox1, "Please fill all the fields");
@@ -186,18 +187,19 @@ namespace DBS25P156.UI
 
                     RegistrationDAL.RegisterTeam(comboBox2.Text, textBox9.Text);
                     RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, payment1);
-                    RegistrationDAL.TeamParticipantRegistration(textBox1.Text, textBox3.Text,textBox9.Text);
+                    RegistrationDAL.TeamParticipantRegistration(textBox1.Text, textBox3.Text, textBox9.Text);
                     //public bool singleParticipantRegistration(string eventName, string name, string email, string contact, string institution, string paymentStatus)
                     RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox8.Text, textBox7.Text, textBox6.Text, textBox5.Text, payment2);
                     RegistrationDAL.TeamParticipantRegistration(textBox8.Text, textBox6.Text, textBox9.Text);
                     MessageBox.Show("Registration Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
         }
 
         private void comboBox1_DragLeave(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex ==-1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 comboBox1.Focus();
                 errorProvider1.SetError(comboBox1, "Please Select the Payment Status");
@@ -206,6 +208,11 @@ namespace DBS25P156.UI
             {
                 errorProvider1.Clear();
             }
+        }
+
+        private void BackToLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
