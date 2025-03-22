@@ -31,14 +31,13 @@
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             panel1 = new Panel();
-            radioButton3 = new RadioButton();
+            comboBox1 = new ComboBox();
+            textBox9 = new TextBox();
+            label10 = new Label();
             label3 = new Label();
             button1 = new Button();
-            radioButton4 = new RadioButton();
             BackToLogin = new Label();
-            radioButton2 = new RadioButton();
             label5 = new Label();
-            radioButton1 = new RadioButton();
             textBox5 = new TextBox();
             label2 = new Label();
             label9 = new Label();
@@ -62,6 +61,7 @@
             Event = new Label();
             label1 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            comboBox3 = new ComboBox();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -83,14 +83,14 @@
             // panel1
             // 
             panel1.AutoScroll = true;
-            panel1.Controls.Add(radioButton3);
+            panel1.Controls.Add(comboBox3);
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(textBox9);
+            panel1.Controls.Add(label10);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(radioButton4);
             panel1.Controls.Add(BackToLogin);
-            panel1.Controls.Add(radioButton2);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(radioButton1);
             panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label9);
@@ -118,17 +118,37 @@
             panel1.Size = new Size(457, 485);
             panel1.TabIndex = 0;
             // 
-            // radioButton3
+            // comboBox1
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton3.Location = new Point(122, 839);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(70, 34);
-            radioButton3.TabIndex = 28;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Paid";
-            radioButton3.UseVisualStyleBackColor = true;
+            comboBox1.BackColor = Color.LightGray;
+            comboBox1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.ForeColor = SystemColors.WindowText;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Pending", "Paid" });
+            comboBox1.Location = new Point(0, 445);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(207, 34);
+            comboBox1.TabIndex = 31;
+            comboBox1.DragLeave += comboBox1_DragLeave;
+            // 
+            // textBox9
+            // 
+            textBox9.BackColor = Color.LightGray;
+            textBox9.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox9.Location = new Point(5, 914);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(284, 33);
+            textBox9.TabIndex = 30;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(5, 881);
+            label10.Name = "label10";
+            label10.Size = new Size(119, 30);
+            label10.TabIndex = 29;
+            label10.Text = "Team Name";
             // 
             // label3
             // 
@@ -154,18 +174,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton4.Location = new Point(7, 839);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(103, 34);
-            radioButton4.TabIndex = 27;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Pending";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
             // BackToLogin
             // 
             BackToLogin.AutoSize = true;
@@ -180,18 +188,6 @@
             BackToLogin.TabIndex = 15;
             BackToLogin.Text = "Go To Home";
             // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(120, 451);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(70, 34);
-            radioButton2.TabIndex = 14;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Paid";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -201,18 +197,6 @@
             label5.Size = new Size(91, 30);
             label5.TabIndex = 26;
             label5.Text = "Fee : 500";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(5, 451);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(103, 34);
-            radioButton1.TabIndex = 13;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Pending";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -227,7 +211,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 420);
+            label2.Location = new Point(3, 415);
             label2.Name = "label2";
             label2.Size = new Size(91, 30);
             label2.TabIndex = 12;
@@ -437,6 +421,18 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // comboBox3
+            // 
+            comboBox3.BackColor = Color.LightGray;
+            comboBox3.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.ForeColor = SystemColors.WindowText;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Pending", "Paid" });
+            comboBox3.Location = new Point(5, 841);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(207, 34);
+            comboBox3.TabIndex = 32;
+            // 
             // UserEventRegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -475,14 +471,10 @@
         private Label nameLabel;
         private Label NumberOfParticipants;
         private NumericUpDown numericUpDown1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
         private Label label2;
         private Button button1;
         private Label BackToLogin;
         private Label label3;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
         private Label label5;
         private TextBox textBox5;
         private Label label9;
@@ -493,6 +485,10 @@
         private Label label7;
         private TextBox textBox7;
         private ErrorProvider errorProvider1;
+        private TextBox textBox9;
+        private Label label10;
+        private ComboBox comboBox1;
+        private ComboBox comboBox3;
     }
 
 }

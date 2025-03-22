@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,9 +51,12 @@ namespace DBS25P156.UI
             label7.Visible = false;
             textBox6.Visible = false;
             label6.Visible = false;
+            label10.Visible = false;
+            textBox9.Visible = false;
             textBox5.Visible = false;
-            radioButton4.Visible = false;
-            radioButton3.Visible = false;
+            //radioButton4.Visible = false;
+            //radioButton3.Visible = false;
+            comboBox3.Visible = false;
 
             label3.Location = new Point(-1000, -1000);
             label9.Location = new Point(-1000, -1000);
@@ -63,9 +67,12 @@ namespace DBS25P156.UI
             label7.Location = new Point(-1000, -1000);
             textBox6.Location = new Point(-1000, -1000);
             label6.Location = new Point(-1000, -1000);
+            label10.Location = new Point(-1000, -1000);
+            textBox9.Location = new Point(-1000, -1000);
             textBox5.Location = new Point(-1000, -1000);
-            radioButton4.Location = new Point(-1000, -1000);
-            radioButton3.Location = new Point(-1000, -1000);
+            comboBox3.Location = new Point(-1000, -1000);
+            //radioButton4.Location = new Point(-1000, -1000);
+            //radioButton3.Location = new Point(-1000, -1000);
 
             button1.Location = new Point(94, 491);
             BackToLogin.Location = new Point(156, 531);
@@ -83,26 +90,32 @@ namespace DBS25P156.UI
             label7.Visible = true;
             textBox6.Visible = true;
             label6.Visible = true;
+            label10.Visible = true;
+            textBox9.Visible = true;
             textBox5.Visible = true;
-            radioButton4.Visible = true;
-            radioButton3.Visible = true;
+            comboBox3.Visible = true;
+            //radioButton4.Visible = true;
+            //radioButton3.Visible = true;
 
             label3.Location = new Point(3, 498);
             label9.Location = new Point(5, 534);
             label8.Location = new Point(5, 602);
-            label5.Location = new Point(-1000, -1000);
+            label5.Location = new Point(5, 808);
             textBox8.Location = new Point(5, 567);
             textBox7.Location = new Point(5, 635);
             label7.Location = new Point(5, 671);
             textBox6.Location = new Point(5, 704);
             label6.Location = new Point(5, 739);
             textBox5.Location = new Point(5, 772);
-            radioButton4.Location = new Point(7, 839);
-            radioButton3.Location = new Point(122, 839);
+            //radioButton4.Location = new Point(7, 839);
+            //radioButton3.Location = new Point(122, 839);
+            comboBox3.Location = new Point(5, 841);
+            label10.Location = new Point(5, 881);
+            textBox9.Location = new Point(5, 914);
 
 
-            button1.Location = new Point(91, 888);
-            BackToLogin.Location = new Point(153, 928);
+            button1.Location = new Point(91, 975);
+            BackToLogin.Location = new Point(153, 1024);
         }
 
         private void UserEventRegistrationForm_Load(object sender, EventArgs e)
@@ -110,7 +123,7 @@ namespace DBS25P156.UI
             value1();
 
             comboBox2.Items.Clear();
-            List <string> Events = RegistrationDAL.GetAllEvents();
+            List<string> Events = RegistrationDAL.GetAllEvents();
 
             foreach (string Event in Events)
             {
@@ -135,24 +148,17 @@ namespace DBS25P156.UI
         {
             if (numericUpDown1.Value == 1)
             {
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || (radioButton1.Checked == false && radioButton2.Checked == false))
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex ==-1)
                 {
+                    groupBox1.Focus();
                     errorProvider1.SetError(groupBox1, "Please fill all the fields");
                     return;
                 }
                 else
                 {
                     errorProvider1.Clear();
-                    
-                    string payment = string.Empty;
-                    if (radioButton1.Checked)
-                    {
-                        payment = radioButton1.Text;
-                    }
-                    else if (radioButton2.Checked)
-                    {
-                        payment = radioButton2.Text;
-                    }
+
+                    string payment = comboBox1.Text;
 
                     RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, payment);
                     MessageBox.Show("Registration Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,14 +167,44 @@ namespace DBS25P156.UI
             }
             else if (numericUpDown1.Value == 2)
             {
-                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || (radioButton1.Checked == false && radioButton2.Checked == false) || string.IsNullOrEmpty(textBox8.Text) || string.IsNullOrEmpty(textBox7.Text) || string.IsNullOrEmpty(textBox6.Text) || string.IsNullOrEmpty(textBox5.Text) || (radioButton3.Checked == false && radioButton4.Checked == false))
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || comboBox2.SelectedIndex == -1 || comboBox1.SelectedIndex ==-1 || string.IsNullOrEmpty(textBox8.Text) || string.IsNullOrEmpty(textBox7.Text) || string.IsNullOrEmpty(textBox6.Text) || string.IsNullOrEmpty(textBox5.Text) || comboBox3.SelectedIndex ==-1)
                 {
+                    groupBox1.Focus();
                     errorProvider1.SetError(groupBox1, "Please fill all the fields");
+                    return;
                 }
                 else
                 {
                     errorProvider1.Clear();
+
+
+
+                    string payment1 = comboBox1.Text;
+                    string payment2 = comboBox3.Text;
+
+
+
+                    RegistrationDAL.RegisterTeam(comboBox2.Text, textBox9.Text);
+                    RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, payment1);
+                    RegistrationDAL.TeamParticipantRegistration(textBox1.Text, textBox3.Text,textBox9.Text);
+                    //public bool singleParticipantRegistration(string eventName, string name, string email, string contact, string institution, string paymentStatus)
+                    RegistrationDAL.singleParticipantRegistration(comboBox2.Text, textBox8.Text, textBox7.Text, textBox6.Text, textBox5.Text, payment2);
+                    RegistrationDAL.TeamParticipantRegistration(textBox8.Text, textBox6.Text, textBox9.Text);
+                    MessageBox.Show("Registration Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void comboBox1_DragLeave(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex ==-1)
+            {
+                comboBox1.Focus();
+                errorProvider1.SetError(comboBox1, "Please Select the Payment Status");
+            }
+            else
+            {
+                errorProvider1.Clear();
             }
         }
     }
