@@ -62,6 +62,8 @@
             errorProvider7 = new ErrorProvider(components);
             errorProvider8 = new ErrorProvider(components);
             errorProvider9 = new ErrorProvider(components);
+            comboBox2 = new ComboBox();
+            label2 = new Label();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
@@ -165,6 +167,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(comboBox2);
+            groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(textBox7);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label9);
@@ -434,6 +438,28 @@
             // 
             errorProvider9.ContainerControl = this;
             // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.LightGray;
+            comboBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Solo", "Team(2)" });
+            comboBox2.Location = new Point(221, 272);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(140, 38);
+            comboBox2.TabIndex = 31;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Poppins", 10.2F);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(221, 245);
+            label2.Name = "label2";
+            label2.Size = new Size(150, 24);
+            label2.TabIndex = 32;
+            label2.Text = "Event";
+            // 
             // EventRegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -497,5 +523,7 @@
         private TextBox textBox7;
         private Label label10;
         private ErrorProvider errorProvider9;
+        private ComboBox comboBox2;
+        private Label label2;
     }
 }

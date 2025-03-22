@@ -20,25 +20,27 @@ namespace DBS25P156.UI
         }
         private void EventRegistrationForm_Load(object sender, EventArgs e)
         {
-            groupBox2.Visible = true;
+            loadSingleParticipantData();
 
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            label9.Visible = false;
-            label10.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox6.Visible = false;
-            textBox7.Visible = false;
-            Fee.Location = new Point(20, 294);
-            radioButton1.Location = new Point(20, 328);
-            radioButton2.Location = new Point(129, 328);
-            button1.Location = new Point(82, 381);
-            BackToLogin.Location = new Point(160, 430);
-            groupBox2.Location = new Point(209, 62);
-            groupBox2.Size = new Size(437, 487);
-            this.Size = new Size(860, 620);
+            //groupBox2.Visible = true;
+
+            //label6.Visible = false;
+            //label7.Visible = false;
+            //label8.Visible = false;
+            //label9.Visible = false;
+            //label10.Visible = false;
+            //textBox4.Visible = false;
+            //textBox5.Visible = false;
+            //textBox6.Visible = false;
+            //textBox7.Visible = false;
+            //Fee.Location = new Point(20, 294);
+            //radioButton1.Location = new Point(20, 328);
+            //radioButton2.Location = new Point(129, 328);
+            //button1.Location = new Point(82, 381);
+            //BackToLogin.Location = new Point(160, 430);
+            //groupBox2.Location = new Point(209, 62);
+            //groupBox2.Size = new Size(437, 487);
+            //this.Size = new Size(860, 620);
         }        
 
         private void BackToLogin_Click(object sender, EventArgs e)
@@ -210,56 +212,58 @@ namespace DBS25P156.UI
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                label6.Visible = false;
-                label7.Visible = false;
-                label8.Visible = false;
-                label9.Visible = false;
-                label10.Visible = false;
-                textBox4.Visible = false;
-                textBox5.Visible = false;
-                textBox6.Visible = false;
-                textBox7.Visible = false;
-                Fee.Location = new Point(20, 294);
-                Fee.Text = "500";
-                radioButton1.Location = new Point(20, 328);
-                radioButton2.Location = new Point(129, 328);
-                button1.Location = new Point(82, 381);
-                BackToLogin.Location = new Point(160, 430);
-                groupBox2.Location = new Point(209, 62);
-                groupBox2.Size = new Size(437, 487);
-                this.Size = new Size(860, 620);
+                loadSingleParticipantData();
+                //label6.Visible = false;
+                //label7.Visible = false;
+                //label8.Visible = false;
+                //label9.Visible = false;
+                //label10.Visible = false;
+                //textBox4.Visible = false;
+                //textBox5.Visible = false;
+                //textBox6.Visible = false;
+                //textBox7.Visible = false;
+                //Fee.Location = new Point(20, 294);
+                //Fee.Text = "500";
+                //radioButton1.Location = new Point(20, 328);
+                //radioButton2.Location = new Point(129, 328);
+                //button1.Location = new Point(82, 381);
+                //BackToLogin.Location = new Point(160, 430);
+                //groupBox2.Location = new Point(209, 62);
+                //groupBox2.Size = new Size(437, 487);
+                //this.Size = new Size(860, 620);
 
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                label9.Visible = true;
-                label10.Visible = true;
-                textBox4.Visible = true;
-                textBox5.Visible = true;
-                textBox6.Visible = true;
-                textBox7.Visible = true;
-                label9.Location = new Point(20, 290);
-                label6.Location = new Point(20, 324);
-                textBox4.Location = new Point(20, 353);
-                label7.Location = new Point(20, 386);
-                textBox5.Location = new Point(20, 415);
-                label8.Location = new Point(20, 451);
-                textBox6.Location = new Point(20, 479);
-                label10.Location = new Point(20, 513);
-                textBox7.Location = new Point(20, 541);
+                loadTeamData();
+                //label6.Visible = true;
+                //label7.Visible = true;
+                //label8.Visible = true;
+                //label9.Visible = true;
+                //label10.Visible = true;
+                //textBox4.Visible = true;
+                //textBox5.Visible = true;
+                //textBox6.Visible = true;
+                //textBox7.Visible = true;
+                //label9.Location = new Point(20, 290);
+                //label6.Location = new Point(20, 324);
+                //textBox4.Location = new Point(20, 353);
+                //label7.Location = new Point(20, 386);
+                //textBox5.Location = new Point(20, 415);
+                //label8.Location = new Point(20, 451);
+                //textBox6.Location = new Point(20, 479);
+                //label10.Location = new Point(20, 513);
+                //textBox7.Location = new Point(20, 541);
 
-                Fee.Location = new Point(20, 587);
-                Fee.Text = "500 X 2 = 1000";
-                radioButton1.Location = new Point(20, 627);
-                radioButton2.Location = new Point(129, 627);
-                BackToLogin.Location = new Point(160, 717);
-                button1.Location = new Point(82, 668);
-                groupBox2.Size = new Size(437, 749);
-                this.Size = new Size(860, 900);
+                //Fee.Location = new Point(20, 587);
+                //Fee.Text = "500 X 2 = 1000";
+                //radioButton1.Location = new Point(20, 627);
+                //radioButton2.Location = new Point(129, 627);
+                //BackToLogin.Location = new Point(160, 717);
+                //button1.Location = new Point(82, 668);
+                //groupBox2.Size = new Size(437, 749);
+                //this.Size = new Size(860, 900);
             }
         }
 
@@ -343,6 +347,86 @@ namespace DBS25P156.UI
             {
                 errorProvider9.Clear();
             }
+        }
+
+
+        public void loadSingleParticipantData()
+        {
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
+            textBox6.Visible = false;
+            textBox7.Visible = false;
+
+            label2.Location = new Point(20,38);
+            comboBox2.Location = new Point(20, 67);
+            NameOfStudent.Location = new Point(20, 100);
+            textBox3.Location = new Point(20, 129);
+            Contact.Location = new Point(20, 162);
+            ContactTextBox.Location = new Point(20, 191);
+            Institute.Location = new Point(20, 227);
+            InstituteTextBox.Location = new Point (20, 255);
+            RegisterAs.Location = new Point(20, 291);
+            comboBox1.Location = new Point(20, 318);
+
+
+            Fee.Location = new Point(20, 356);
+            Fee.Text = "500";
+            radioButton1.Location = new Point(20, 390);
+            radioButton2.Location = new Point(129, 390);
+            button1.Location = new Point(82, 441);
+            BackToLogin.Location = new Point(160, 492);
+            groupBox2.Location = new Point(209, 62);
+            groupBox2.Size = new Size(437, 549);
+            this.Size = new Size(860, 682);
+        }
+
+        public void loadTeamData()
+        {
+            label2.Location = new Point(20, 38);
+            comboBox2.Location = new Point(20, 67);
+            NameOfStudent.Location = new Point(20, 100);
+            textBox3.Location = new Point(20, 129);
+            Contact.Location = new Point(20, 162);
+            ContactTextBox.Location = new Point(20, 191);
+            Institute.Location = new Point(20, 227);
+            InstituteTextBox.Location = new Point(20, 255);
+            RegisterAs.Location = new Point(20, 291);
+            comboBox1.Location = new Point(20, 318);
+
+
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            label10.Visible = true;
+            textBox4.Visible = true;
+            textBox5.Visible = true;
+            textBox6.Visible = true;
+            textBox7.Visible = true;
+            label9.Location = new Point(20, 352);
+            label6.Location = new Point(20, 386);
+            textBox4.Location = new Point(20, 415);
+            label7.Location = new Point(20, 448);
+            textBox5.Location = new Point(20, 477);
+            label8.Location = new Point(20, 513);
+            textBox6.Location = new Point(20, 541);
+            label10.Location = new Point(20, 575);
+            textBox7.Location = new Point(20, 603);
+
+            Fee.Location = new Point(20, 649);
+            Fee.Text = "500 X 2 = 1000";
+            radioButton1.Location = new Point(20, 689);
+            radioButton2.Location = new Point(129, 689);
+            BackToLogin.Location = new Point(160, 770);
+            //151, 708
+            button1.Location = new Point(82, 730);
+            groupBox2.Size = new Size(437, 811);
+            this.Size = new Size(860, 962);
         }
     }
 }
