@@ -94,12 +94,12 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Student", "Faculty", "Sponsor", "Vendor" });
             comboBox1.Location = new Point(20, 249);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 31);
+            comboBox1.Size = new Size(150, 38);
             comboBox1.TabIndex = 4;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;

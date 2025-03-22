@@ -24,15 +24,15 @@ namespace DBS25P156.BLL
             return userDAL.CreateUser(user);
         }
 
-        public User AuthenticateUser(string identifier, string password)
+        public User? AuthenticateUser(string identifier, string password)
         {
-            User user = userDAL.GetUserByEmailOrUsername(identifier);
-            return (user != null && user.Password == password) ? user : null;
+            User? user = userDAL.GetUserByEmailOrUsername(identifier);
+            return (user != null && UserDAL.VerifyPassword(password, user.Password)) ? user : null;
         }
 
         public bool UpdatePassword(string newPassword, string identifier)
         {
-            if(!userDAL.UserExists(identifier))
+            if (!userDAL.UserExists(identifier))
             {
                 return false;
             }
@@ -41,7 +41,7 @@ namespace DBS25P156.BLL
 
         public List<string> GetUsers()
         {
-            return userDAL.GetUsers();  
+            return userDAL.GetUsers();
         }
     }
 }

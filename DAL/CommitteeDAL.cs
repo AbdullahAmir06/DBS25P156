@@ -45,23 +45,23 @@ namespace DBS25P156.DAL
         {
             string query = "select distinct cm.name as Name,r.role_name as Category,r2.role_name as Role,d.task_description as Duty,d.deadline as Deadline from committee_members cm join duties d on cm.committee_id = d.committee_id and cm.name = d.assigned_to join users u on u.username=cm.name join roles r on r.role_id=u.role_id join roles r2 on cm.role_id = r2.role_id where cm.committee_id =@committeeId";
 
-            return DatabaseHelper.Instance.GetData(query,new object[] {commmitteeId});
+            return DatabaseHelper.Instance.GetData(query, new object[] { commmitteeId });
 
         }
 
-        public bool UpdateCommmitteeData(int committeeId,string name,string taskDescription,DateTime date)
+        public bool UpdateCommmitteeData(int committeeId, string name, string taskDescription, DateTime date)
         {
             //UPDATE itec_events SET event_date = @Date, venue_id = @VenueId WHERE event_id = @EventId";
             string query = "UPDATE duties SET task_description=@taskDescription, deadline =@date WHERE committee_id =@committeeId and assigned_to = @name";
 
-            return DatabaseHelper.Instance.ExecuteQuery(query,new object[] {taskDescription,date,committeeId,name})>0;
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { taskDescription, date, committeeId, name }) > 0;
         }
 
         public bool DeleteCommittee(int committeeId)
         {
             string query = "DELETE FROM committees WHERE committee_id = @committeeId";
 
-            return DatabaseHelper.Instance.ExecuteQuery(query,new object[] {committeeId})>0;   
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { committeeId }) > 0;
         }
 
         public bool CreateCommittee(string name)
@@ -105,10 +105,17 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { committeeId, name, roleId }) > 0;
         }
 
-        public bool AssignDuty(int committeeId,string name,string description,DateTime date,int statusId)
+        public bool AssignDuty(int committeeId, string name, string description, DateTime date, int statusId)
         {
             string query = "INSERT INTO duties (committee_id,assigned_to,task_description,deadline,status_id) VALUES (@committeeId,@name,@description,@date,@statusId)";
-            return DatabaseHelper.Instance.ExecuteQuery(query,new object[] { committeeId, name, description, date, statusId })>0; 
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { committeeId, name, description, date, statusId }) > 0;
+        }
+
+        public List<string> GetCommitteeNameOfSpecificUser(string username) // used for duty update
+        {
+            string query = "select c.committee_name from committees c join duties d on d.committee_id = c.committee_id where d.assigned_to =@username";
+
+            return DatabaseHelper.Instance.GetColumn(query,new object[] { username }).Select(e => e?.ToString() ?? "").ToList();
         }
 
     }

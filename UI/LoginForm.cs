@@ -12,7 +12,7 @@ using DBS25P156.BLL;
 using DBS25P156.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+using BCrypt.Net;
 
 
 namespace DBS25P156.UI
@@ -61,6 +61,8 @@ namespace DBS25P156.UI
 
         private void label2_Click_1(object sender, EventArgs e)
         {
+            textBox2.Clear();
+            textBox3.Clear();
             Sign_Up sign_Up = new Sign_Up();
             this.Hide();
             sign_Up.ShowDialog();
@@ -113,6 +115,8 @@ namespace DBS25P156.UI
 
         private void label5_Click(object sender, EventArgs e)
         {
+            textBox2.Clear();
+            textBox3.Clear();
             ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm();
             this.Hide();
             forgetPasswordForm.ShowDialog();

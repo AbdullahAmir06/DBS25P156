@@ -411,12 +411,12 @@
             // comboBox7
             // 
             comboBox7.BackColor = Color.LightGray;
-            comboBox7.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox7.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox7.FormattingEnabled = true;
             comboBox7.Items.AddRange(new object[] { "Add New Committee" });
-            comboBox7.Location = new Point(16, 444);
+            comboBox7.Location = new Point(16, 450);
             comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(157, 34);
+            comboBox7.Size = new Size(157, 38);
             comboBox7.TabIndex = 9;
             comboBox7.SelectedIndexChanged += comboBox7_SelectedIndexChanged;
             comboBox7.Enter += comboBox7_Enter;
@@ -426,7 +426,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.Location = new Point(16, 421);
+            label22.Location = new Point(16, 425);
             label22.Name = "label22";
             label22.Size = new Size(129, 23);
             label22.TabIndex = 10;
@@ -449,11 +449,11 @@
             // comboBox2
             // 
             comboBox2.BackColor = Color.LightGray;
-            comboBox2.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(16, 384);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(157, 34);
+            comboBox2.Size = new Size(157, 38);
             comboBox2.TabIndex = 5;
             comboBox2.Enter += comboBox2_Enter;
             comboBox2.Leave += comboBox2_Leave;
@@ -514,11 +514,11 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(16, 132);
+            comboBox1.Location = new Point(16, 131);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(157, 34);
+            comboBox1.Size = new Size(157, 38);
             comboBox1.TabIndex = 2;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
@@ -614,11 +614,11 @@
             // 
             comboBox5.BackColor = Color.LightGray;
             comboBox5.Enabled = false;
-            comboBox5.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox5.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox5.FormattingEnabled = true;
             comboBox5.Location = new Point(17, 254);
             comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(183, 31);
+            comboBox5.Size = new Size(183, 38);
             comboBox5.TabIndex = 2;
             comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             // 
@@ -657,11 +657,11 @@
             // comboBox6
             // 
             comboBox6.BackColor = Color.LightGray;
-            comboBox6.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox6.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox6.FormattingEnabled = true;
             comboBox6.Location = new Point(16, 70);
             comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(183, 31);
+            comboBox6.Size = new Size(183, 38);
             comboBox6.TabIndex = 0;
             comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
             comboBox6.Enter += comboBox6_Enter;
@@ -690,7 +690,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(320, 203);
+            groupBoxUpdate.Location = new Point(302, 163);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 377);
             groupBoxUpdate.TabIndex = 21;
@@ -738,11 +738,11 @@
             // comboBox4
             // 
             comboBox4.BackColor = Color.LightGray;
-            comboBox4.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox4.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox4.FormattingEnabled = true;
             comboBox4.Location = new Point(16, 256);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(183, 31);
+            comboBox4.Size = new Size(183, 38);
             comboBox4.TabIndex = 2;
             comboBox4.Enter += comboBox4_Enter;
             comboBox4.Leave += comboBox4_Leave;
@@ -782,11 +782,11 @@
             // comboBox3
             // 
             comboBox3.BackColor = Color.LightGray;
-            comboBox3.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(16, 70);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(183, 31);
+            comboBox3.Size = new Size(183, 38);
             comboBox3.TabIndex = 0;
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             comboBox3.Enter += comboBox3_Enter;

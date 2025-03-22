@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DBS25P156.DAL;
+using DBS25P156.Models;
 
 namespace DBS25P156.UI
 {
     public partial class UserCommitteeForm : Form
     {
+        public DutyDAL DutyDAL = new DutyDAL();
         public UserCommitteeForm()
         {
             InitializeComponent();
@@ -27,8 +30,12 @@ namespace DBS25P156.UI
 
         private void UserCommitteeForm_Load(object sender, EventArgs e)
         {
-
-
+            List<string> Committees = DutyDAL.GetCommitteeNames(UserSession.UserLoginUserName);
+            comboBox2.Items.Clear();
+            foreach (string CommitteeName in Committees)
+            {
+                comboBox2.Items.Add(CommitteeName);
+            }
         }
 
         private void label3_MouseHover(object sender, EventArgs e)
@@ -130,7 +137,7 @@ namespace DBS25P156.UI
 
         }
 
-        private async void button5_Click(object sender, EventArgs e)
+        private  void button5_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
             {
@@ -138,10 +145,48 @@ namespace DBS25P156.UI
             }
             else
             {
+                DutyDAL.UpdateDutyStatus(comboBox1.Text, comboBox2.Text);
                 MessageBox.Show("Duty Status Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                await Task.Delay(500);
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                textBox2.Clear();
+                dateTimePicker1.Value = DateTime.Now;
+                //await Task.Delay(500);
                 this.Close();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                comboBox2.Focus();
+                errorProvider2.SetError(comboBox2, "Please Selete the Committee Name");
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox2.SelectedIndex != -1)
+            {
+                DutyDAL = DutyDAL.GetDutyDetails(comboBox2.Text);
+                if(DutyDAL != null)
+                {
+                    textBox2.Text = DutyDAL.description;
+                    dateTimePicker1.Value = DutyDAL.date;
+                }
+            }
+
         }
     }
 }

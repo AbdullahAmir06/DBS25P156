@@ -222,11 +222,11 @@
             // comboBox3
             // 
             comboBox3.BackColor = Color.LightGray;
-            comboBox3.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.Font = new Font("Poppins", 10.2F);
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(17, 349);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(151, 31);
+            comboBox3.Size = new Size(151, 38);
             comboBox3.TabIndex = 40;
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             comboBox3.Click += comboBox3_Click;
@@ -246,11 +246,11 @@
             // comboBox2
             // 
             comboBox2.BackColor = Color.LightGray;
-            comboBox2.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.Font = new Font("Poppins", 10.2F);
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(17, 282);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 31);
+            comboBox2.Size = new Size(151, 38);
             comboBox2.TabIndex = 4;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             comboBox2.Leave += comboBox2_Leave;
@@ -269,12 +269,12 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "User", "Committee", "Vendor" });
             comboBox1.Location = new Point(17, 213);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 31);
+            comboBox1.Size = new Size(151, 38);
             comboBox1.TabIndex = 3;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Leave += comboBox1_Leave;

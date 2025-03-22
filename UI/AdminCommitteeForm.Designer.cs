@@ -184,11 +184,11 @@
             // 
             // comboBox1
             // 
-            comboBox1.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(24, 72);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(249, 31);
+            comboBox1.Size = new Size(249, 38);
             comboBox1.TabIndex = 11;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;

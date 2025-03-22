@@ -358,7 +358,7 @@
             panel2.BackColor = Color.FromArgb(50, 68, 79, 73);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label14);
-            panel2.Location = new Point(322, 270);
+            panel2.Location = new Point(322, 256);
             panel2.Name = "panel2";
             panel2.Size = new Size(487, 155);
             panel2.TabIndex = 19;
@@ -402,11 +402,11 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.LightGray;
-            comboBox1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(24, 65);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(249, 34);
+            comboBox1.Size = new Size(249, 38);
             comboBox1.TabIndex = 1;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged_1;
             // 
@@ -441,7 +441,7 @@
             groupBoxDelete.Controls.Add(label11);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(766, 218);
+            groupBoxDelete.Location = new Point(311, 422);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(418, 248);
             groupBoxDelete.TabIndex = 17;
@@ -453,11 +453,11 @@
             // comboBox2
             // 
             comboBox2.BackColor = Color.LightGray;
-            comboBox2.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(24, 64);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(249, 34);
+            comboBox2.Size = new Size(249, 38);
             comboBox2.TabIndex = 11;
             // 
             // button6
