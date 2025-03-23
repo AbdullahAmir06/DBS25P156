@@ -13,12 +13,15 @@ namespace DBS25P156.DAL
 {
     public class EventDAL
     {
-        //public bool AddEvent(Event newEvent)
-        //{
-        //    string query = "INSERT INTO itec_events (event_name, description, event_date, itec_id, event_category_id, venue_id, committee_id) VALUES ( @newEvent.Name , @newEvent.Description , @newEvent.Date , @newEvent.EditionId , @newEvent.CategoryId , @newEvent.VenueId , @newEvent.CommitteeID )";
 
-        //    return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Name, newEvent.Description, newEvent.Date, newEvent.EditionId, newEvent.CategoryId, newEvent.VenueId, newEvent.CommitteeID }) > 0;
-        //}
+        public bool UpdateToFinance(int event_id,int amount,string from,int fromComm,string to,int toComm)
+        {
+            int type_id = 24;
+            string des = "Event Expected Expenses";
+            string query = "INSERT INTO finances (itec_id,event_id,type_id,amount,from_entity_type,from_entity_id,to_entity_type,to_entity_id,description) VALUES (@SelectedEditionID,@event_id,@amount,@type_id,@from,@fromComm,@to,@toComm,@des)";
+
+            return DatabaseHelper.Instance.ExecuteQuery(query,new object [] {UserSession.SelectedEditionID,event_id,type_id,amount,from,fromComm,to,toComm,des})>0;  
+        }
         public bool AddEvent(Event newEvent)
         {
             string query = "INSERT INTO itec_events (event_name, description, event_date, itec_id, event_category_id, venue_id, committee_id) VALUES (@Name, @Description, @dateOnly, @EditionId, @CategoryId, @VenueId, @CommitteeID)";
@@ -35,11 +38,6 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { eventId, venueId, date, time }) > 0;
         }
 
-        //public bool DeleteEvent(Event newEvent) {
-        //    string query = "DELETE FROM itec_events WHERE event_id = @newEvent.Id";
-        //    return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Id }) > 0;
-        //}
-
         public bool DeleteEvent(Event newEvent)
         {
             string query = "DELETE FROM itec_events WHERE event_id = @EventId";
@@ -47,11 +45,6 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Id }) > 0;
         }
 
-
-        //public bool UpdateEvent(Event newEvent) {
-        //    string query = "UPDATE itec_events SET  event_date = @newEvent.Date, venue_id = @newEvent.VenueId WHERE event_id = @newEvent.Id";
-        //    return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Date, newEvent.VenueId, newEvent.Id }) > 0;
-        //}
 
         public bool UpdateEvent(Event newEvent)
         {
@@ -66,15 +59,6 @@ namespace DBS25P156.DAL
 
             return (rowsAffected > 0 && venueUpdate > 0);
         }
-
-
-        //public bool UpdateEvent(Event newEvent)
-        //{
-        //    string query = "UPDATE itec_events SET event_date = @Date, venue_id = @VenueId WHERE event_id = @EventId";
-
-        //    return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { newEvent.Date, newEvent.VenueId, newEvent.Id }) > 0;
-        //}
-
 
         public bool ConflictCheck(int venueId, DateTime date, DateTime time)
         {
@@ -197,30 +181,6 @@ namespace DBS25P156.DAL
             return DatabaseHelper.Instance.GetColumn(query, new object[] { UserSession.SelectedEditionID }).Select(e => e?.ToString() ?? "").ToList();
         }
 
-
-
-
-
-        //public List<Event> GetEventsByCategory(int categoryId)
-        //{
-        //    string query = "SELECT * FROM itec_events WHERE event_category_id = @categoryId";
-        //    var rows = DatabaseHelper.Instance.GetDataTable(query, new object[] { categoryId });
-        //    List<Event> events = new List<Event>();
-        //    foreach (var row in rows)
-        //    {
-        //        events.Add(new Event(
-        //            Convert.ToInt32(row["event_id"]),
-        //            row["event_name"].ToString(),
-        //            row["description"].ToString(),
-        //            Convert.ToDateTime(row["event_date"]),
-        //            Convert.ToInt32(row["itec_id"]),
-        //            Convert.ToInt32(row["event_category_id"]),
-        //            Convert.ToInt32(row["venue_id"]),
-        //            Convert.ToInt32(row["committee_id"])
-        //        ));
-        //    }
-        //    return events;
-        //}
 
 
     }

@@ -73,9 +73,9 @@ namespace DBS25P156.DAL
 
         public int GetCommitteeId(string name)
         {
-            string query = "Select committee_id from committees where committee_name = @name";
+            string query = "Select committee_id from committees where committee_name = @name and itec_id =@SelectedEditionID";
 
-            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name }));
+            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name,UserSession.SelectedEditionID }));
         }
 
         public List<string> GetCommitteeNames()

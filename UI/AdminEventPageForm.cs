@@ -19,6 +19,8 @@ namespace DBS25P156.UI
         Event newEvent = new Event();   //used to fetch data from db
 
         EventBLL eventBLL = new EventBLL();
+        EventDAL eventDAL = new EventDAL(); 
+        CommitteeDAL CommitteeDAL = new CommitteeDAL();
         //VenueBLL venueBLL = new VenueBLL();
         public AdminEventPageForm()
         {
@@ -274,6 +276,12 @@ namespace DBS25P156.UI
 
                 eventBLL.CreateEvent(textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker4.Value, comboBox1.Text, comboBox2.Text, comboBox7.Text);
                 //MessageBox.Show("Event Registered Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int event_id =eventDAL.GetEventId(textBox1.Text);
+                int comm_id = CommitteeDAL.GetCommitteeId(comboBox7.Text);
+                int amount = Convert.ToInt32(numericUpDown1.Value);
+                eventDAL.UpdateToFinance(event_id, amount, "Committee", comm_id, "Committee", comm_id);
+
+                            //public bool UpdateToFinance(string event_id, int amount, string from, int fromComm, string to, int tocomm)
                 LoadDataIntoComboBoxes();
                 textBox1.Clear();
                 textBox2.Clear();
@@ -531,6 +539,24 @@ namespace DBS25P156.UI
         private void dateTimePicker5_Leave(object sender, EventArgs e)
         {
             label24.Font = new Font(label24.Font.FontFamily, 8);
+        }
+
+        private void numericUpDown1_Leave(object sender, EventArgs e)
+        {
+            label26.Font = new Font(label26.Font.FontFamily, 8);
+            if (numericUpDown1.Value < 6000)
+            {
+                errorProvider11.SetError(numericUpDown1, "Please Set the price more than 6000");
+            }
+            else
+            {
+                errorProvider11.Clear();
+            }
+        }
+
+        private void numericUpDown1_Enter(object sender, EventArgs e)
+        {
+            label26.Font = new Font (label26.Font.FontFamily, 8);   
         }
     }
 }

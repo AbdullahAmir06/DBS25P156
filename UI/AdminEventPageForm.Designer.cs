@@ -48,6 +48,8 @@
             button1 = new Button();
             label8 = new Label();
             groupBoxAdd = new GroupBox();
+            numericUpDown1 = new NumericUpDown();
+            label26 = new Label();
             dateTimePicker4 = new DateTimePicker();
             label23 = new Label();
             comboBox7 = new ComboBox();
@@ -98,6 +100,7 @@
             errorProvider8 = new ErrorProvider(components);
             errorProvider9 = new ErrorProvider(components);
             errorProvider10 = new ErrorProvider(components);
+            errorProvider11 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -105,6 +108,7 @@
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBoxAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBoxDelete.SuspendLayout();
             groupBoxUpdate.SuspendLayout();
             panel2.SuspendLayout();
@@ -118,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider11).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -359,6 +364,8 @@
             // 
             // groupBoxAdd
             // 
+            groupBoxAdd.Controls.Add(numericUpDown1);
+            groupBoxAdd.Controls.Add(label26);
             groupBoxAdd.Controls.Add(dateTimePicker4);
             groupBoxAdd.Controls.Add(label23);
             groupBoxAdd.Controls.Add(comboBox7);
@@ -378,12 +385,34 @@
             groupBoxAdd.ForeColor = SystemColors.ButtonHighlight;
             groupBoxAdd.Location = new Point(378, 162);
             groupBoxAdd.Name = "groupBoxAdd";
-            groupBoxAdd.Size = new Size(465, 563);
+            groupBoxAdd.Size = new Size(465, 632);
             groupBoxAdd.TabIndex = 12;
             groupBoxAdd.TabStop = false;
             groupBoxAdd.Text = "Add Event";
             groupBoxAdd.Visible = false;
             groupBoxAdd.Enter += groupBoxAdd_Enter;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(20, 518);
+            numericUpDown1.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 6000, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(150, 33);
+            numericUpDown1.TabIndex = 14;
+            numericUpDown1.Value = new decimal(new int[] { 6000, 0, 0, 0 });
+            numericUpDown1.Enter += numericUpDown1_Enter;
+            numericUpDown1.Leave += numericUpDown1_Leave;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label26.Location = new Point(16, 491);
+            label26.Name = "label26";
+            label26.Size = new Size(151, 23);
+            label26.TabIndex = 13;
+            label26.Text = "Event Expense Budget";
             // 
             // dateTimePicker4
             // 
@@ -438,7 +467,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.Location = new Point(121, 505);
+            button4.Location = new Point(121, 572);
             button4.Name = "button4";
             button4.Size = new Size(241, 37);
             button4.TabIndex = 0;
@@ -566,7 +595,7 @@
             groupBoxDelete.Controls.Add(label21);
             groupBoxDelete.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxDelete.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxDelete.Location = new Point(653, 140);
+            groupBoxDelete.Location = new Point(746, 56);
             groupBoxDelete.Name = "groupBoxDelete";
             groupBoxDelete.Size = new Size(438, 350);
             groupBoxDelete.TabIndex = 23;
@@ -690,7 +719,7 @@
             groupBoxUpdate.Controls.Add(label16);
             groupBoxUpdate.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxUpdate.ForeColor = SystemColors.ButtonHighlight;
-            groupBoxUpdate.Location = new Point(302, 163);
+            groupBoxUpdate.Location = new Point(625, 63);
             groupBoxUpdate.Name = "groupBoxUpdate";
             groupBoxUpdate.Size = new Size(438, 377);
             groupBoxUpdate.TabIndex = 21;
@@ -872,12 +901,16 @@
             // 
             errorProvider10.ContainerControl = this;
             // 
+            // errorProvider11
+            // 
+            errorProvider11.ContainerControl = this;
+            // 
             // AdminEventPageForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(894, 763);
+            ClientSize = new Size(894, 826);
             Controls.Add(groupBoxDelete);
             Controls.Add(panel2);
             Controls.Add(groupBoxUpdate);
@@ -898,6 +931,7 @@
             groupBox2.ResumeLayout(false);
             groupBoxAdd.ResumeLayout(false);
             groupBoxAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             groupBoxDelete.ResumeLayout(false);
             groupBoxDelete.PerformLayout();
             groupBoxUpdate.ResumeLayout(false);
@@ -914,6 +948,7 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider8).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider9).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -988,5 +1023,8 @@
         private Label label24;
         private DateTimePicker dateTimePicker6;
         private Label label25;
+        private NumericUpDown numericUpDown1;
+        private Label label26;
+        private ErrorProvider errorProvider11;
     }
 }
