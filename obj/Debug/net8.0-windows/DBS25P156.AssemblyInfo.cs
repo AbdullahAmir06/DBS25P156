@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DBS25P156")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e08ae30d85cecce45547a01da778031eb6e9526d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f42ad21c4f091274e6d985d5273befc5ff0fd974")]
 [assembly: System.Reflection.AssemblyProductAttribute("DBS25P156")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DBS25P156")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
