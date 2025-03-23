@@ -188,7 +188,10 @@ namespace DBS25P156.UI
 
         private void label10_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminResultForm adminResultForm = new AdminResultForm();
+            adminResultForm.ShowDialog();
+            this.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

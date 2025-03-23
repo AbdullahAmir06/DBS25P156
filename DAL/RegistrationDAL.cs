@@ -53,6 +53,18 @@ namespace DBS25P156.DAL
 
                 int count3 = Convert.ToInt32(DatabaseHelper.Instance.ExecuteQuery(query3, new object[] { UserSession.SelectedEditionID, event_id, type_id, amount, from_entity_type, from_entity_id, to_entity_type, to_entity_id, description }));
 
+                //string? team_id = null;
+                string? team_id = GetTeamIdViaParticipant(participant_id);
+
+                object teamIdValue;
+                if (string.IsNullOrEmpty(team_id))
+                    teamIdValue = DBNull.Value; // Store NULL if no team_id
+                else
+                    teamIdValue = Convert.ToInt32(team_id); // Convert to int if exists
+
+                string query4 = "Insert INTO event_results (event_id,participant_id,team_id) VALUES (@event_id,@participant_id,@team_id)";
+
+                int count4 = DatabaseHelper.Instance.ExecuteQuery(query4, new object[] { event_id, participant_id, teamIdValue });
 
                 return (count3 > 0 && count2 > 0 && count1 > 0);
             }
@@ -61,6 +73,15 @@ namespace DBS25P156.DAL
                 return (count2 > 0 && count1 > 0);
             }
 
+        }
+
+        public string? GetTeamIdViaParticipant(int id)
+        {
+            string query = "SELECT team_id from team_participants where participant_id = @id";
+            object result = DatabaseHelper.Instance.GetSingleValue(query, new object[] { id });
+
+            // If result is null or DBNull.Value, return null
+            return (result == null || result == DBNull.Value) ? null : result.ToString();
         }
         //public bool participantRegistration(string name, string email, string contact, string institution) // 2
         //{
@@ -71,12 +92,12 @@ namespace DBS25P156.DAL
         //    return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { UserSession.SelectedEditionID, name, email, contact, institution, role_id })>0;
         //}
 
-        public bool TeamParticipantRegistration(string name, string contact,string teamName) //3
+        public bool TeamParticipantRegistration(string name, string contact, string teamName) //3
         {
             int participant_id = GetParticipanteeId(name, contact);
             int team_id = GetTeamId(teamName);
             string query = "INSERT INTO team_participants (team_id,participant_id) VALUES (@team_id,@participant_id)";
-            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { team_id,participant_id }) > 0;
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { team_id, participant_id }) > 0;
         }
 
 
@@ -98,8 +119,6 @@ namespace DBS25P156.DAL
 
             return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name }));
         }
-
-        //public bool AddTeamParticipants()
 
         public bool TeamExist(string name)
         {
@@ -132,17 +151,19 @@ namespace DBS25P156.DAL
         }
 
 
-        public bool facultyRegistration(string name,string email,string contact,string institution,string role)
+        public bool facultyRegistration(string name, string email, string contact, string institution, string role)
         {
             int role_id = GetRoleIdOfParticipantFromLookup(role);
             string query = "INSERT INTO participants (itec_id,name,email,contact,institute,role_id) VALUES (@SelectedEditionID,@name,@email,@contact,@instutition,@role_id)";
 
-            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { UserSession.SelectedEditionID, name, email, contact, institution, role_id })>0;
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { UserSession.SelectedEditionID, name, email, contact, institution, role_id }) > 0;
         }
 
-        public List <string> getEventsForFaculty()
+        public List<string> getEventsForFaculty()
         {
             return EventDAL.GetEventNamesByItecEdition(UserSession.SelectedEditionID);
         }
+
+
     }
 }

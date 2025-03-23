@@ -106,7 +106,7 @@
             textBox1.Location = new Point(20, 208);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(375, 33);
-            textBox1.TabIndex = 34;
+            textBox1.TabIndex = 2;
             textBox1.Leave += textBox1_Leave;
             // 
             // label2
@@ -151,7 +151,7 @@
             comboBox1.Location = new Point(20, 396);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(140, 38);
-            comboBox1.TabIndex = 31;
+            comboBox1.TabIndex = 5;
             comboBox1.Enter += comboBox1_Enter;
             comboBox1.Leave += comboBox1_Leave;
             // 
@@ -198,7 +198,7 @@
             ContactTextBox.Location = new Point(20, 271);
             ContactTextBox.Name = "ContactTextBox";
             ContactTextBox.Size = new Size(375, 33);
-            ContactTextBox.TabIndex = 2;
+            ContactTextBox.TabIndex = 3;
             ContactTextBox.Enter += ContactTextBox_Enter;
             ContactTextBox.Leave += ContactTextBox_Leave;
             // 
@@ -224,7 +224,7 @@
             BackToLogin.Location = new Point(146, 488);
             BackToLogin.Name = "BackToLogin";
             BackToLogin.Size = new Size(119, 30);
-            BackToLogin.TabIndex = 0;
+            BackToLogin.TabIndex = 7;
             BackToLogin.Text = "Go To Home";
             BackToLogin.Click += BackToLogin_Click;
             // 
@@ -236,7 +236,7 @@
             InstituteTextBox.Location = new Point(20, 333);
             InstituteTextBox.Name = "InstituteTextBox";
             InstituteTextBox.Size = new Size(375, 33);
-            InstituteTextBox.TabIndex = 3;
+            InstituteTextBox.TabIndex = 4;
             InstituteTextBox.Enter += InstituteTextBox_Enter;
             InstituteTextBox.Leave += InstituteTextBox_Leave;
             // 
@@ -260,7 +260,7 @@
             button1.Location = new Point(82, 448);
             button1.Name = "button1";
             button1.Size = new Size(241, 37);
-            button1.TabIndex = 5;
+            button1.TabIndex = 6;
             button1.Text = "Register";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
