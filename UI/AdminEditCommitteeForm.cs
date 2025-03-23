@@ -157,29 +157,6 @@ namespace DBS25P156.UI
         private void button1_Click(object sender, EventArgs e)
         {
             bool valid = true;
-            //int counter = 0;
-
-            // Loop through each row in the DataGridView
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    // Check if the checkbox in the first column is checked
-            //    if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value == true)
-            //    {
-            //        counter++;
-            //    }
-            //}
-
-            //// If no row is selected, show an error
-            //if (counter < 5)
-            //{
-            //    errorProvider2.SetError(dataGridView1, "Please select at least 5 persons.");
-            //    valid = false;
-            //    dataGridView1.Focus(); // Set focus on DataGridView
-            //}
-            //else
-            //{
-            //    errorProvider2.Clear(); // Clear the error if selection is 
-            //}
 
             if (comboBox1.SelectedIndex == -1)
             {

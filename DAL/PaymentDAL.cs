@@ -17,5 +17,12 @@ namespace DBS25P156.DAL
 
             return DatabaseHelper.Instance.GetData(query, new object[] { });
         }
+
+        public bool UpdatePaymentStatus(int regId, int status)
+        {
+            string query = "UPDATE event_participants  SET payment_status_id =@status where registration_id = @regId";
+
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { status, regId})>0;
+        }
     }
 }

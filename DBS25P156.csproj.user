@@ -22,9 +22,6 @@
     <Compile Update="UI\AdminVenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UI\EventRegistrationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="UI\FacultyEventRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -43,25 +40,14 @@
     <Compile Update="UI\UserCommitteeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UI\UserEventForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="UI\UserEventRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UI\UserHomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UI\UserPaymentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="UI\Vendor&amp;SponserHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="UI\UserEventForm.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
