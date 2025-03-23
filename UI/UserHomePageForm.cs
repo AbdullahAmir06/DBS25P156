@@ -48,12 +48,12 @@ namespace DBS25P156.UI
         private void label5_MouseHover(object sender, EventArgs e)
         {
 
-            label5.Font = new Font(label5.Font, FontStyle.Bold | FontStyle.Underline);
+            //label5.Font = new Font(label5.Font, FontStyle.Bold | FontStyle.Underline);
         }
 
         private void label5_MouseLeave(object sender, EventArgs e)
         {
-            label5.Font = new Font(label5.Font, FontStyle.Regular);
+            //label5.Font = new Font(label5.Font, FontStyle.Regular);
         }
 
         private void label2_MouseHover(object sender, EventArgs e)

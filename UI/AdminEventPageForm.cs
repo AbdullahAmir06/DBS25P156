@@ -123,6 +123,7 @@ namespace DBS25P156.UI
             panel2.Visible = false;
             groupBoxDelete.Visible = false;
             groupBoxUpdate.Visible = false;
+            //this.Size();
 
             groupBoxAdd.Visible = true;
             groupBoxAdd.Location = new Point(362, 170);
