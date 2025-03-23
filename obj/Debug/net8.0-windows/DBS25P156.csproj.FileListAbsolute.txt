@@ -46,16 +46,13 @@ D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\D
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.AdminFinanceForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.AdminHomePageForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.AdminVenueForm.resources
-D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.EventRegistrationForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.FacultyEventRegistrationForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.ForgetPasswordForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.ItecEditionForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.LoginForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.Sign_Up.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.UserCommitteeForm.resources
-D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.UserEventForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.UserHomePageForm.resources
-D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.UserPaymentForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.Vendor_SponserHomePage.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.UserEventRegistrationForm.resources
 D:\ABDULLAH(D DRIVE)\UET\Semester-2\Database (DB)\DB MIDTERM PROJECT\DBS25P156\DBS25P156\obj\Debug\net8.0-windows\DBS25P156.UI.AdminParticipationForm.resources

@@ -31,6 +31,10 @@
             components = new System.ComponentModel.Container();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            comboBox2 = new ComboBox();
+            Event = new Label();
             comboBox1 = new ComboBox();
             RegisterAs = new Label();
             textBox3 = new TextBox();
@@ -45,11 +49,15 @@
             errorProvider2 = new ErrorProvider(components);
             errorProvider3 = new ErrorProvider(components);
             errorProvider4 = new ErrorProvider(components);
+            errorProvider5 = new ErrorProvider(components);
+            errorProvider6 = new ErrorProvider(components);
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -67,6 +75,10 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(comboBox2);
+            groupBox2.Controls.Add(Event);
             groupBox2.Controls.Add(comboBox1);
             groupBox2.Controls.Add(RegisterAs);
             groupBox2.Controls.Add(textBox3);
@@ -81,10 +93,54 @@
             groupBox2.ForeColor = SystemColors.ButtonHighlight;
             groupBox2.Location = new Point(195, 71);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(437, 398);
+            groupBox2.Size = new Size(437, 529);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             groupBox2.Text = "Registration";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.LightGray;
+            textBox1.Font = new Font("Poppins", 10.2F);
+            textBox1.ForeColor = SystemColors.ActiveCaptionText;
+            textBox1.Location = new Point(20, 208);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(375, 33);
+            textBox1.TabIndex = 34;
+            textBox1.Leave += textBox1_Leave;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Poppins", 10.2F);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(20, 179);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 30);
+            label2.TabIndex = 35;
+            label2.Text = "Email";
+            // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.LightGray;
+            comboBox2.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.ForeColor = SystemColors.WindowText;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(20, 76);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(272, 38);
+            comboBox2.TabIndex = 0;
+            comboBox2.Leave += comboBox2_Leave;
+            // 
+            // Event
+            // 
+            Event.AutoSize = true;
+            Event.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Event.Location = new Point(17, 43);
+            Event.Name = "Event";
+            Event.Size = new Size(60, 30);
+            Event.TabIndex = 32;
+            Event.Text = "Event";
             // 
             // comboBox1
             // 
@@ -92,7 +148,7 @@
             comboBox1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Professional", "Guest Speaker", "Judge" });
-            comboBox1.Location = new Point(20, 256);
+            comboBox1.Location = new Point(20, 396);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(140, 38);
             comboBox1.TabIndex = 31;
@@ -104,7 +160,7 @@
             RegisterAs.BackColor = Color.Transparent;
             RegisterAs.Font = new Font("Poppins", 10.2F);
             RegisterAs.ForeColor = SystemColors.ButtonHighlight;
-            RegisterAs.Location = new Point(20, 229);
+            RegisterAs.Location = new Point(20, 369);
             RegisterAs.Name = "RegisterAs";
             RegisterAs.Size = new Size(150, 24);
             RegisterAs.TabIndex = 30;
@@ -115,7 +171,7 @@
             textBox3.BackColor = Color.LightGray;
             textBox3.Font = new Font("Poppins", 10.2F);
             textBox3.ForeColor = SystemColors.ActiveCaptionText;
-            textBox3.Location = new Point(20, 67);
+            textBox3.Location = new Point(20, 146);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(375, 33);
             textBox3.TabIndex = 1;
@@ -128,7 +184,7 @@
             Names.BackColor = Color.Transparent;
             Names.Font = new Font("Poppins", 10.2F);
             Names.ForeColor = SystemColors.ButtonHighlight;
-            Names.Location = new Point(20, 38);
+            Names.Location = new Point(20, 117);
             Names.Name = "Names";
             Names.Size = new Size(114, 30);
             Names.TabIndex = 28;
@@ -139,7 +195,7 @@
             ContactTextBox.BackColor = Color.LightGray;
             ContactTextBox.Font = new Font("Poppins", 10.2F);
             ContactTextBox.ForeColor = SystemColors.ActiveCaptionText;
-            ContactTextBox.Location = new Point(20, 129);
+            ContactTextBox.Location = new Point(20, 271);
             ContactTextBox.Name = "ContactTextBox";
             ContactTextBox.Size = new Size(375, 33);
             ContactTextBox.TabIndex = 2;
@@ -151,7 +207,7 @@
             Contact.BackColor = Color.Transparent;
             Contact.Font = new Font("Poppins", 10.2F);
             Contact.ForeColor = SystemColors.ButtonHighlight;
-            Contact.Location = new Point(20, 100);
+            Contact.Location = new Point(20, 241);
             Contact.Name = "Contact";
             Contact.Size = new Size(114, 30);
             Contact.TabIndex = 22;
@@ -165,7 +221,7 @@
             BackToLogin.FlatStyle = FlatStyle.Flat;
             BackToLogin.Font = new Font("Poppins", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             BackToLogin.ForeColor = SystemColors.ButtonHighlight;
-            BackToLogin.Location = new Point(146, 348);
+            BackToLogin.Location = new Point(146, 488);
             BackToLogin.Name = "BackToLogin";
             BackToLogin.Size = new Size(119, 30);
             BackToLogin.TabIndex = 0;
@@ -177,7 +233,7 @@
             InstituteTextBox.BackColor = Color.LightGray;
             InstituteTextBox.Font = new Font("Poppins", 10.2F);
             InstituteTextBox.ForeColor = SystemColors.ActiveCaptionText;
-            InstituteTextBox.Location = new Point(20, 193);
+            InstituteTextBox.Location = new Point(20, 333);
             InstituteTextBox.Name = "InstituteTextBox";
             InstituteTextBox.Size = new Size(375, 33);
             InstituteTextBox.TabIndex = 3;
@@ -189,7 +245,7 @@
             Institute.BackColor = Color.Transparent;
             Institute.Font = new Font("Poppins", 10.2F);
             Institute.ForeColor = SystemColors.ButtonHighlight;
-            Institute.Location = new Point(20, 165);
+            Institute.Location = new Point(20, 307);
             Institute.Name = "Institute";
             Institute.Size = new Size(150, 22);
             Institute.TabIndex = 18;
@@ -201,7 +257,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Poppins", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(82, 308);
+            button1.Location = new Point(82, 448);
             button1.Name = "button1";
             button1.Size = new Size(241, 37);
             button1.TabIndex = 5;
@@ -225,12 +281,20 @@
             // 
             errorProvider4.ContainerControl = this;
             // 
+            // errorProvider5
+            // 
+            errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            errorProvider6.ContainerControl = this;
+            // 
             // FacultyEventRegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 47);
-            ClientSize = new Size(800, 516);
+            ClientSize = new Size(800, 641);
             Controls.Add(groupBox2);
             Controls.Add(label1);
             Name = "FacultyEventRegistrationForm";
@@ -243,6 +307,8 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,5 +331,11 @@
         private ErrorProvider errorProvider2;
         private ErrorProvider errorProvider3;
         private ErrorProvider errorProvider4;
+        private ComboBox comboBox2;
+        private Label Event;
+        private TextBox textBox1;
+        private Label label2;
+        private ErrorProvider errorProvider5;
+        private ErrorProvider errorProvider6;
     }
 }

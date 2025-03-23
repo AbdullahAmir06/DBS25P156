@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.DAL;
 
 namespace DBS25P156.UI
 {
     public partial class FacultyEventRegistrationForm : Form
     {
+        RegistrationDAL RegistrationDAL = new RegistrationDAL();
         public FacultyEventRegistrationForm()
         {
             InitializeComponent();
@@ -24,7 +26,13 @@ namespace DBS25P156.UI
 
         private void FacultyEventRegistrationForm_Load(object sender, EventArgs e)
         {
-     
+            comboBox2.Items.Clear();
+            List<string> Events = RegistrationDAL.getEventsForFaculty();
+
+            foreach (string Event in Events)
+            {
+                comboBox2.Items.Add(Event);
+            }
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
@@ -108,7 +116,7 @@ namespace DBS25P156.UI
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(InstituteTextBox.Text) ||
                string.IsNullOrWhiteSpace(ContactTextBox.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
@@ -116,20 +124,49 @@ namespace DBS25P156.UI
                 MessageBox.Show("Please fill all the fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            RegistrationDAL.facultyRegistration(textBox3.Text, textBox1.Text, ContactTextBox.Text, InstituteTextBox.Text, comboBox1.Text);
             MessageBox.Show("Register Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             button1.Enabled = false;
 
-            await Task.Delay(500);
-            UserHomePageForm userHomePageForm = new UserHomePageForm();
-            this.Hide();
-            userHomePageForm.ShowDialog();
+
+            //await Task.Delay(500);
+            this.Close();
+            //UserHomePageForm userHomePageForm = new UserHomePageForm();
+            //this.Hide();
+            //userHomePageForm.ShowDialog();
 
         }
 
         private void BackToLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Focus();
+                errorProvider5.SetError(textBox1, "Please enter your Email");
+            }
+            else
+            {
+                errorProvider5.Clear();
+            }
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            if(comboBox2.SelectedIndex == -1)
+            {
+                comboBox2.Focus();
+                errorProvider6.SetError(comboBox2, "Please Select the Event");
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
         }
     }
 }

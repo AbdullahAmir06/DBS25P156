@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P156.Models;
+
 
 namespace DBS25P156.UI
 {
@@ -82,11 +84,10 @@ namespace DBS25P156.UI
 
         private void label6_Click(object sender, EventArgs e)
         {
+            UserEventRegistrationForm userEventRegistrationForm = new UserEventRegistrationForm();
 
-            UserEventForm userEventForm = new UserEventForm();
             this.Hide();
-            userEventForm.ShowDialog();
-            this.Show();
+            userEventRegistrationForm.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -103,10 +104,10 @@ namespace DBS25P156.UI
 
         private void label5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UserPaymentForm userPaymentForm = new UserPaymentForm();
-            userPaymentForm.ShowDialog();
-            this.Show();
+            //this.Hide();
+            //UserPaymentForm userPaymentForm = new UserPaymentForm();
+            //userPaymentForm.ShowDialog();
+            //this.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -134,15 +135,22 @@ namespace DBS25P156.UI
 
         private void label8_Click(object sender, EventArgs e)
         {
-            UserEventRegistrationForm userEventRegistrationForm = new UserEventRegistrationForm();
-            this.Hide();
-            userEventRegistrationForm.ShowDialog();
-            this.Show();
+            if (UserSession.UserLoginRoleID == 1)
+            {
 
-            //UserEventForm userEventForm = new UserEventForm();
-            //this.Hide();
-            //userEventForm.ShowDialog();
-            //this.Show();
+                UserEventRegistrationForm userEventRegistrationForm = new UserEventRegistrationForm();
+                this.Hide();
+                userEventRegistrationForm.ShowDialog();
+                this.Show();
+
+            }
+            else if (UserSession.UserLoginRoleID == 2)
+            {
+                FacultyEventRegistrationForm facultyEventRegistrationForm = new FacultyEventRegistrationForm();
+                this.Hide();
+                facultyEventRegistrationForm.ShowDialog();
+                this.Show();
+            }
         }
         private void panel2_MouseEnter(object sender, EventArgs e)
         {

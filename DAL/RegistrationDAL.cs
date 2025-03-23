@@ -5,7 +5,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using DBS25P156.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DBS25P156.DAL
 {
@@ -114,12 +116,12 @@ namespace DBS25P156.DAL
             return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { category }));
         }
 
-        public int GetRoleIdOfParticipantFromLookup(string category)
+        public int GetRoleIdOfParticipantFromLookup(string name)
         {
             string c = "ParticipantRoles";
-            string query = "SELECT lookup_id from lookup where value =@category and category =@c";
+            string query = "SELECT lookup_id from lookup where value =@name and category =@c";
 
-            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { category, c }));
+            return Convert.ToInt32(DatabaseHelper.Instance.GetSingleValue(query, new object[] { name, c }));
         }
 
         public int GetParticipanteeId(string name, string contact)
@@ -130,5 +132,17 @@ namespace DBS25P156.DAL
         }
 
 
+        public bool facultyRegistration(string name,string email,string contact,string institution,string role)
+        {
+            int role_id = GetRoleIdOfParticipantFromLookup(role);
+            string query = "INSERT INTO participants (itec_id,name,email,contact,institute,role_id) VALUES (@SelectedEditionID,@name,@email,@contact,@instutition,@role_id)";
+
+            return DatabaseHelper.Instance.ExecuteQuery(query, new object[] { UserSession.SelectedEditionID, name, email, contact, institution, role_id })>0;
+        }
+
+        public List <string> getEventsForFaculty()
+        {
+            return EventDAL.GetEventNamesByItecEdition(UserSession.SelectedEditionID);
+        }
     }
 }

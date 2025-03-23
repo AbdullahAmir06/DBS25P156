@@ -101,9 +101,10 @@ namespace DBS25P156.UI
 
         private void label6_Click(object sender, EventArgs e)
         {
-            UserEventForm uef = new UserEventForm();
+            UserEventRegistrationForm userEventRegistrationForm = new UserEventRegistrationForm();
+            //UserEventForm uef = new UserEventForm();
             this.Hide();
-            uef.ShowDialog();
+            userEventRegistrationForm.ShowDialog();
         }
 
         private void label2_Click_1(object sender, EventArgs e)
@@ -114,8 +115,8 @@ namespace DBS25P156.UI
         private void label5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UserPaymentForm upf = new UserPaymentForm();
-            upf.ShowDialog();
+            //UserPaymentForm upf = new UserPaymentForm();
+            //upf.ShowDialog();
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
