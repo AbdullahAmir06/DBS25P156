@@ -242,6 +242,7 @@
             label7.Size = new Size(151, 30);
             label7.TabIndex = 41;
             label7.Text = "To Event Name";
+            label7.Click += label7_Click;
             // 
             // comboBox2
             // 
@@ -293,11 +294,11 @@
             // numericUpDown1
             // 
             numericUpDown1.BackColor = Color.LightGray;
-            numericUpDown1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown1.Location = new Point(21, 429);
+            numericUpDown1.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numericUpDown1.Location = new Point(21, 436);
             numericUpDown1.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 30);
+            numericUpDown1.Size = new Size(150, 33);
             numericUpDown1.TabIndex = 5;
             // 
             // label4
@@ -305,7 +306,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Poppins", 10.2F);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(21, 396);
+            label4.Location = new Point(21, 403);
             label4.Name = "label4";
             label4.Size = new Size(114, 30);
             label4.TabIndex = 35;

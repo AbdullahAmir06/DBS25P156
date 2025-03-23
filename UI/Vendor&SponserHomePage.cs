@@ -38,14 +38,21 @@ namespace DBS25P156.UI
             {
                 LoadDataIntoComboBox();
                 groupBox1.Visible = false;
+                label7.Visible = false;
+                comboBox3.Visible = false;
                 groupBox2.Visible = true;
                 this.Size = new Size(818, 603);
                 groupBox2.Location = new Point(189, 12);
 
-                label4.Location = new Point(17, 317);
-                numericUpDown1.Location = new Point(17, 350);
+                label4.Location = new Point(17, 327);
+                numericUpDown1.Location = new Point(17, 360);
+
+                //label4.Location = new Point(17, 317);
+                //numericUpDown1.Location = new Point(17, 350);
                 button2.Location = new Point(90, 435);
                 label1.Location = new Point(177, 481);
+                //label4.Location = new Point(21, 403);
+                //numericUpDown1.Location = new Point(21, 436);
                 groupBox2.Size = new Size(422, 518);
                 //this.Size = new Size(818, 603);
 
@@ -279,10 +286,12 @@ namespace DBS25P156.UI
                 comboBox3.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
                 label7.Visible = true;
-                label4.Location = new Point(21, 383);
-                numericUpDown1.Location = new Point(21, 416);
+                label4.Location = new Point(21, 400);
+                numericUpDown1.Location = new Point(21, 435);
                 button2.Location = new Point(94, 501);
                 label1.Location = new Point(181, 547);
+                //label4.Location = new Point(21, 403);
+                //numericUpDown1.Location = new Point(21, 436);
                 groupBox2.Size = new Size(422, 583);
                 this.Size = new Size(818, 688);
 
@@ -292,10 +301,12 @@ namespace DBS25P156.UI
                 comboBox3.Visible = false;
                 label7.Visible = false;
                 comboBox2.SelectedIndex = -1;
-                label4.Location = new Point(17, 317);
-                numericUpDown1.Location = new Point(17, 350);
+                label4.Location = new Point(17, 327);
+                numericUpDown1.Location = new Point(17, 360);
                 button2.Location = new Point(90, 435);
                 label1.Location = new Point(177, 481);
+                //label4.Location = new Point(17, 324);
+                //numericUpDown1.Location = new Point(17, 357);
                 groupBox2.Size = new Size(422, 518);
                 this.Size = new Size(818, 603);
 
@@ -361,6 +372,11 @@ namespace DBS25P156.UI
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

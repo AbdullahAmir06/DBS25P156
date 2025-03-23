@@ -113,9 +113,9 @@ namespace DBS25P156.DAL
 
         public List<string> GetCommitteeNameOfSpecificUser(string username) // used for duty update
         {
-            string query = "select c.committee_name from committees c join duties d on d.committee_id = c.committee_id where d.assigned_to =@username";
+            string query = "select c.committee_name from committees c join duties d on d.committee_id = c.committee_id where d.assigned_to =@username and c.itec_id=@SelectedEditionID";
 
-            return DatabaseHelper.Instance.GetColumn(query,new object[] { username }).Select(e => e?.ToString() ?? "").ToList();
+            return DatabaseHelper.Instance.GetColumn(query,new object[] { username ,UserSession.SelectedEditionID}).Select(e => e?.ToString() ?? "").ToList();
         }
 
         public int GetCommitteeIdOfSpecificEvent(int eventId)

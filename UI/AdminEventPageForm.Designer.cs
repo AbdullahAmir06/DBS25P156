@@ -172,11 +172,11 @@
             label7.FlatStyle = FlatStyle.Flat;
             label7.Font = new Font("Poppins", 12F);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(793, 7);
+            label7.Location = new Point(734, 6);
             label7.Name = "label7";
-            label7.Size = new Size(97, 36);
+            label7.Size = new Size(159, 36);
             label7.TabIndex = 6;
-            label7.Text = "LOGOUT";
+            label7.Text = "BACK TO MENU";
             label7.Click += label7_Click;
             label7.MouseLeave += label7_MouseLeave;
             label7.MouseHover += label7_MouseHover;

@@ -35,7 +35,7 @@ namespace DBS25P156.DAL
 
         public List<string> GetCommitteeNames()
         {
-            string query = "SELECT committee_name from committees where itec_id =@SelectedEditionID";
+            string query = "SELECT distinct committee_name from committees right join itec_events e on e.committee_id=committees.committee_id where e.itec_id =@SelectedEditionID";
             return DatabaseHelper.Instance.GetColumn(query, new object[] { UserSession.SelectedEditionID }).Select(e => e?.ToString() ?? "").ToList();
         }
 
